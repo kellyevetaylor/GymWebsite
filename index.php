@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>WAD Gym </title>
 </head>
+
+
 <style>
 
     body {
@@ -31,6 +33,7 @@
         padding-top: 10%;
         text-align: center;
         color: dodgerblue;
+        text-decoration: underline;
         font-size: 65px;
 
     }
@@ -52,11 +55,15 @@
 <body>
 
 <?php
+
+
 if (isset($_POST["login"])) {
     ?>
+
+
     <form action="post">
         <div>
-            <p id="GYM">Gym Loyal</p>
+            <p id="GYM">WAD GYM</p>
 
             <p>
                 Enter Username below:<br>
@@ -65,26 +72,34 @@ if (isset($_POST["login"])) {
             <p>
                 Enter Password below:<br>
                 <input type="password" name="Password" placeholder="Password"/>
-                <input type="hidden" name="action" value="dash">
             </p>
+            <p><input type="submit" name="dashboard" value="Login" formaction="Dashboard.php"></p>
+
         </div>
     </form>
+
+
     <?php
 
 } else {
+
     ?>
+
     <form method="post">
 
         <div id="GYM">
 
             <h1>WAD Gym</h1>
 
-            <input id=inputButton type="submit" value="Create Account" name="createAccount"
+            <input id=inputButton type="submit" value="Creat Account" name="createAccount"
                    formaction="CreateAccount.php">
             <input id=inputButton type="submit" value="Login" name="login" formaction="index.php">
 
         </div>
+
+
     </form>
+
 <?php } ?>
 
 </body>
