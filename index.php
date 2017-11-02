@@ -52,12 +52,8 @@
 <body>
 
 <?php
-
-
 if (isset($_POST["login"])) {
     ?>
-
-
     <form action="post">
         <div>
             <p id="GYM">Gym Loyal</p>
@@ -71,33 +67,24 @@ if (isset($_POST["login"])) {
                 <input type="password" name="Password" placeholder="Password"/>
                 <input type="hidden" name="action" value="dash">
             </p>
-
         </div>
     </form>
-
-
     <?php
 
 } else {
-
-
     ?>
-
     <form method="post">
 
         <div id="GYM">
 
             <h1>WAD Gym</h1>
 
-            <input id=inputButton type="submit" value="Creat Account" name="createAccount"
+            <input id=inputButton type="submit" value="Create Account" name="createAccount"
                    formaction="CreateAccount.php">
             <input id=inputButton type="submit" value="Login" name="login" formaction="index.php">
 
         </div>
-
-
     </form>
-
 <?php } ?>
 
 </body>
