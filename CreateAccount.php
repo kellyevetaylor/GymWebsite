@@ -120,7 +120,7 @@ $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
             <input type="text" name="username" required/><br></p>
         <p><label>Password:</label>
             <input type="input" name="password" required/><br></p>
-        <p><input type="submit"/></p>
+        <p><input type="submit" formaction="Dashboard.php"/></p>
     </form>
 </div>
 

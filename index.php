@@ -71,7 +71,7 @@ if (isset($_POST["login"])) {
             </p>
             <p>
                 Enter Password below:<br>
-                <input type="password" name="Password" placeholder="Password"/>
+                <input type="password" name="Password" placeholder="Password" />
             </p>
             <p><input type="submit" name="dashboard" value="Login" formaction="Dashboard.php"></p>
 
