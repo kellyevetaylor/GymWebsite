@@ -7,11 +7,8 @@
 <style>
 
     body {
-
         background-color: dimgrey;
-
     }
-
 
     #GYM {
         text-align: center;
@@ -76,7 +73,6 @@ function cleanInput($input)
     $input = stripslashes($input);
     $input = htmlspecialchars(strip_tags($input));
     return $input;
-
 }
 
 function safePost($conn, $name)
@@ -87,7 +83,6 @@ function safePost($conn, $name)
         return "";
     }
 }
-
 
 $host = "devweb2017.cis.strath.ac.uk";
 $user = "gmb15147";
@@ -107,7 +102,7 @@ $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
 
 ?>
 <div id="createAccount">
-    <form method="POST">
+    <form method="POST" action="index.php">
         <p><label>First name:</label>
             <input type="text" name="firstName" required/><br></p>
         <p><label>Second name:</label>
@@ -136,7 +131,7 @@ $conn->query($sql);
 $password = md5($password);
 $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
 $conn->query($sql);
-
 ?>
+
 </body>
 </html>
