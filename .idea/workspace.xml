@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AddActivity.php" afterPath="$PROJECT_DIR$/AddActivity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes.php" afterPath="$PROJECT_DIR$/Classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contact.php" afterPath="$PROJECT_DIR$/Contact.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CreateAccount.php" afterPath="$PROJECT_DIR$/CreateAccount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard.php" afterPath="$PROJECT_DIR$/Dashboard.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyAccount.php" afterPath="$PROJECT_DIR$/MyAccount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PersonalDiary.php" afterPath="$PROJECT_DIR$/PersonalDiary.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,13 +16,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyAccount.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dashboard.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-370">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyAccount.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyAccount.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="59" column="3" lean-forward="true" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
+            <state relative-caret-position="237">
+              <caret line="108" column="7" lean-forward="true" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
               <folding>
-                <marker date="1509710687421" expanded="true" signature="1437:1571" ph="SELECT `id`,... Gym Membership" />
+                <marker date="1509713253880" expanded="true" signature="1835:1969" ph="SELECT `id`,... Gym Membership" />
               </folding>
             </state>
           </provider>
@@ -39,52 +41,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+            <state relative-caret-position="251">
+              <caret line="63" column="11" lean-forward="true" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateAccount.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CreateAccount.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-              <folding>
-                <marker date="1509710583318" expanded="true" signature="2232:2480" ph="INSERT INTO `Gym Membership`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Contact.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Contact.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Contact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Classes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
-              <folding>
-                <marker date="1509710721949" expanded="true" signature="1787:1810" ph="SELECT * FRO... Classes" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddActivity.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AddActivity.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+            <state relative-caret-position="782">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,6 +74,7 @@
       <find>createAccount</find>
       <find>Login</find>
       <find>td</find>
+      <find>myAccount</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,13 +99,13 @@
         <option value="$USER_HOME$/AppData/Local/Temp/PersonalDiary.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/CreateAccount.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/CreateAccount.php" />
         <option value="$PROJECT_DIR$/Dashboard.php" />
         <option value="$PROJECT_DIR$/PersonalDiary.php" />
-        <option value="$PROJECT_DIR$/MyAccount.php" />
         <option value="$PROJECT_DIR$/Contact.php" />
         <option value="$PROJECT_DIR$/Classes.php" />
         <option value="$PROJECT_DIR$/AddActivity.php" />
+        <option value="$PROJECT_DIR$/CreateAccount.php" />
+        <option value="$PROJECT_DIR$/MyAccount.php" />
       </list>
     </option>
   </component>
@@ -307,7 +276,7 @@
       <workItem from="1509356617241" duration="3486000" />
       <workItem from="1509641057973" duration="8859000" />
       <workItem from="1509658208163" duration="5947000" />
-      <workItem from="1509709525964" duration="1285000" />
+      <workItem from="1509709525964" duration="3774000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -344,11 +313,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509658785817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Contact page added to dashboard">
+      <created>1509710861119</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1509710861119</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20346000" />
+    <option name="totallyTimeSpent" value="22835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -393,7 +369,8 @@
     <MESSAGE value="Create new membership page added. Inserts into a database called WADGym." />
     <MESSAGE value="Ryan's code. Contains template of what we want to do" />
     <MESSAGE value="Added basic contact page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic contact page" />
+    <MESSAGE value="Contact page added to dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact page added to dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -413,7 +390,7 @@
         <state relative-caret-position="1343">
           <caret line="84" column="19" lean-forward="true" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
           <folding>
-            <marker date="1509710687421" expanded="true" signature="1437:1571" ph="SELECT `id`,... Gym Membership" />
+            <marker date="1509713253880" expanded="true" signature="1835:1969" ph="SELECT `id`,... Gym Membership" />
           </folding>
         </state>
       </provider>
@@ -447,7 +424,8 @@
         <state relative-caret-position="2159">
           <caret line="127" column="23" lean-forward="true" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
           <folding>
-            <marker date="1509710583318" expanded="true" signature="2232:2480" ph="INSERT INTO `Gym Membership`... " />
+            <marker date="1509712144542" expanded="true" signature="2200:2311" ph="INSERT INTO userClasses... " />
+            <marker date="1509712144542" expanded="true" signature="2392:2641" ph="INSERT INTO `Gym Membership`... " />
           </folding>
         </state>
       </provider>
@@ -552,7 +530,8 @@
         <state relative-caret-position="342">
           <caret line="127" column="23" lean-forward="false" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
           <folding>
-            <marker date="1509710583318" expanded="true" signature="2232:2480" ph="INSERT INTO `Gym Membership`... " />
+            <marker date="1509712144542" expanded="true" signature="2200:2311" ph="INSERT INTO userClasses... " />
+            <marker date="1509712144542" expanded="true" signature="2392:2641" ph="INSERT INTO `Gym Membership`... " />
           </folding>
         </state>
       </provider>
@@ -562,7 +541,7 @@
         <state relative-caret-position="-559">
           <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
-            <marker date="1509710687421" expanded="true" signature="1437:1571" ph="SELECT `id`,... Gym Membership" />
+            <marker date="1509713253880" expanded="true" signature="1835:1969" ph="SELECT `id`,... Gym Membership" />
           </folding>
         </state>
       </provider>
@@ -596,7 +575,8 @@
         <state relative-caret-position="1905">
           <caret line="127" column="23" lean-forward="true" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
           <folding>
-            <marker date="1509710583318" expanded="true" signature="2232:2480" ph="INSERT INTO `Gym Membership`... " />
+            <marker date="1509712144542" expanded="true" signature="2200:2311" ph="INSERT INTO userClasses... " />
+            <marker date="1509712144542" expanded="true" signature="2392:2641" ph="INSERT INTO `Gym Membership`... " />
           </folding>
         </state>
       </provider>
@@ -620,14 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PersonalDiary.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -636,23 +608,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyAccount.php">
+    <entry file="file://$PROJECT_DIR$/AddActivity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="59" column="3" lean-forward="true" selection-start-line="59" selection-start-column="3" selection-end-line="59" selection-end-column="3" />
-          <folding>
-            <marker date="1509710687421" expanded="true" signature="1437:1571" ph="SELECT `id`,... Gym Membership" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CreateAccount.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <marker date="1509710583318" expanded="true" signature="2232:2480" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+        <state relative-caret-position="359">
+          <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,27 +626,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AddActivity.php">
+    <entry file="file://$PROJECT_DIR$/CreateAccount.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+        <state relative-caret-position="200">
+          <caret line="140" column="74" lean-forward="false" selection-start-line="140" selection-start-column="74" selection-end-line="140" selection-end-column="74" />
+          <folding>
+            <marker date="1509712144542" expanded="true" signature="2200:2311" ph="INSERT INTO userClasses... " />
+            <marker date="1509712144542" expanded="true" signature="2392:2641" ph="INSERT INTO `Gym Membership`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-370">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        <state relative-caret-position="251">
+          <caret line="63" column="11" lean-forward="true" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Contact.php">
+    <entry file="file://$PROJECT_DIR$/MyAccount.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="237">
+          <caret line="108" column="7" lean-forward="true" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
+          <folding>
+            <marker date="1509713253880" expanded="true" signature="1835:1969" ph="SELECT `id`,... Gym Membership" />
+          </folding>
         </state>
       </provider>
     </entry>

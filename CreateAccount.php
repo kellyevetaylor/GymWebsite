@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New gym membership form</title>
+    <title>New gym membership</title>
 </head>
 <style>
 
@@ -28,11 +28,13 @@
     }
 
     label, input {
+
         color: dodgerblue;
         display: inline-block;
     }
 
     label {
+
         width: 30%;
         text-align: right;
     }
@@ -60,6 +62,8 @@
 <body>
 <h1 id=GYM>WAD GYM</h1>
 <h2>Create Account</h2>
+
+
 <?php
 
 function cleanInput($input)
@@ -80,6 +84,7 @@ function safePost($conn, $name)
     }
 }
 
+
 $host = "devweb2017.cis.strath.ac.uk";
 $user = "gmb15147";
 $password = "Cei7wevoh4ti";
@@ -95,12 +100,16 @@ $postcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
 $username = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
 $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
 
+
+
 if(isset($_POST["toDashboard"])){
 
+    $sql= "INSERT INTO userClasses (UserID, class1, class2, class3, class4, class5) VALUES (Null, '0', '0', '0', '0', '0');";
+    $result=$conn->query($sql);
 
     $password = md5($password);
-    $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
-    $result=$conn->query($sql);
+    $sql = "INSERT INTO `Gym Membership` (`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
+    $result=$conn->multi_query($sql);
 
     if (!$result === TRUE) {
         die("Error on insert" . $conn->error);
@@ -127,8 +136,9 @@ if(isset($_POST["toDashboard"])){
             <p><label>Username:</label>
                 <input type="text" name="username" required/><br></p>
             <p><label>Password:</label>
-                <input type="input" name="password" required/><br></p>
-
+                <input type="password" name="password1" required/><br></p>
+            <p><label>Re-type password:</label>
+                <input type="password" name="password2" required/><br></p>
             <p><input type="submit" name="toDashboard"/></p>
         </form>
     </div>
