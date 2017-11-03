@@ -66,7 +66,9 @@
             <input id="diary" type="submit" value="Personal Diary" formaction="PersonalDiary.php">
             <input id=addAc type="submit" value="Add Activity" formaction="AddActivity.php">
             <input id=classes type="submit" value="Classes" formaction="Classes.php">
+            <input id=Contact type="submit" value="Contact Information" formaction="Contact.php">
             <input id=Logout type="submit" value="Logout" formaction="index.php">
+
 
         </p>
     </div>
