@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: Ryan
- * Date: 02/11/2017
- * Time: 13:56
- */
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +52,7 @@
     <li><a href="MyAccount.php">My Account</a></li>
     <li><a href="PersonalDiary.php">Personal Diary</a></li>
     <li><a href=" Classes.php">Classes</a></li>
+    <li><a href="Contact.php">Contact us</a></li>
 </ul>
 </p>
 <h1>My Account</h1>
