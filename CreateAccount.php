@@ -104,7 +104,7 @@ $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
 
 if(isset($_POST["toDashboard"])){
 
-        $sql= "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, NULL , NULL ,NULL ,NULL ,NULL );";
+        $sql= "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, Null , Null ,Null ,Null ,Null );";
         $conn->multi_query($sql);
 
             $password = ($password);
