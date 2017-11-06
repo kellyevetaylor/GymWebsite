@@ -10,7 +10,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <style>
         body {
@@ -83,7 +83,10 @@ $dbname = "gmb15147";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 
+
+
 ?>
+<form method="post">
 <div id="Nav">
     <p>
     <ul>
@@ -101,7 +104,6 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
     <h2>Classes Available</h2>
 
-
     <table>
         <?php
 
@@ -117,12 +119,35 @@ $conn = new mysqli($host, $user, $password, $dbname);
                 echo "<td>" . "<br>";
                 echo "Date: " . $row["Date"]
                     . "<br>";
-                echo "Class: " . $row["Classes"]
+                echo "Class: " . $row["Class"]
                     . "<br> Length: " . $row["Length"] . " minutes<br> ";
-                echo "Capacity: " . $row["Capacity"]
-                    . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='addClass' value='Add Class'/></td>";
+                echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                    . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type=\"submit\" name=\"addClass\" value=\" Add Class\" formaction=\"Classes.php \"></td>";
 
                 echo "</tr>";
+
+
+                /*
+                                if (isset($_POST['addClass'])) {
+                                    $ClassID=$row["ClassID"];
+                                    $class_Number = "class1";
+                                    if (!$class_Number === 0) {
+                                        $class_Number = "class2";
+                                    } elseif (!$class_Number === 0) {
+                                        $class_Number = "class3";
+                                    }
+                */
+
+                    $sql = "UPDATE `userClasses` SET `$class_Number`=$ClassID WHERE `UserID` = 2";   //change first name to username
+                    $result1 = $conn->query($sql);
+
+                    if (!$result1) {
+                        die("Query failed" . $conn->error);//get rid of error line
+                    }
+
+                    unset($_POST["addClass"]);
+                    header('location:Classes.php');
+
 
 
             }
@@ -141,6 +166,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
 </table>
 
 </div>
+</form>
 
 
 
