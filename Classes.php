@@ -52,13 +52,13 @@
             text-decoration: underline;
         }
 
-        .right{
+        .right {
             padding-right: 25%;
             text-align: center;
             float: right;
         }
 
-        .left{
+        .left {
             padding-left: 25%;
 
             text-align: left;
@@ -66,13 +66,10 @@
         }
 
 
-
-
     </style>
     <meta charset="UTF-8">
     <title>Classes</title>
 </head>
-
 
 <?php
 
@@ -83,94 +80,97 @@ $dbname = "gmb15147";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 
-
-
 ?>
 <form method="post">
-<div id="Nav">
-    <p>
-    <ul>
-        <li><a href="Dashboard.php">Dashboard</a></li>
-        <li><a href="MyAccount.php">My Account</a></li>
-        <li><a href="PersonalDiary.php">Personal Diary</a></li>
-        <li><a href="Classes.php">Classes</a></li>
-        <li><a href="Contact.php">Contact us</a></li>
-    </ul>
-    </p>
+    <div id="Nav">
+        <p>
+        <ul>
+            <li><a href="Dashboard.php">Dashboard</a></li>
+            <li><a href="MyAccount.php">My Account</a></li>
+            <li><a href="PersonalDiary.php">Personal Diary</a></li>
+            <li><a href="Classes.php">Classes</a></li>
+            <li><a href="Contact.php">Contact us</a></li>
+        </ul>
+        </p>
 
-</div>
-<h1 id="GYM">WAD GYM</h1>
+    </div>
+    <h1 id="GYM">WAD GYM</h1>
 
-<div class="left">
+    <div class="left">
 
-    <h2>Classes Available</h2>
+        <h2>Classes Available</h2>
 
-    <table>
-        <?php
+        <table>
+            <?php
 
-        $sql = "SELECT * FROM `Classes`";
-        $result = $conn->query($sql);
+            $sql = "SELECT * FROM Classes";
+            $result = $conn->query($sql);
 
-        if (!$result) {
-            die("Query failed" . $conn->error);//get rid of error line
-        }
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . "<br>";
-                echo "Date: " . $row["Date"]
-                    . "<br>";
-                echo "Class: " . $row["Class"]
-                    . "<br> Length: " . $row["Length"] . " minutes<br> ";
-                echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                    . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type=\"submit\" name=\"addClass\" value=\" Add Class\" formaction=\"Classes.php \"></td>";
-
-                echo "</tr>";
-
-
-                /*
-                                if (isset($_POST['addClass'])) {
-                                    $ClassID=$row["ClassID"];
-                                    $class_Number = "class1";
-                                    if (!$class_Number === 0) {
-                                        $class_Number = "class2";
-                                    } elseif (!$class_Number === 0) {
-                                        $class_Number = "class3";
-                                    }
-                */
-
-                    $sql = "UPDATE `userClasses` SET `$class_Number`=$ClassID WHERE `UserID` = 2";   //change first name to username
-                    $result1 = $conn->query($sql);
-
-                    if (!$result1) {
-                        die("Query failed" . $conn->error);//get rid of error line
-                    }
-
-                    unset($_POST["addClass"]);
-                    header('location:Classes.php');
-
-
-
+            if (!$result) {
+                die("Query failed" . $conn->error);//get rid of error line
             }
-        }
+            if ($result->num_rows > 0) {
 
-        ?>
-    </table>
+                for ($i = 1; $i < 5; $i++) {
+                    while ($row = $result->fetch_assoc()) {
 
-</div>
+                        echo "<tr>";
+                        echo "<td>" . "<br>";
+                        echo "Date: " . $row["Date"] . "<br>";
+                        echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                        echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php '>
+            </td>";
+                        echo "</tr>";
+                        if (isset($_POST["class$i"])) {
+                            //$i is the id of classes class
 
-<div class="right">
-    <h2 >Current Classes</h2>
-<table>
+                            $sql = "UPDATE userClasses SET class$i`= 1 WHERE `UserID = 1";
+                            $conn->query($sql);
+                            if (!$result) {
+                                die("Query Fail" . $conn->error);
+                            }
+                            unset($_POST["addClass"]);
+                        }
+                    }
+                }
+            }
+            ?>
+        </table>
+    </div>
 
+    <div class="right">
+        <h2>Current Classes</h2>
 
-</table>
+        <table>
+            <?php
 
-</div>
+            $sql = "SELECT * FROM Classes";
+            $result = $conn->query($sql);
+
+            if (!$result) {
+                die("Query failed" . $conn->error);//get rid of error line
+            }
+            if ($result->num_rows > 0) {
+                for ($i = 1; $i < 5; $i++) {
+                    while ($row = $result->fetch_assoc()) {
+
+                        if ($row["class$i"] == 1) {
+                            echo "<tr>";
+                            echo "<td>" . "<br>";
+                            echo "Date: " . $row["Date"] . "<br>";
+                            echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                            echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php '>;
+            </td>";
+                            echo "</tr>";
+                        }
+                    }
+                }
+            }
+            ?>
+        </table>
+    </div>
 </form>
-
-
-
-
 </body>
 </html>
