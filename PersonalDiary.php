@@ -40,6 +40,7 @@
     <li><a href="MyAccount.php">My Account</a></li>
     <li><a href="AddActivity.php">Add Activity</a></li>
     <li><a href=" Classes.php">Classes</a></li>
+    <li><a href="Contact.php">Contact us</a></li>
 </ul>
 </p>
 Personal Diary

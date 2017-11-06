@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="4ed932ac-2f3d-4ccc-8911-d94916e5f143" name="cafe" url="https://devweb2017.cis.strath.ac.uk/~xwb15122/">
-        <fileTransfer host="cafe.cis.strath.ac.uk" port="22" rootFolder="/home/xwb15122/DEVWEB/2017" accessType="SFTP">
+      <webServer id="4ed932ac-2f3d-4ccc-8911-d94916e5f143" name="cafe" url="https://devweb2017.cis.strath.ac.uk/~gmb15147/">
+        <fileTransfer host="cafe.cis.strath.ac.uk" port="22" rootFolder="/home/gmb15147/DEVWEB/2017" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
