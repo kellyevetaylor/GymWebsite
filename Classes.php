@@ -160,7 +160,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                 die("Query failed" . $conn->error);//get rid of error line
             }
             if ($result->num_rows > 0) {
-
+ 
                     while ($row = $result->fetch_assoc()) {
 
                         $classID =$row["ClassID"];
