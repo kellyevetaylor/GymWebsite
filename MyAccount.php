@@ -107,37 +107,47 @@ $password = "Cei7wevoh4ti";
 $dbname = "gmb15147";
 $conn = new mysqli($host, $user, $password, $dbname);
 
-$newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
-
-
 if (isset($_POST["updatePassword"])) {
-
-    $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = 1";
-   $result= $conn->query($sql);
-
-
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-
-
-
+    updatePassword($conn);
 }
 
 if (isset($_POST["editDetails"])) {
+    editDetails();
+} else if (isset($_POST["changePassword"])) {
+    displayForm();
+} else {
+    displayInfo($conn);
+}
 
 
+function updatePassword($conn)
+{
+    $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
+    $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
+    $oldPassword = isset($_POST["oldPassword"]) ? cleanInput($_POST["oldPassword"]) : "";
+
+    if ($newPassword1 == $newPassword2) {
+        $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = 1";
+        $conn->query($sql);
+    }
+    else{
+        echo "Error - your passwords don't match.";
+    }
+
+}
+
+function editDetails()
+{
     ?><h1>Edit details</h1><?php
-
-
     echo "Edit details";
     ?>
     <p>
         <button onclick="history.go(-1);">Back</button>
-    </p><?php
+    <?php
+}
 
-
-} else if (isset($_POST["changePassword"])) {
+function displayForm()
+{
     ?><h1>Change password</h1><?php
     ?>
     <div>
@@ -154,8 +164,11 @@ if (isset($_POST["editDetails"])) {
             </p>
         </form>
     </div>
+    <?php
+}
 
-<?php } else {
+function displayInfo($conn)
+{
     //by default will display the info and buttons
     ?><h1>My Account</h1><?php
     ?><p><img src="MyAccountImage.png" width="125"></p><?php
@@ -187,7 +200,7 @@ if (isset($_POST["editDetails"])) {
                    formaction="MyAccount.php">
         </div>
     </form>
-<?php
+    <?php
 }
 
 function cleanInput($input)
@@ -196,7 +209,6 @@ function cleanInput($input)
     $input = stripslashes($input);
     $input = htmlspecialchars(strip_tags($input));
     return $input;
-
 }
 
 ?>
