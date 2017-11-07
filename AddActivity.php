@@ -53,8 +53,49 @@
     <li><a href="Contact.php">Contact us</a></li>
 </ul>
 </p>
-Add Activity
+<?php
 
+//connects to database
+$host = "devweb2017.cis.strath.ac.uk";
+$user = "gmb15147";
+$password = "Cei7wevoh4ti";
+$dbname = "gmb15147";
+$conn = new mysqli($host, $user, $password, $dbname);
+
+$activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
+$duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
+
+
+function cleanInput($input)
+{
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars(strip_tags($input));
+    return $input;
+}
+
+if(isset($_POST['addactivity'])){
+
+    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ('1', CURRENT_DATE, '$activity', '$duration')";
+    $conn->query($sql);
+}
+?>
+<form method="post">
+    Add an activity from today:</br>
+    <input type="text" name="activity"></br>
+    Duration:</br>
+    <input type="number" name="time" min="0"></br>
+
+    <input type="submit" name="addactivity" formaction="AddActivity.php"/>
+</form>
+<?php
+
+
+
+
+//Disconnect
+$conn->close();
+?>
 
 </body>
 </html>
