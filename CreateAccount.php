@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    if(empty($_SESSION['userId'])){
+        session_destroy();
+        header("Location: index.php"); /* Redirect browser */
+        exit();
+    }
+    ?>
     <meta charset="UTF-8">
     <title>New gym membership form</title>
 </head>
@@ -139,6 +147,11 @@ if(isset($_POST["toDashboard"])){
                 <input type="password" name="password" required/><br></p>
 
             <p><input type="submit" name="toDashboard"/></p>
+        </form>
+    </div>
+    <div>
+        <form action="index.php" method="POST">
+            <p><input type="submit" value="Login" name="login"</p>
         </form>
     </div>
     <?php

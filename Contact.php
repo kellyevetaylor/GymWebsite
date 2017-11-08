@@ -10,6 +10,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    if(empty($_SESSION['userId'])){
+        session_destroy();
+        header("Location: index.php"); /* Redirect browser */
+        exit();
+    }
+    ?>
     <meta charset="UTF-8">
     <title>Contact us</title>
 </head>

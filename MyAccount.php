@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    if(empty($_SESSION['userId'])){
+        session_destroy();
+        header("Location: index.php"); /* Redirect browser */
+        exit();
+    }
+    ?>
     <style>
         body {
             background-color: dimgrey;
@@ -92,10 +100,10 @@
 </head>
 <body>
 <ul>
-    <li><a href=" Dashboard.php">Dashboard</a></li>
+    <li><a href="Dashboard.php">Dashboard</a></li>
     <li><a href="MyAccount.php">My Account</a></li>
     <li><a href="PersonalDiary.php">Personal Diary</a></li>
-    <li><a href=" Classes.php">Classes</a></li>
+    <li><a href="Classes.php">Classes</a></li>
     <li><a href="Contact.php">Contact us</a></li>
 </ul>
 <?php
@@ -172,7 +180,8 @@ function displayInfo($conn)
     //by default will display the info and buttons
     ?><h1>My Account</h1><?php
     ?><p><img src="MyAccountImage.png" width="125"></p><?php
-    $sql = "SELECT `id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password` FROM `Gym Membership`WHERE `id`=1";// change to a variable
+    $userId = $_SESSION['userId'];
+    $sql = "SELECT `id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password` FROM `Gym Membership`WHERE `id`=\"$userId\"";// change to a variable
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {

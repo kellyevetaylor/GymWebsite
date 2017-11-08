@@ -11,6 +11,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    if(empty($_SESSION['userId'])){
+        session_destroy();
+        header("Location: index.php"); /* Redirect browser */
+        exit();
+    }
+    ?>
     <style>
         body {
             background-color: dimgrey;
