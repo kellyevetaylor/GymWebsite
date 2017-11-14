@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classes.php" afterPath="$PROJECT_DIR$/Classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CreateAccount.php" afterPath="$PROJECT_DIR$/CreateAccount.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,13 +20,12 @@
       <file leaf-file-name="Classes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Classes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="173" column="90" lean-forward="false" selection-start-line="173" selection-start-column="90" selection-end-line="173" selection-end-column="90" />
+            <state relative-caret-position="449">
+              <caret line="192" column="15" lean-forward="false" selection-start-line="192" selection-start-column="15" selection-end-line="192" selection-end-column="15" />
               <folding>
-                <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-                <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-                <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-                <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+                <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+                <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+                <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
               </folding>
             </state>
           </provider>
@@ -35,11 +34,9 @@
       <file leaf-file-name="Dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
+            <state relative-caret-position="1020">
               <caret line="68" column="10" lean-forward="false" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-              <folding>
-                <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,6 +62,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="BootstrapVersion" />
+      </map>
+    </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GradleLocalSettings">
@@ -124,21 +126,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="GymSiteProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GymSiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,6 +272,7 @@
       <workItem from="1509831500139" duration="973000" />
       <workItem from="1509900915613" duration="7615000" />
       <workItem from="1509975342476" duration="9716000" />
+      <workItem from="1510675896388" duration="152000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -338,7 +341,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40466000" />
+    <option name="totallyTimeSpent" value="40618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -351,13 +354,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14823529" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14752117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14097223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14091559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -396,10 +399,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -408,10 +410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="110" column="48" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="48" />
-          <folding>
-            <marker date="1509980207000" expanded="true" signature="2209:2341" ph="INSERT INTO `userClasses`... " />
-            <marker date="1509980207000" expanded="true" signature="2437:2685" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -419,9 +418,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-          <folding>
-            <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -429,11 +426,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -441,10 +434,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1509980074000" expanded="true" signature="2394:2463" ph="UPDATE `Gym " />
-            <marker date="1509980074000" expanded="true" signature="3647:3793" ph="SELECT `id`,... Gym Membership" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -461,10 +451,9 @@
         <state relative-caret-position="2010">
           <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -473,9 +462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="68" column="96" lean-forward="false" selection-start-line="68" selection-start-column="96" selection-end-line="68" selection-end-column="96" />
-          <folding>
-            <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -483,11 +470,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -503,10 +486,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1509980074000" expanded="true" signature="2394:2463" ph="UPDATE `Gym " />
-            <marker date="1509980074000" expanded="true" signature="3647:3793" ph="SELECT `id`,... Gym Membership" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -515,10 +495,9 @@
         <state relative-caret-position="2010">
           <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -527,9 +506,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="68" column="96" lean-forward="false" selection-start-line="68" selection-start-column="96" selection-end-line="68" selection-end-column="96" />
-          <folding>
-            <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -545,11 +522,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -558,10 +531,9 @@
         <state relative-caret-position="2010">
           <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -578,9 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="68" column="96" lean-forward="true" selection-start-line="68" selection-start-column="96" selection-end-line="68" selection-end-column="96" />
-          <folding>
-            <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -588,11 +558,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -609,10 +575,9 @@
         <state relative-caret-position="2010">
           <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -621,10 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1509980074000" expanded="true" signature="2394:2463" ph="UPDATE `Gym " />
-            <marker date="1509980074000" expanded="true" signature="3647:3793" ph="SELECT `id`,... Gym Membership" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -632,10 +594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="6" lean-forward="false" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
-          <folding>
-            <marker date="1509980207000" expanded="true" signature="2209:2341" ph="INSERT INTO `userClasses`... " />
-            <marker date="1509980207000" expanded="true" signature="2437:2685" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -643,11 +602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="5" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -655,10 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1830">
           <caret line="122" column="57" lean-forward="false" selection-start-line="122" selection-start-column="57" selection-end-line="122" selection-end-column="57" />
-          <folding>
-            <marker date="1509980207000" expanded="true" signature="2209:2341" ph="INSERT INTO `userClasses`... " />
-            <marker date="1509980207000" expanded="true" signature="2437:2685" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,10 +618,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <marker date="1509980074000" expanded="true" signature="2394:2463" ph="UPDATE `Gym " />
-            <marker date="1509980074000" expanded="true" signature="3647:3793" ph="SELECT `id`,... Gym Membership" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -686,10 +635,9 @@
         <state relative-caret-position="2010">
           <caret line="139" column="0" lean-forward="true" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
@@ -706,11 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -718,10 +662,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1905">
           <caret line="127" column="23" lean-forward="true" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
-          <folding>
-            <marker date="1509980207000" expanded="true" signature="2209:2341" ph="INSERT INTO `userClasses`... " />
-            <marker date="1509980207000" expanded="true" signature="2437:2685" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -756,11 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <marker date="1509980069000" expanded="true" signature="1728:1735" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1737" ph="..." />
-            <marker date="1509980069000" expanded="true" signature="1728:1747" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -768,10 +705,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding>
-            <marker date="1509980074000" expanded="true" signature="2394:2463" ph="UPDATE `Gym " />
-            <marker date="1509980074000" expanded="true" signature="3647:3793" ph="SELECT `id`,... Gym Membership" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -779,10 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="117" column="1" lean-forward="true" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
-          <folding>
-            <marker date="1509980207000" expanded="true" signature="2209:2341" ph="INSERT INTO `userClasses`... " />
-            <marker date="1509980207000" expanded="true" signature="2437:2685" ph="INSERT INTO `Gym Membership`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -801,23 +732,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
+        <state relative-caret-position="1020">
           <caret line="68" column="10" lean-forward="false" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-          <folding>
-            <marker date="1509980073000" expanded="true" signature="1680:1687" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Classes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="173" column="90" lean-forward="false" selection-start-line="173" selection-start-column="90" selection-end-line="173" selection-end-column="90" />
+        <state relative-caret-position="449">
+          <caret line="192" column="15" lean-forward="false" selection-start-line="192" selection-start-column="15" selection-end-line="192" selection-end-column="15" />
           <folding>
-            <marker date="1509991951000" expanded="true" signature="1911:1946" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3089:3145" ph="UPDATE `user... " />
-            <marker date="1509991951000" expanded="true" signature="3675:3698" ph="SELECT * FRO... Classes" />
-            <marker date="1509991951000" expanded="true" signature="3675:3712" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="2096:2131" ph="SELECT * FRO... Classes" />
+            <marker date="1510676045000" expanded="true" signature="3274:3330" ph="UPDATE `user... " />
+            <marker date="1510676045000" expanded="true" signature="3860:3897" ph="SELECT * FRO... Classes" />
           </folding>
         </state>
       </provider>
