@@ -1,7 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="uploading bootstrap files">
+    <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/.gitignore" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/.travis.yml" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/.travis.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/LICENSE" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/README.md" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/css/grayscale.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/css/grayscale.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/css/grayscale.min.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/css/grayscale.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/gulpfile.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/gulpfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/img/downloads-bg.jpg" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/img/downloads-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/img/intro-bg.jpg" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/img/intro-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/img/map-marker.svg" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/img/map-marker.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/index.html" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/js/grayscale.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/js/grayscale.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/js/grayscale.min.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/js/grayscale.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/package.json" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/scss/_mixins.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/scss/_variables.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/scss/grayscale.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/scss/grayscale.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap-grid.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap-grid.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap-grid.min.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap-grid.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap-reboot.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap-reboot.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap-reboot.min.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap-reboot.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/js/bootstrap.bundle.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/js/bootstrap.bundle.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/js/bootstrap.bundle.min.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/animated.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/screen-reader.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_animated.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_screen-reader.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/font-awesome/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/jquery-easing/jquery.easing.compatibility.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/jquery-easing/jquery.easing.compatibility.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/jquery-easing/jquery.easing.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/jquery-easing/jquery.easing.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/jquery-easing/jquery.easing.min.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/jquery-easing/jquery.easing.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/jquery/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/vendor/jquery/jquery.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,10 +117,10 @@
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/index.html">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -182,7 +250,12 @@
             <path>
               <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
-              <item name="startbootstrap-grayscale-gh-pages 2" type="462c0819:PsiDirectoryNode" />
+              <item name="WAD3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
+              <item name="Wad3BootstrapVersion" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,7 +394,7 @@
       <workItem from="1509831500139" duration="973000" />
       <workItem from="1509900915613" duration="7615000" />
       <workItem from="1509975342476" duration="9716000" />
-      <workItem from="1510675896388" duration="1984000" />
+      <workItem from="1510675896388" duration="2300000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -407,11 +480,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510677265735</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="uploading bootstrap files">
+      <created>1510679173924</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1510679173924</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42450000" />
+    <option name="totallyTimeSpent" value="42766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -456,7 +536,8 @@
     <MESSAGE value="Ryan's code. Contains template of what we want to do" />
     <MESSAGE value="Added basic contact page" />
     <MESSAGE value="Fixed MyAccount password" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed MyAccount password" />
+    <MESSAGE value="uploading bootstrap files" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploading bootstrap files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -793,7 +874,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -809,10 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages 2/index.html">
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="240">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding />
         </state>
       </provider>
