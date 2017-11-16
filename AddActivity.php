@@ -9,7 +9,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <?php
     session_start();
