@@ -54,16 +54,18 @@
 <?php
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 date_default_timezone_set('GMT');
 $date = date('Y-m-j');
 
 function activityQuery($conn, $newdate){
-    $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate'";
+    $userId = $_SESSION['userId'];
+
+    $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate' AND `userActivities`.UserID = '$userId'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "</br>";
@@ -77,7 +79,9 @@ function activityQuery($conn, $newdate){
 }
 
 function classQuery($conn, $newdate){
-    $sql = "SELECT * FROM `Classes`,`userClasses`WHERE `Classes`.Date = '$newdate'";
+    $userId = $_SESSION['userId'];
+
+    $sql = "SELECT * FROM `Classes`,`userClasses`WHERE `Classes`.Date = '$newdate' AND `userClasses`.UserID = '$userId'";
     $result = $conn->query($sql);
 
     if (!$result) {
@@ -90,7 +94,7 @@ function classQuery($conn, $newdate){
             $classID =$row["ClassID"];
             if ($row["class$classID"] == 1) {
 
-               echo "<br>";
+                echo "<br>";
                 echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
                 echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
                     . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>";
@@ -112,21 +116,21 @@ function classQuery($conn, $newdate){
                 echo $newdate;
 
                 ?></th>
-        <th><?php
+            <th><?php
                 $newdate1 = strtotime ( '-1 day' , strtotime ( $date ) ) ;
                 $newdate1 = date ( "Y-m-d" , $newdate1 );
                 echo $newdate1;
                 ?></th>
-        <th><?php
-            $newdate2 = date ("Y-m-d");
-            echo $newdate2;  ?>
-        <th><?php
+            <th><?php
+                $newdate2 = date ("Y-m-d");
+                echo $newdate2;  ?>
+            <th><?php
                 $newdate3 = strtotime ( '+1 day' , strtotime ( $date ) ) ;
                 $newdate3 = date ( "Y-m-d" , $newdate3 );
                 echo $newdate3;
                 echo "</th>";
                 ?>
-        <th><?php
+            <th><?php
                 $newdate4 = strtotime ( '+2 day' , strtotime ( $date ) ) ;
                 $newdate4 = date ( "Y-m-d" , $newdate4 );
                 echo $newdate4;
@@ -166,3 +170,4 @@ $conn->close();
 ?>
 </body>
 </html>
+

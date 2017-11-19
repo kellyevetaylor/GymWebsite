@@ -10,6 +10,64 @@
 
 <head>
 
+    <?php
+    session_start();
+    //check for a logout
+    if(!empty($_POST['Logout'])) {
+        session_destroy();
+        $logoutMes = "Successfully Logged Out.";
+        echo "<script type='text/javascript'>alert('$logoutMes');</script>";
+    }else{
+        //connects to database
+        $host = "devweb2017.cis.strath.ac.uk";
+        $user = "gmb15147";
+        $password = "Cei7wevoh4ti";
+        $dbname = "gmb15147";
+        $conn = new mysqli($host, $user, $password, $dbname);
+
+        $loginError = "";
+        $username = "";
+        $password = "";
+
+        $rowNum = 1;
+        //making sure that the user is not logged in
+        if(empty($_SESSION['userId'])){
+            //check to make sure the username and password are correct
+            if(isset($_POST["Username"]) && isset($_POST["Password"])){
+                $username = htmlspecialchars($_POST['Username']);
+                $password = htmlspecialchars($_POST['Password']);
+                //getting the account information.
+                $sql = "SELECT * FROM `Gym Membership`WHERE `username` = \"$username\" AND `password` = \"$password\"";// change to a variable
+                $result = $conn->query($sql);
+                $rowNum = $result->num_rows;
+                //ro results from database will redirect back to index.
+                if($rowNum == 0){
+                    $loginError = "Incorrect Username and/or Password entered, Please try again";
+                    echo "<script type='text/javascript'>alert('$loginError');</script>";
+                }
+                else{
+                    while ($row = $result->fetch_assoc()) {
+                        $firstName = $row["first name"];
+                        $secondName = $row["second name"];
+                        $userId = $row["id"];
+                        //session for welcome message which can be used in any page.
+                        $_SESSION['login'] = "Welcome, ".$firstName . " " . $secondName;
+                        $_SESSION['userId'] = $userId;
+
+                    }
+                    //session for user account which means we can then access any part of their account details on any page.
+                    $_SESSION['userAccount'] = $result;
+                    header("Location: ../Dashboard/pages/index.php"); /* Redirect browser */
+                    exit();
+                }
+            }
+        }
+        else{
+            header("Location: ../Dashboard/pages/index.php"); /* Redirect browser */
+        }
+    }
+    ?>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="the index page, information regarding the WAD Gym, login and re-direct for signing up" content="">
@@ -45,6 +103,14 @@
             }
         }
     </script>
+
+    <style>
+        #errorMessFont {
+
+            color: red;
+            background-color: #1b1e21;
+        }
+    </style>
 
 </head>
 
@@ -85,7 +151,7 @@
                         WAD GYM offers really next generation equipment
                         <br>
                         We offer everything you could think of when its comes to fitness.
-                        A free, responsive, one page Bootstrap theme.
+                        So join today with no Joining Fee.
                     </p>
                     <a href="#about" class="btn btn-circle js-scroll-trigger">
                         <i class="fa fa-angle-double-down animated"></i>
@@ -122,7 +188,7 @@
             <div class="col-lg-8 mx-auto">
                 <p>
                 <h2>Account</h2>
-                <form name="loginForm" action="Dashboard.php" method="post" onsubmit="return validateInputForm()">
+                <form name="loginForm" method="post" onsubmit="return validateInputForm()">
                     <ul class="list-inline banner-social-buttons">
                         <li class="list-inline-item">
                             <input type="text" name="Username" placeholder="Username"/>
@@ -133,13 +199,15 @@
                             <input type="password" name="Password" placeholder="Password"/>
                         </li>
                     </ul>
-                    <input type="submit" name="SignIn" value="Sign In" class="btn btn-default btn-lg"/>
+                    <ul class="list-inline banner-social-buttons">
+                        <input type="submit" name="SignIn" value="Sign In" class="btn btn-default btn-lg"/>
+                    </ul>
                 </form>
-                <br>
-                <form>
+                <form action="../Dashboard/pages/register.php">
+                    <ul class="list-inline banner-social-buttons">
                         <input type="submit" href="test" name="SignIn" value="Sign Up" class="btn btn-default btn-lg"/>
+                    </ul>
                 </form>
-                </ul>
                 </p>
             </div>
         </div>

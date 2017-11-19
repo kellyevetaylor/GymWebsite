@@ -1,13 +1,11 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
     session_start();
-    if(empty($_SESSION['userId'])){
-        session_destroy();
-        header("Location: index.php"); /* Redirect browser */
-        exit();
-    }
     ?>
     <meta charset="UTF-8">
     <title>New gym membership form</title>
@@ -94,9 +92,9 @@ function safePost($conn, $name)
 
 
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 $firstName = isset($_POST["firstName"]) ? cleanInput($_POST["firstName"]) : "";
@@ -112,18 +110,28 @@ $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
 
 if(isset($_POST["toDashboard"])){
 
-        $sql= "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, Null , Null ,Null ,Null ,Null );";
-        $conn->multi_query($sql);
+    $sql= "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (NULL, 0 , 0 ,0 ,0 ,0);";
+    $conn->multi_query($sql);
 
-            $password = ($password);
-            $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
-            $result=$conn->multi_query($sql);
+    $password = ($password);
+    $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
+    $result=$conn->multi_query($sql);
 
     if (!$result === TRUE) {
         die("Error on insert" . $conn->error);
     }else{
-    header('location:Dashboard.php');
-}
+        $sql = "SELECT * FROM `Gym Membership`WHERE `username` = \"$username\" AND `password` = \"$password\"";// change to a variable
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $firstName = $row["first name"];
+            $secondName = $row["second name"];
+            $userId = $row["id"];
+            //session for welcome message which can be used in any page.
+            $_SESSION['login'] = "Welcome," . $firstName . " " . $secondName;
+            $_SESSION['userId'] = $userId;
+        }
+        header('location:Dashboard.php');
+    }
 
 }else {
     ?>
@@ -160,3 +168,4 @@ if(isset($_POST["toDashboard"])){
 
 </body>
 </html>
+

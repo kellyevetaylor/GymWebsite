@@ -83,9 +83,9 @@
 <?php
 
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 
@@ -112,38 +112,42 @@ $conn = new mysqli($host, $user, $password, $dbname);
         <table>
             <?php
 
-            $sql = "SELECT * FROM Classes,`userClasses`";
+            $userId = $_SESSION['userId'];
+            $sql = "SELECT * FROM Classes,`userClasses` WHERE `userClasses`.UserID = '$userId'";
             $result = $conn->query($sql);
 
             if (!$result) {
                 die("Query failed" . $conn->error);//get rid of error line
             }
             if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
+                while ($row = $result->fetch_assoc()) {
 
-                        $i = $row["ClassID"];
-                        if($row["class$i"]==0) {
-                            echo "<tr>";
-                            echo "<td>" . "<br>";
-                            echo "Date: " . $row["Date"] . "<br>";
-                            echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
-                            echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php '>
+                    $i = $row["ClassID"];
+                    if($row["class$i"]==0) {
+                        echo "<tr>";
+                        echo "<td>" . "<br>";
+                        echo "Date: " . $row["Date"] . "<br>";
+                        echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                        echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php '>
             </td>";
-                            echo "</tr>";
-                        }
-                        if (isset($_POST["class$i"])) {
-                            //$i is the id of classes class
-
-                            $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` = 1";
-                            $conn->query($sql);
-                            if (!$result) {
-                                die("Query Fail" . $conn->error);
-                            }
-                            unset($_POST["class$i"]);
-                            header('location:Classes.php');
-                        }
+                        echo "</tr>";
                     }
+                    if (isset($_POST["class$i"])) {
+                        //$i is the id of classes class
+                        $userId = $_SESSION['userId'];
+                        $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
+                        $conn->query($sql);
+                        $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i";
+                        $conn->query($sql);
+
+                        if (!$result) {
+                            die("Query Fail" . $conn->error);
+                        }
+                        unset($_POST["class$i"]);
+                        header('location:Classes.php');
+                    }
+                }
 
             }
             ?>
@@ -157,32 +161,29 @@ $conn = new mysqli($host, $user, $password, $dbname);
         <table>
             <?php
 
-
-
-
-
-            $sql = "SELECT * FROM `Classes`,`userClasses`";
+            $userId = $_SESSION['userId'];
+            $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' ";
             $result = $conn->query($sql);
 
             if (!$result) {
                 die("Query failed" . $conn->error);//get rid of error line
             }
             if ($result->num_rows > 0) {
- 
-                    while ($row = $result->fetch_assoc()) {
 
-                        $classID =$row["ClassID"];
-                        if ($row["class$classID"] == 1) {
+                while ($row = $result->fetch_assoc()) {
 
-                            echo "<tr>";
-                            echo "<td>" . "<br>";
-                            echo "Date: " . $row["Date"] . "<br>";
-                            echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
-                            echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . " </td>";
-                            echo "</tr>";
-                        }
+                    $classID =$row["ClassID"];
+                    if ($row["class$classID"] == 1) {
+
+                        echo "<tr>";
+                        echo "<td>" . "<br>";
+                        echo "Date: " . $row["Date"] . "<br>";
+                        echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                        echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . " </td>";
+                        echo "</tr>";
                     }
+                }
 
 
 
@@ -190,10 +191,12 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
             ?>
         </table>
-        testing
+
+
     </div>
 </form>
 
 
 </body>
 </html>
+

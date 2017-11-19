@@ -110,9 +110,9 @@
 
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 if (isset($_POST["updatePassword"])) {
@@ -146,8 +146,21 @@ function updatePassword($conn)
 
 function editDetails()
 {
-    ?><h1>Edit details</h1><?php
+    ?>
+    <form method="post">
+        <h1>Edit details</h1>
+
+
+
+    </form>
+
+
+
+
+    <?php
     echo "Edit details";
+
+
     ?>
     <p>
         <button onclick="history.go(-1);">Back</button>
@@ -204,7 +217,7 @@ function displayInfo($conn)
     <form method="post">
         <div id="GYM">
             <input id=inputButton type="submit" value="Edit details" name="editDetails"
-                   formaction="MyAccount.php">
+                   formaction="Edit.php">
             <input id=inputButton type="submit" value="Change password" name="changePassword"
                    formaction="MyAccount.php">
         </div>
@@ -223,3 +236,4 @@ function cleanInput($input)
 ?>
 </body>
 </html>
+

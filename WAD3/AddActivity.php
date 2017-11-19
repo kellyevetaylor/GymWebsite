@@ -65,9 +65,9 @@
 
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 $activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
@@ -83,8 +83,8 @@ function cleanInput($input)
 }
 
 if(isset($_POST['addactivity'])){
-
-    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ('1', CURRENT_DATE, '$activity', '$duration')";
+    $userId = $_SESSION['userId'];
+    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
     $conn->query($sql);
 }
 ?>

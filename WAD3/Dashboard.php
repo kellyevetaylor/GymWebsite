@@ -92,9 +92,9 @@ $firstName = "";
 $secondName = "";
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 if((!empty($_POST['Username']) && !empty($_POST['Password']))||!empty($_SESSION['login'])){
     $rowNum = 1;
@@ -110,7 +110,7 @@ if((!empty($_POST['Username']) && !empty($_POST['Password']))||!empty($_SESSION[
     {
 
         //display html to get them re-etner their username and passwords
-      ?>
+        ?>
         <form name="retryLogin" action="Dashboard.php" onsubmit="return validateInputForm()" method="post">
             <div>
                 Error: Invalid input
@@ -173,7 +173,7 @@ if((!empty($_POST['Username']) && !empty($_POST['Password']))||!empty($_SESSION[
 
 
         </form>
-    <?php
+        <?php
 
     }
 
@@ -186,3 +186,4 @@ else{
 ?>
 </body>
 </html>
+
