@@ -136,10 +136,12 @@ $conn = new mysqli($host, $user, $password, $dbname);
                     if (isset($_POST["class$i"])) {
                         //$i is the id of classes class
                         $userId = $_SESSION['userId'];
+                        $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i AND `Capacity`<`classCapacity`";
+                        $conn->query($sql);
                         $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
                         $conn->query($sql);
-                        $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i";
-                        $conn->query($sql);
+                        
+
 
                         if (!$result) {
                             die("Query Fail" . $conn->error);

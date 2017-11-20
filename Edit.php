@@ -58,14 +58,18 @@ while ($row = $result->fetch_assoc()){
     $address = $row["address"];
     $city= $row["city"];
     $postcode = $row["postcode"];
-
-
-
 }
 
 
 if(isset($_POST["updateDetails"])){
+
     $userId = $_SESSION['userId'];
+
+    if($newPostcode==""){
+
+
+    }
+
 
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
    $result= $conn->query($sql);
