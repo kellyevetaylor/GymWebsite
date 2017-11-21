@@ -122,6 +122,10 @@ $conn = new mysqli($host, $user, $password, $dbname);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
 
+
+                    $limit = $row["classCapacity"];
+                    $capacity= $row["Capacity"];
+
                     $i = $row["ClassID"];
                     if($row["class$i"]==0) {
                         echo "<tr>";
@@ -136,10 +140,19 @@ $conn = new mysqli($host, $user, $password, $dbname);
                     if (isset($_POST["class$i"])) {
                         //$i is the id of classes class
                         $userId = $_SESSION['userId'];
-                        $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
-                        $conn->query($sql);
-                        $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i";
-                        $conn->query($sql);
+
+                       if($capacity<$limit){
+                           $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i AND `Capacity`<`classCapacity`";
+                           $conn->query($sql);
+                           $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
+                           $result=   $conn->query($sql);
+                       }else {
+                           $sql = "UPDATE `userClasses` SET `class$i`= 0 WHERE `UserID` =\"$userId\"";
+                           $result=   $conn->query($sql);
+                       }
+
+
+
 
                         if (!$result) {
                             die("Query Fail" . $conn->error);
@@ -160,6 +173,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
         <table>
             <?php
+
+
 
             $userId = $_SESSION['userId'];
             $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' ";

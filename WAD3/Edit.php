@@ -7,16 +7,24 @@
  */
 
 session_start();
-if(empty($_SESSION['userId'])){
+if (empty($_SESSION['userId'])) {
     session_destroy();
     header("Location: index.php"); /* Redirect browser */
     exit();
+}
+function safePOST($conn, $name)
+{
+    if (isset($_POST[$name])) {
+        return $conn->real_escape_string(strip_tags(htmlentities($_POST[$name])));
+    } else
+        return "";
 }
 
 function cleanInput($input)
 {
     $input = trim($input);
     $input = stripslashes($input);
+    $input = htmlentities($input);
     $input = htmlspecialchars(strip_tags($input));
     return $input;
 
@@ -29,13 +37,12 @@ $dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 
-
-$firstName="";
-$secondName ="";
-$emailAddress="";
-$address ="";
-$city="";
-$postcode ="";
+$firstName = "";
+$secondName = "";
+$emailAddress = "";
+$address = "";
+$city = "";
+$postcode = "";
 
 $newFirstName = isset($_POST["newFirstName"]) ? cleanInput($_POST["newFirstName"]) : $firstName;
 $newSecondName = isset($_POST["newSecondName"]) ? cleanInput($_POST["newSecondName"]) : $secondName;
@@ -44,6 +51,12 @@ $newAddress = isset($_POST["newAddress"]) ? cleanInput($_POST["newAddress"]) : $
 $newCity = isset($_POST["newCity"]) ? cleanInput($_POST["newCity"]) : $city;
 $newPostcode = isset($_POST["newPostcode"]) ? cleanInput($_POST["newPostcode"]) : $postcode;
 
+$newFirstName = safePost($conn, "newFirstName");
+$newSecondName = safePost($conn, "newSecondName");
+$newEmail = safePost($conn, "newEmail");
+$newAddress = safePost($conn, "newAddress");
+$newCity = safePost($conn, "newCity");
+$newPostcode = safePost($conn, "newPostcode");
 
 
 $userId = $_SESSION['userId'];
@@ -51,24 +64,22 @@ $sql = "SELECT * FROM `Gym Membership` WHERE `Gym Membership`.id= '$userId'";
 $result = $conn->query($sql);
 
 
-while ($row = $result->fetch_assoc()){
-    $firstName= $row["first name"];
+while ($row = $result->fetch_assoc()) {
+    $firstName = $row["first name"];
     $secondName = $row["second name"];
-    $emailAddress= $row["email address"];
+    $emailAddress = $row["email address"];
     $address = $row["address"];
-    $city= $row["city"];
+    $city = $row["city"];
     $postcode = $row["postcode"];
-
-
-
 }
 
 
-if(isset($_POST["updateDetails"])){
+if (isset($_POST["updateDetails"])) {
     $userId = $_SESSION['userId'];
 
+
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
-   $result= $conn->query($sql);
+    $result = $conn->query($sql);
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
     }
@@ -92,7 +103,7 @@ if(isset($_POST["updateDetails"])){
             <p><label>Second name:</label>
                 <input type="text" name="newSecondName" value="<?php echo $secondName ?>"/><br></p>
             <p><label>Email address:</label>
-                <input type="text" name="newEmail" value="<?php echo $emailAddress ?>" /><br></p>
+                <input type="text" name="newEmail" value="<?php echo $emailAddress ?>"/><br></p>
             <p><label>Home address:</label>
                 <input type="text" name="newAddress" value="<?php echo $address ?>"/><br></p>
             <p><label>City:</label>

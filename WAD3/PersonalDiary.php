@@ -8,6 +8,18 @@
         header("Location: index.php"); /* Redirect browser */
         exit();
     }
+
+
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
+
+
     ?>
     <style>
         body {
@@ -52,6 +64,15 @@
 </ul>
 </p>
 <?php
+
+function cleanInput($input)
+{
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars(strip_tags($input));
+    return $input;
+}
+
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
 $user = "cs312_a";
@@ -61,6 +82,11 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
 date_default_timezone_set('GMT');
 $date = date('Y-m-j');
+$activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
+$duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
+
+$activity = safePost($conn,"activity");
+$duration = safePost($conn,"time");
 
 function activityQuery($conn, $newdate){
     $userId = $_SESSION['userId'];
@@ -69,9 +95,9 @@ function activityQuery($conn, $newdate){
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "</br>";
-        echo $row['Activity'];
+        echo "Activity: ".$row['Activity'];
         echo "</br>";
-        echo $row['Duration'];
+        echo $row['Duration']." minutes" ;
         echo "</br>";
 
 
@@ -103,6 +129,14 @@ function classQuery($conn, $newdate){
         }
 
     }
+}
+
+if(isset($_POST['addactivity'])){
+    $userId = $_SESSION['userId'];
+    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
+    $conn->query($sql);
+
+    unset($_POST['addactivity']);
 }
 
 ?>
@@ -164,6 +198,21 @@ function classQuery($conn, $newdate){
 
 
 </div>
+
+<div>
+<?php
+
+
+    ?>
+    <form method="post">
+        Add an activity from today:</br>
+        <input type="text" name="activity"></br>
+        Duration:</br>
+        <input type="number" name="time" min="0"></br>
+
+        <input type="submit" name="addactivity"/>
+    </form>
+    </div>
 <?php
 //disconnect
 $conn->close();

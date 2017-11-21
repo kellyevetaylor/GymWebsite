@@ -154,7 +154,6 @@ if((!empty($_POST['Username']) && !empty($_POST['Password']))||!empty($_SESSION[
                 <p id="myAccount">
                     <input type="submit" value="My Account" formaction="MyAccount.php">
                     <input id="diary" type="submit" value="Personal Diary" formaction="PersonalDiary.php">
-                    <input id=addAc type="submit" value="Add Activity" formaction="AddActivity.php">
                     <input id=classes type="submit" value="Classes" formaction="Classes.php">
                     <input id=Contact type="submit" value="Contact Information" formaction="Contact.php">
                     <input id=Logout name=Logout type="submit" value="Logout" formaction="index.php">
