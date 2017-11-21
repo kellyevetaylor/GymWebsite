@@ -80,11 +80,13 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
 date_default_timezone_set('GMT');
 $date = date('Y-m-j');
+
+$activity = safePost($conn, "activity");
+$duration = safePost($conn, "time");
+
 $activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
 $duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
 
-$activity = safePost($conn,"activity");
-$duration = safePost($conn,"time");
 
 function activityQuery($conn, $newdate)
 {
@@ -96,7 +98,7 @@ function activityQuery($conn, $newdate)
         echo "</br>";
         echo "Activity: " . $row['Activity'];
         echo "</br>";
-        echo $row['Duration'] . " minutes";
+        echo "Time " . $row['Duration'] . "mins";
         echo "</br>";
 
 
@@ -133,8 +135,10 @@ if (isset($_POST['addactivity'])) {
     $userId = $_SESSION['userId'];
     $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
     $conn->query($sql);
-
     unset($_POST['addactivity']);
+    header('location:personalDiary.php');
+
+
 }
 
 ?>
@@ -294,7 +298,8 @@ if (isset($_POST['addactivity'])) {
                 <div class="panel panel-body">
                     <div class="col-lg-8">
 
-                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-customer">
+                        <table width="100%" class="table table-striped table-bordered table-hover"
+                               id="dataTables-customer">
                             <tr>
                                 <th><?php
                                     $newdate = strtotime('-2 day', strtotime($date));
@@ -352,7 +357,6 @@ if (isset($_POST['addactivity'])) {
                     </div>
                     <div class="col-lg-4">
 
-
                         <form method="post">
                             <br>Add an activity from today:</br>
                             <input type="text" name="activity"></br>
@@ -361,7 +365,6 @@ if (isset($_POST['addactivity'])) {
 
                             <input type="submit" name="addactivity"/>
                         </form>
-
 
                     </div>
                 </div>
@@ -400,7 +403,7 @@ if (isset($_POST['addactivity'])) {
 <script src="../dist/js/sb-admin-2.js"></script>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#dataTables-customer').DataTable({
             responsive: true
         });
