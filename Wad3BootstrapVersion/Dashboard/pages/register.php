@@ -81,6 +81,20 @@
     $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
     $confirmPassword = isset($_POST["ConfirmPassword"]) ? cleanInput($_POST["ConfirmPassword"]) : "";
     $rowNum = 0;
+
+    $firstName = safePost($conn,"firstName");
+    $secondName = safePost($conn,"secondName");
+    $email = safePost($conn,"email");
+    $address = safePost($conn,"address");
+    $city = safePost($conn,"city");
+    $postcode = safePost($conn,"postcode");
+    $username = safePost($conn,"username");
+    $password = safePost($conn,"password");
+    $confirmPassword = safePost($conn,"ConfirmPassword");
+
+
+
+
     //make sure both passwords match
     if(!empty($username)) {
         if (($password != $confirmPassword)) {

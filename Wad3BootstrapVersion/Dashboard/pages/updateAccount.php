@@ -73,6 +73,14 @@ function cleanInput($input)
     return $input;
 
 }
+function safePost($conn, $name)
+{
+    if (isset($_POST[$name])) {
+        return $conn->real_escape_string(strip_tags($_POST[$name]));
+    } else {
+        return "";
+    }
+}
 
 $userID = "";
 $userID = $_SESSION['userId'];
@@ -105,6 +113,13 @@ $newEmail = isset($_POST["email"]) ? cleanInput($_POST["email"]) : $email;
 $newAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : $address;
 $newCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : $city;
 $newPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
+
+$newFirstName = safePost($conn, "newFirstName");
+$newSecondName = safePost($conn, "newSecondName");
+$newEmail = safePost($conn, "newEmail");
+$newAddress = safePost($conn, "newAddress");
+$newCity = safePost($conn, "newCity");
+$newPostcode = safePost($conn, "newPostcode");
 
 $newPassword = isset($_POST["password"]) ? cleanInput($_POST["postcode"]) : $postcode;
 $confirmPassword = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;

@@ -21,6 +21,22 @@
             header("Location: ../Dashboard/pages/indexStaff.php"); /* Redirect browser */
         }
     }
+    function cleanInput($input)
+    {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars(strip_tags($input));
+        return $input;
+
+    }
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
     //connects to database
     $host = "devweb2017.cis.strath.ac.uk";
     $user = "cs312_a";
@@ -31,6 +47,11 @@
     $loginError = "";
     $username = "";
     $password = "";
+
+    $loginError = safePost($conn,"login");
+    $username = safePost($conn,"username");
+    $password = safePost($conn,"password");
+
 
     if(isset($_POST["login"])){
         $username = htmlspecialchars($_POST['username']);

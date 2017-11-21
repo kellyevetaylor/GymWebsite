@@ -15,6 +15,23 @@
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
     }
+
+    function cleanInput($input)
+    {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars(strip_tags($input));
+        return $input;
+
+    }
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

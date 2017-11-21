@@ -16,6 +16,22 @@
         exit();
     }
 
+    function cleanInput($input)
+    {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars(strip_tags($input));
+        return $input;
+
+    }
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
 
     ?>
     <meta charset="utf-8">
@@ -96,6 +112,15 @@ $selectEmail = "";
 $selectAddress = "";
 $selectCity = "";
 $selectPostcode = "";
+
+$selectID = safePost($conn,"SelectCust");
+$selectFName = safePost($conn,"first name");
+$selectSName = safePost($conn,"second name");
+$selectUsername = safePost($conn,"username");
+$selectEmail = safePost($conn,"email address");
+$selectAddress = safePost($conn,"address");
+$selectCity = safePost($conn,"city");
+$selectPostcode = safePost($conn,"postcode");
 
 if(isset($_POST["SelectCust"])){
     //get customer information
