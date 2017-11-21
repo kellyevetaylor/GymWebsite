@@ -3,11 +3,22 @@
 <head>
     <?php
     session_start();
-    if(empty($_SESSION['userId'])){
+    if (empty($_SESSION['userId'])) {
         session_destroy();
         header("Location: index.php"); /* Redirect browser */
         exit();
     }
+
+
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
+
     ?>
     <style>
         body {
@@ -115,31 +126,55 @@ $password = "Thi0Eiwophe3";
 $dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
+
+$newPassword1 = safePost($conn,"newPassword1");
+$newPassword2 = safePost($conn,"newPassword2");
+$oldPassword = safePost($conn,"oldPassword");
+
+
+
+
+
+
 if (isset($_POST["updatePassword"])) {
-    updatePassword($conn);
-}
-
-if (isset($_POST["editDetails"])) {
-    editDetails();
-} else if (isset($_POST["changePassword"])) {
-    displayForm();
+    if (updatePassword($conn) == false) {
+        displayForm();
+        echo "Error - your passwords don't match.";
+    } else {
+        displayInfo($conn);
+    }
 } else {
-    displayInfo($conn);
+
+    if (isset($_POST["editDetails"])) {
+        editDetails();
+    } else if (isset($_POST["changePassword"])) {
+        displayForm();
+    } else {
+        displayInfo($conn);
+    }
 }
 
 
-function updatePassword($conn)
-{
+function updatePassword($conn){
+
+
+
     $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
     $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
     $oldPassword = isset($_POST["oldPassword"]) ? cleanInput($_POST["oldPassword"]) : "";
 
+
+
+
+
     if ($newPassword1 == $newPassword2) {
-        $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = 1";
+        $newPassword1 = md5($newPassword1);
+        $userId = $_SESSION['userId'];
+        $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
         $conn->query($sql);
-    }
-    else{
-        echo "Error - your passwords don't match.";
+        return true;
+    } else {
+        return false;
     }
 
 }
@@ -151,10 +186,7 @@ function editDetails()
         <h1>Edit details</h1>
 
 
-
     </form>
-
-
 
 
     <?php

@@ -106,6 +106,15 @@ $postcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
 $username = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
 $password = isset($_POST["password"]) ? cleanInput($_POST["password"]) : "";
 
+$firstName = safePost($conn,"firstName");
+$secondName =safePost($conn,"secondName");
+$email = safePost($conn,"email");
+$address =safePost($conn,"address");
+$city =safePost($conn,"city");
+$postcode = safePost($conn,"postcode");
+$username = safePost($conn,"username");
+$password = safePost($conn,"password");
+
 
 
 if(isset($_POST["toDashboard"])){
@@ -113,14 +122,14 @@ if(isset($_POST["toDashboard"])){
     $sql= "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (NULL, 0 , 0 ,0 ,0 ,0);";
     $conn->multi_query($sql);
 
-    $password = ($password);
-    $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
+    $userPassword = md5($userPassword);
+    $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$userPassword')";
     $result=$conn->multi_query($sql);
 
     if (!$result === TRUE) {
         die("Error on insert" . $conn->error);
     }else{
-        $sql = "SELECT * FROM `Gym Membership`WHERE `username` = \"$username\" AND `password` = \"$password\"";// change to a variable
+        $sql = "SELECT * FROM `Gym Membership`WHERE `username` = \"$username\" AND `password` = \"$userPassword\"";// change to a variable
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             $firstName = $row["first name"];

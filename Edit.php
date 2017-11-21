@@ -12,6 +12,13 @@ if(empty($_SESSION['userId'])){
     header("Location: index.php"); /* Redirect browser */
     exit();
 }
+function safePOST($conn, $name)
+{
+    if (isset($_POST[$name])) {
+        return $conn->real_escape_string(strip_tags($_POST[$name]));
+    } else
+        return "";
+}
 
 function cleanInput($input)
 {
@@ -44,6 +51,13 @@ $newAddress = isset($_POST["newAddress"]) ? cleanInput($_POST["newAddress"]) : $
 $newCity = isset($_POST["newCity"]) ? cleanInput($_POST["newCity"]) : $city;
 $newPostcode = isset($_POST["newPostcode"]) ? cleanInput($_POST["newPostcode"]) : $postcode;
 
+$newFirstName = safePost($conn,"newFirstName");
+$newSecondName = safePost($conn,"newSecondName");
+$newEmail = safePost($conn,"newEmail");
+$newAddress =safePost($conn,"newAddress");
+$newCity = safePost($conn,"newCity");
+$newPostcode = safePost($conn,"newPostcode");
+
 
 
 $userId = $_SESSION['userId'];
@@ -62,13 +76,7 @@ while ($row = $result->fetch_assoc()){
 
 
 if(isset($_POST["updateDetails"])){
-
     $userId = $_SESSION['userId'];
-
-    if($newPostcode==""){
-
-
-    }
 
 
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";

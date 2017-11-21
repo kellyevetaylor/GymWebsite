@@ -8,6 +8,18 @@
         header("Location: index.php"); /* Redirect browser */
         exit();
     }
+
+
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
+
+
     ?>
     <style>
         body {
@@ -73,6 +85,8 @@ $date = date('Y-m-j');
 $activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
 $duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
 
+$activity = safePost($conn,"activity");
+$duration = safePost($conn,"time");
 
 function activityQuery($conn, $newdate){
     $userId = $_SESSION['userId'];

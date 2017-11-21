@@ -140,7 +140,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                         $conn->query($sql);
                         $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
                         $conn->query($sql);
-                        
+
 
 
                         if (!$result) {
