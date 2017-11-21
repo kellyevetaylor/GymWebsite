@@ -20,9 +20,9 @@
     }else{
         //connects to database
         $host = "devweb2017.cis.strath.ac.uk";
-        $user = "gmb15147";
-        $password = "Cei7wevoh4ti";
-        $dbname = "gmb15147";
+        $user = "cs312_a";
+        $password = "Thi0Eiwophe3";
+        $dbname = "cs312_a";
         $conn = new mysqli($host, $user, $password, $dbname);
 
         $loginError = "";
@@ -31,7 +31,7 @@
 
         $rowNum = 1;
         //making sure that the user is not logged in
-        if(empty($_SESSION['userId'])){
+        if(empty($_SESSION['userId']) && empty($_SESSION['isStaff'])){
             //check to make sure the username and password are correct
             if(isset($_POST["Username"]) && isset($_POST["Password"])){
                 $username = htmlspecialchars($_POST['Username']);
@@ -62,8 +62,13 @@
                 }
             }
         }
-        else{
-            header("Location: ../Dashboard/pages/index.php"); /* Redirect browser */
+        else {
+            if(empty($_SESSION['isStaff'])){
+                header("Location: ../Dashboard/pages/index.php"); /* Redirect browser */
+            }
+            else{
+                header("Location: ../Dashboard/pages/indexStaff.php"); /* Redirect browser */
+            }
         }
     }
     ?>
@@ -247,7 +252,7 @@
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; WAD Gym 2017</p>
+        <p><a href="../Dashboard/pages/staffLogin.php">Staff Login</a><br/>Copyright &copy; WAD Gym 2017</p>
     </div>
 </footer>
 

@@ -60,10 +60,19 @@
 <?php
 //connects to database
 $host = "devweb2017.cis.strath.ac.uk";
-$user = "gmb15147";
-$password = "Cei7wevoh4ti";
-$dbname = "gmb15147";
+$user = "cs312_a";
+$password = "Thi0Eiwophe3";
+$dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
+
+function cleanInput($input)
+{
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars(strip_tags($input));
+    return $input;
+
+}
 
 $userID = "";
 $userID = $_SESSION['userId'];
@@ -90,7 +99,38 @@ while ($row = $result->fetch_assoc()) {
     $postcode = $row["postcode"];
 }
 
+$newFirstName = isset($_POST["firstName"]) ? cleanInput($_POST["firstName"]) : $firstName;
+$newSecondName = isset($_POST["secondName"]) ? cleanInput($_POST["secondName"]) : $secondName;
+$newEmail = isset($_POST["email"]) ? cleanInput($_POST["email"]) : $email;
+$newAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : $address;
+$newCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : $city;
+$newPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
 
+$newPassword = isset($_POST["password"]) ? cleanInput($_POST["postcode"]) : $postcode;
+$confirmPassword = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
+
+if(isset($_POST["updateDetails"])){
+    $userId = $_SESSION['userId'];
+
+    $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
+    $result= $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+    header("location:index.php");
+}
+
+if(isset($_POST["updatePassword"])){
+    $userId = $_SESSION['userId'];
+
+
+    $sql = "UPDATE `Gym Membership` SET `password`= '$newPassword' WHERE `Gym Membership`.`id` = '$userId' ";
+    $result= $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+    header("location:index.php");
+}
 ?>
 
 <div id="wrapper">
@@ -266,32 +306,39 @@ while ($row = $result->fetch_assoc()) {
                     </div>
 
                     <div class="col-lg-6">
+                        <form method="post" action="updateAccount.php">
                         <p>
                             First Name:
                         </p>
-                        <input name="firstName" value="" placeholder="First Name" class="form-control">
+                        <input name="firstName" value = "<?php echo $firstName; ?>" class="form-control">
                         <br/>
                         <p>
                             Second Name:
                         </p>
-                        <input name="secondName" value="" placeholder="Second Name" class="form-control">
+                        <input name="secondName" value="<?php echo $secondName ?>" class="form-control">
+                        <br/>
+                        <p>
+                            Email Address:
+                        </p>
+                        <input name="email" type="email" value="<?php echo $email ?>" class="form-control">
                         <br/>
                         <p>
                             Address:
                         </p>
-                        <input name="adress" value="" placeholder="Address" class="form-control">
+                        <input name="address" value="<?php echo $address ?>" class="form-control">
                         <br/>
                         <p>
                             City:
                         </p>
-                        <input name="city" value="" placeholder="City" class="form-control">
+                        <input name="city" value="<?php echo $city ?>" class="form-control">
                         <br/>
                         <p>
                             PostCode:
                         </p>
-                        <input name="postcode" value="" placeholder="PostCode" class="form-control">
+                        <input name="postcode" value="<?php echo $postcode ?>" class="form-control">
                         <br/>
-                        <button type="button" class="btn btn-outline btn-primary">Update Details</button>
+                            <input type="submit" name="updateDetails" value="update" class="btn btn-outline btn-primary"/>
+                        </form>
                     </div>
                 </div>
             </div>

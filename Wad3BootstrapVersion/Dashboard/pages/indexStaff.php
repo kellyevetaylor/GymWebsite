@@ -2,15 +2,15 @@
 /**
  * Created by IntelliJ IDEA.
  * User: pavindersingh
- * Date: 16/11/2017
- * Time: 23:18
+ * Date: 14/11/2017
+ * Time: 21:38
  */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
     session_start();
-    if(empty($_SESSION['userId'])){
+    if(empty($_SESSION['userId']) || empty($_SESSION['isStaff'])){
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
@@ -58,46 +58,29 @@ $password = "Thi0Eiwophe3";
 $dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
-date_default_timezone_set('GMT');
-$date = date('Y-m-j');
+$userID = "";
+$userID = $_SESSION['userId'];
+$level = "";
+$firstName = "";
+$secondName = "";
+$email = "";
+$address = "";
+$city = "";
+$postcode = "";
 
-function activityQuery($conn, $newdate){
-    $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate'";
-    $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc()) {
-        echo "</br>";
-        echo $row['Activity'];
-        echo "</br>";
-        echo $row['Duration'];
-        echo "</br>";
+//get staff information
+$sql = "SELECT * FROM `staff` WHERE `id` = $userID";// change to a variable
+$result = $conn->query($sql);
+$rowNum = $result->num_rows;
 
-
-    }
-}
-
-function classQuery($conn, $newdate){
-    $sql = "SELECT * FROM `Classes`,`userClasses`WHERE `Classes`.Date = '$newdate'";
-    $result = $conn->query($sql);
-
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-    if ($result->num_rows > 0) {
-
-        while ($row = $result->fetch_assoc()) {
-
-            $classID =$row["ClassID"];
-            if ($row["class$classID"] == 1) {
-
-                echo "<br>";
-                echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
-                echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                    . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>";
-
-            }
-        }
-
-    }
+while ($row = $result->fetch_assoc()) {
+    $firstName = $row["first name"];
+    $secondName = $row["second name"];
+    $level = $row["level"];
+    $email = $row["email"];
+    $address = $row["address"];
+    $city = $row["city"];
+    $postcode = $row["postcode"];
 }
 
 
@@ -114,7 +97,7 @@ function classQuery($conn, $newdate){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="indexStaff.php"><?php echo $_SESSION['login']?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -220,17 +203,17 @@ function classQuery($conn, $newdate){
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> MyAccount</a>
+                        <a href="indexStaff.php"><i class="fa fa-dashboard fa-fw"></i> My Account</a>
                     </li>
+                    <?php
+                    if($level == "admin"){
+                        ?>
                     <li>
-                        <a href="personalDiary.php"><i class="fa fa-calendar fa-fw"></i> Personal Diary</a>
+                        <a href="adminAccounts.php"><i class="fa fa-users fa-fw"></i>Staff/Customer Accounts</a>
                     </li>
-                    <li>
-                        <a href="Classes.php"><i class="fa fa-users fa-fw"></i> Classes</a>
-                    </li>
-                    <li>
-                        <a href="contactUs.php"><i class="glyphicon glyphicon-earphone"></i> Contact Us</a>
-                    </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -243,65 +226,28 @@ function classQuery($conn, $newdate){
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Personal Diary</h1>
+                <h1 class="page-header">(Staff) My Account</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">
-                <table>
-                    <tr><th><?php
-                            $newdate = strtotime ( '-2 day' , strtotime ( $date ) ) ;
-                            $newdate = date ( "Y-m-d" , $newdate );
-                            echo $newdate;
-
-                            ?></th>
-                        <th><?php
-                            $newdate1 = strtotime ( '-1 day' , strtotime ( $date ) ) ;
-                            $newdate1 = date ( "Y-m-d" , $newdate1 );
-                            echo $newdate1;
-                            ?></th>
-                        <th><?php
-                            $newdate2 = date ("Y-m-d");
-                            echo $newdate2;  ?>
-                        <th><?php
-                            $newdate3 = strtotime ( '+1 day' , strtotime ( $date ) ) ;
-                            $newdate3 = date ( "Y-m-d" , $newdate3 );
-                            echo $newdate3;
-                            echo "</th>";
-                            ?>
-                        <th><?php
-                            $newdate4 = strtotime ( '+2 day' , strtotime ( $date ) ) ;
-                            $newdate4 = date ( "Y-m-d" , $newdate4 );
-                            echo $newdate4;
-                            ?></th>
-                    </tr>
-                    <tr>
-                        <td><?php activityQuery($conn, $newdate);
-                            classQuery($conn, $newdate)
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate1);
-                            classQuery($conn, $newdate1);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate2);
-                            classQuery($conn, $newdate2);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate3);
-                            classQuery($conn, $newdate3);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate4);
-                            classQuery($conn, $newdate4);
-                            ?></td>
-
-                    </tr>
-                    <?php
-
-                    $sql = "SELECT * FROM `Classes`,`userClasses`";
-
-
-                    ?>
-                </table>
+                <p>Name: <?php echo $firstName." ".$secondName ?></p>
+                <br/>
+                <p>Level: <?php echo $level ?></p>
+                <br/>
+                <p>Email: <?php echo $email ?></p>
+                <br/>
+                <p>Address: <?php echo $address ?></p>
+                <br/>
+                <p>City: <?php echo $city ?></p>
+                <br/>
+                <p>PostCode: <?php echo $postcode ?></p>
+                <br/>
+                <form action="updateAccountStaff.php">
+                    <button type="submit" class="btn btn-outline btn-primary">Update Details</button>
+                </form>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -331,4 +277,3 @@ function classQuery($conn, $newdate){
 </body>
 
 </html>
-
