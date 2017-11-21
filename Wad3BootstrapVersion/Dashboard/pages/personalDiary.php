@@ -9,12 +9,32 @@
 <html lang="en">
 <head>
     <?php
+
     session_start();
-    if(empty($_SESSION['userId'])){
+    if (empty($_SESSION['userId'])) {
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
     }
+
+
+    function cleanInput($input)
+    {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars(strip_tags($input));
+        return $input;
+    }
+
+    function safePost($conn, $name)
+    {
+        if (isset($_POST[$name])) {
+            return $conn->real_escape_string(strip_tags($_POST[$name]));
+        } else {
+            return "";
+        }
+    }
+
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,22 +80,31 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
 date_default_timezone_set('GMT');
 $date = date('Y-m-j');
+$activity = isset($_POST["activity"]) ? cleanInput($_POST["activity"]) : "";
+$duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
 
-function activityQuery($conn, $newdate){
-    $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate'";
+$activity = safePost($conn,"activity");
+$duration = safePost($conn,"time");
+
+function activityQuery($conn, $newdate)
+{
+    $userId = $_SESSION['userId'];
+
+    $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate' AND `userActivities`.UserID = '$userId'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "</br>";
-        echo $row['Activity'];
+        echo "Activity: " . $row['Activity'];
         echo "</br>";
-        echo $row['Duration'];
+        echo $row['Duration'] . " minutes";
         echo "</br>";
 
 
     }
 }
 
-function classQuery($conn, $newdate){
+function classQuery($conn, $newdate)
+{
     $sql = "SELECT * FROM `Classes`,`userClasses`WHERE `Classes`.Date = '$newdate'";
     $result = $conn->query($sql);
 
@@ -86,7 +115,7 @@ function classQuery($conn, $newdate){
 
         while ($row = $result->fetch_assoc()) {
 
-            $classID =$row["ClassID"];
+            $classID = $row["ClassID"];
             if ($row["class$classID"] == 1) {
 
                 echo "<br>";
@@ -100,6 +129,13 @@ function classQuery($conn, $newdate){
     }
 }
 
+if (isset($_POST['addactivity'])) {
+    $userId = $_SESSION['userId'];
+    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
+    $conn->query($sql);
+
+    unset($_POST['addactivity']);
+}
 
 ?>
 
@@ -114,7 +150,7 @@ function classQuery($conn, $newdate){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login'] ?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -133,7 +169,8 @@ function classQuery($conn, $newdate){
                                     <span class="pull-right text-muted">40% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <span class="sr-only">40% Complete (success)</span>
                                     </div>
                                 </div>
@@ -149,7 +186,8 @@ function classQuery($conn, $newdate){
                                     <span class="pull-right text-muted">20% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                         <span class="sr-only">20% Complete</span>
                                     </div>
                                 </div>
@@ -165,7 +203,8 @@ function classQuery($conn, $newdate){
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -181,7 +220,8 @@ function classQuery($conn, $newdate){
                                     <span class="pull-right text-muted">80% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -206,7 +246,8 @@ function classQuery($conn, $newdate){
                 <ul class="dropdown-menu dropdown-user">
                     <li>
                         <form action="../../MainPage/index.php" method="post">
-                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout" class="btn btn-outline btn-primary"/>
+                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout"
+                                                                       class="btn btn-outline btn-primary"/>
                         </form>
                     </li>
                 </ul>
@@ -239,7 +280,6 @@ function classQuery($conn, $newdate){
     </nav>
 
 
-
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -248,66 +288,97 @@ function classQuery($conn, $newdate){
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
         <div class="row">
             <div class="col-lg-12">
-                <table>
-                    <tr><th><?php
-                            $newdate = strtotime ( '-2 day' , strtotime ( $date ) ) ;
-                            $newdate = date ( "Y-m-d" , $newdate );
-                            echo $newdate;
+                <div class="panel panel-body">
+                    <div class="col-lg-8">
 
-                            ?></th>
-                        <th><?php
-                            $newdate1 = strtotime ( '-1 day' , strtotime ( $date ) ) ;
-                            $newdate1 = date ( "Y-m-d" , $newdate1 );
-                            echo $newdate1;
-                            ?></th>
-                        <th><?php
-                            $newdate2 = date ("Y-m-d");
-                            echo $newdate2;  ?>
-                        <th><?php
-                            $newdate3 = strtotime ( '+1 day' , strtotime ( $date ) ) ;
-                            $newdate3 = date ( "Y-m-d" , $newdate3 );
-                            echo $newdate3;
-                            echo "</th>";
+                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-customer">
+                            <tr>
+                                <th><?php
+                                    $newdate = strtotime('-2 day', strtotime($date));
+                                    $newdate = date("Y-m-d", $newdate);
+                                    echo $newdate;
+
+                                    ?></th>
+                                <th><?php
+                                    $newdate1 = strtotime('-1 day', strtotime($date));
+                                    $newdate1 = date("Y-m-d", $newdate1);
+                                    echo $newdate1;
+                                    ?></th>
+                                <th><?php
+                                    $newdate2 = date("Y-m-d");
+                                    echo $newdate2; ?>
+                                <th><?php
+                                    $newdate3 = strtotime('+1 day', strtotime($date));
+                                    $newdate3 = date("Y-m-d", $newdate3);
+                                    echo $newdate3;
+                                    echo "</th>";
+                                    ?>
+                                <th><?php
+                                    $newdate4 = strtotime('+2 day', strtotime($date));
+                                    $newdate4 = date("Y-m-d", $newdate4);
+                                    echo $newdate4;
+                                    ?></th>
+                            </tr>
+                            <tr>
+                                <td><?php activityQuery($conn, $newdate);
+                                    classQuery($conn, $newdate)
+                                    ?></td>
+                                <td><?php activityQuery($conn, $newdate1);
+                                    classQuery($conn, $newdate1);
+                                    ?></td>
+                                <td><?php activityQuery($conn, $newdate2);
+                                    classQuery($conn, $newdate2);
+                                    ?></td>
+                                <td><?php activityQuery($conn, $newdate3);
+                                    classQuery($conn, $newdate3);
+                                    ?></td>
+                                <td><?php activityQuery($conn, $newdate4);
+                                    classQuery($conn, $newdate4);
+                                    ?></td>
+
+                            </tr>
+                            <?php
+
+                            $sql = "SELECT * FROM `Classes`,`userClasses`";
+
+
                             ?>
-                        <th><?php
-                            $newdate4 = strtotime ( '+2 day' , strtotime ( $date ) ) ;
-                            $newdate4 = date ( "Y-m-d" , $newdate4 );
-                            echo $newdate4;
-                            ?></th>
-                    </tr>
-                    <tr>
-                        <td><?php activityQuery($conn, $newdate);
-                            classQuery($conn, $newdate)
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate1);
-                            classQuery($conn, $newdate1);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate2);
-                            classQuery($conn, $newdate2);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate3);
-                            classQuery($conn, $newdate3);
-                            ?></td>
-                        <td><?php activityQuery($conn, $newdate4);
-                            classQuery($conn, $newdate4);
-                            ?></td>
-
-                    </tr>
-                    <?php
-
-                    $sql = "SELECT * FROM `Classes`,`userClasses`";
+                        </table>
 
 
-                    ?>
-                </table>
+                    </div>
+                    <div class="col-lg-4">
+
+
+                        <form method="post">
+                            <br>Add an activity from today:</br>
+                            <input type="text" name="activity"></br>
+                            Duration:</br>
+                            <input type="number" name="time" min="0"></br>
+
+                            <input type="submit" name="addactivity"/>
+                        </form>
+
+
+                    </div>
+                </div>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-        <!-- /.row -->
+
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div>
+
+
+</div>
+
+</div>
+<!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
 
@@ -327,6 +398,15 @@ function classQuery($conn, $newdate){
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#dataTables-customer').DataTable({
+            responsive: true
+        });
+    });
+
+</script>
 
 </body>
 

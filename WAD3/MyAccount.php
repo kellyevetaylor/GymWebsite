@@ -114,7 +114,7 @@
     <li><a href="Dashboard.php">Dashboard</a></li>
     <li><a href="MyAccount.php">My Account</a></li>
     <li><a href="PersonalDiary.php">Personal Diary</a></li>
-    <li><a href="Classes.php">Classes</a></li>
+    <li><a href="ClassesOld.php">Classes</a></li>
     <li><a href="Contact.php">Contact us</a></li>
 </ul>
 <?php

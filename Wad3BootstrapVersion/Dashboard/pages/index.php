@@ -95,7 +95,7 @@ while ($row = $result->fetch_assoc()) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="index.php"><?php echo $_SESSION['login']?></a>
         </div>
         <!-- /.navbar-header -->
 

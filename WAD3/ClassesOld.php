@@ -97,7 +97,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
             <li><a href="Dashboard.php">Dashboard</a></li>
             <li><a href="MyAccount.php">My Account</a></li>
             <li><a href="PersonalDiary.php">Personal Diary</a></li>
-            <li><a href="Classes.php">Classes</a></li>
+            <li><a href="ClassesOld.php">Classes</a></li>
             <li><a href="Contact.php">Contact us</a></li>
         </ul>
         </p>
@@ -133,7 +133,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                         echo "Date: " . $row["Date"] . "<br>";
                         echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
                         echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php '>
+                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='ClassesOld.php '>
             </td>";
                         echo "</tr>";
                     }
@@ -158,7 +158,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                             die("Query Fail" . $conn->error);
                         }
                         unset($_POST["class$i"]);
-                        header('location:Classes.php');
+                        header('location:ClassesOld.php');
                     }
                 }
 
