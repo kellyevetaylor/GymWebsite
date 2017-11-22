@@ -10,6 +10,10 @@
 <head>
     <?php
     session_start();
+    if(!empty($_SESSION['isStaff'])){
+        header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
+        exit();
+    }
     if(empty($_SESSION['userId'])){
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */

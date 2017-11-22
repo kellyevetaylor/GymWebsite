@@ -125,7 +125,6 @@ $selectPostcode = safePost($conn,"postcode");
 if(isset($_POST["SelectCust"])){
     //get customer information
     $selectID = $_POST["SelectCust"];
-    echo "testing ".$selectID;
     $sql = "SELECT * FROM `Gym Membership` WHERE `id` = $selectID";// change to a variable
     $result = $conn->query($sql);
     $rowNum = $result->num_rows;
@@ -138,6 +137,42 @@ if(isset($_POST["SelectCust"])){
         $selectAddress = $row["address"];
         $selectCity = $row["city"];
         $selectPostcode = $row["postcode"];
+    }
+}
+
+$selectStaffID = "";
+$selectStaffFName = "";
+$selectStaffSName = "";
+$selectStaffUsername = "";
+$selectStaffEmail = "";
+$selectStaffAddress = "";
+$selectStaffCity = "";
+$selectStaffPostcode = "";
+
+$selectStaffID = safePost($conn,"Staff Select");
+$selectStaffFName = safePost($conn,"Staff first name");
+$selectStaffSName = safePost($conn,"Staff second name");
+$selectStaffUsername = safePost($conn,"Staff username");
+$selectStaffEmail = safePost($conn,"Staff email address");
+$selectStaffAddress = safePost($conn,"Staff address");
+$selectStaffCity = safePost($conn,"Staff city");
+$selectStaffPostcode = safePost($conn,"Staff postcode");
+
+if(isset($_POST["SelectStaff"])){
+    //get customer information
+    $selectStaffID = $_POST["SelectStaff"];
+    $sql = "SELECT * FROM `staff` WHERE `id` = $selectStaffID";// change to a variable
+    $result = $conn->query($sql);
+    $rowNum = $result->num_rows;
+
+    while ($row = $result->fetch_assoc()) {
+        $selectStaffFName = $row["first name"];
+        $selectStaffSName = $row["second name"];
+        $selectStaffUsername = $row["username"];
+        $selectStaffEmail = $row["email"];
+        $selectStaffAddress = $row["address"];
+        $selectStaffCity = $row["city"];
+        $selectStaffPostcode = $row["postcode"];
     }
 }
 
@@ -321,20 +356,20 @@ if(isset($_POST["SelectCust"])){
                                             echo $row["id"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["first name"];
+                                            echo $row["first name"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["second name"];
+                                            echo $row["second name"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["username"];
+                                            echo $row["username"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo "<input type=\"submit\" value=\"Select\" name=\"Select\" class=\"btn btn-outline btn-primary\"/>";
-                                        echo "</td>";
+                                            echo "<input type=\"submit\" value=\"Select\" name=\"Select\" class=\"btn btn-outline btn-primary\"/>";
                                         ?>
-                                        <input type="hidden" value="<?php echo $row["id"]; ?>" name="SelectCust"/>
+                                            <input type="hidden" value="<?php echo $row["id"]; ?>" name="SelectCust"/>
                                         <?php
+                                        echo "</td>";
                                         echo "</form>";
                                     echo "</tr>";
                                 }
@@ -417,11 +452,11 @@ if(isset($_POST["SelectCust"])){
                                             </td>
                                             <td>
                                                 <input type="submit" value="Delete" name="delete" class="btn btn-outline btn-danger"
-                                                    <?php if(!isset($_POST["SelectCust"])){echo "disabled";} ?>//>
+                                                    <?php if(!isset($_POST["SelectCust"])){echo "disabled";} ?>/>
                                             </td>
                                             <td>
                                                 <input type="submit" value="Reset Password" name="reset password" class="btn btn-outline btn-warning"
-                                                <?php if(!isset($_POST["SelectCust"])){echo "disabled";} ?>//>
+                                                <?php if(!isset($_POST["SelectCust"])){echo "disabled";} ?>/>
                                             </td>
                                             <td></td>
                                         </tr>
@@ -455,6 +490,7 @@ if(isset($_POST["SelectCust"])){
                                     <th>first name</th>
                                     <th>second name</th>
                                     <th>username</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -481,14 +517,110 @@ if(isset($_POST["SelectCust"])){
                                     echo "<td>";
                                     echo $row["username"];
                                     echo "</td>";
+                                    echo "<td>";
+                                    ?>
+                                    <form method = "post" action="adminAccounts.php">
+                                    <input type="submit" value="Select" name="SelectedStaff" class="btn btn-outline btn-primary" />
+                                    <input type="hidden" value="<?php echo $row["id"]; ?>" name="SelectStaff"/>
+                                    </form>
+                                    <?php
+                                    echo "</td>";
                                     echo "</tr>";
                                 }
                                 ?>
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <input type="text" name="staffAcc" placeholder="Enter ID"/>
-                            <input type="submit" name="staffBtn" value="Select Account" class="btn btn-outline btn-primary"/>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <h3>Selected Staff Account</h3>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                ID:
+                                            </td>
+                                            <td>
+                                                First Name:
+                                            </td>
+                                            <td>
+                                                Second Name:
+                                            </td>
+                                            <td>
+                                                Username:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="staffID" value="<?php echo $selectStaffID; ?>" placeholder="ID" disabled/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffFName" value="<?php echo $selectStaffFName;?>" placeholder="First Name"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffSName" value="<?php echo $selectStaffSName;?>" placeholder="Second Name"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffUsername" value="<?php echo $selectStaffUsername;?>" placeholder="Username"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address:
+                                            </td>
+                                            <td>
+                                                City:
+                                            </td>
+                                            <td>
+                                                PostCode:
+                                            </td>
+                                            <td>
+                                                Email:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="staffAddress" value="<?php echo $selectStaffAddress;?>" placeholder="Address"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffCity" value="<?php echo $selectStaffCity;?>" placeholder="City"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffPostcode" value="<?php echo $selectStaffPostcode;?>" placeholder="Postcode"/>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="staffEmail" value="<?php echo $selectStaffEmail;?>" placeholder="Email"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="submit" value="Update" name="update" class="btn btn-outline btn-primary"
+                                                    <?php if(!isset($_POST["SelectStaff"])){echo "disabled";} ?>/>
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="Delete" name="delete" class="btn btn-outline btn-danger"
+                                                <?php if(!isset($_POST["SelectStaff"])){echo "disabled";} ?>//>
+                                            </td>
+                                            <td>
+                                                <input type="submit" value="Reset Password" name="reset password" class="btn btn-outline btn-warning"
+                                                <?php if(!isset($_POST["SelectStaff"])){echo "disabled";} ?>//>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
                         </div>
                         <!-- /.panel-body -->
                     </div>

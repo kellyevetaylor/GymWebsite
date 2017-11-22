@@ -9,7 +9,10 @@
 <html lang="en">
 <head>
     <?php
-
+    if(!empty($_SESSION['isStaff'])){
+        header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
+        exit();
+    }
     session_start();
     if (empty($_SESSION['userId'])) {
         session_destroy();
