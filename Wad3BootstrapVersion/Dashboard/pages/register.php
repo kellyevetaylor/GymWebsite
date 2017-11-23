@@ -11,11 +11,11 @@
 <head>
     <?php
     session_start();
-    if(!empty($_SESSION['isStaff'])){
+    if (!empty($_SESSION['isStaff'])) {
         header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
         exit();
     }
-    if(!empty($_SESSION['userId'])){
+    if (!empty($_SESSION['userId'])) {
         header("Location: ../pages/index.php"); /* Redirect browser */
         exit();
     }
@@ -86,21 +86,19 @@
     $confirmPassword = isset($_POST["ConfirmPassword"]) ? cleanInput($_POST["ConfirmPassword"]) : "";
     $rowNum = 0;
 
-    $firstName = safePost($conn,"firstName");
-    $secondName = safePost($conn,"secondName");
-    $email = safePost($conn,"email");
-    $address = safePost($conn,"address");
-    $city = safePost($conn,"city");
-    $postcode = safePost($conn,"postcode");
-    $username = safePost($conn,"username");
-    $password = safePost($conn,"password");
-    $confirmPassword = safePost($conn,"ConfirmPassword");
-
-
+    $firstName = safePost($conn, "firstName");
+    $secondName = safePost($conn, "secondName");
+    $email = safePost($conn, "email");
+    $address = safePost($conn, "address");
+    $city = safePost($conn, "city");
+    $postcode = safePost($conn, "postcode");
+    $username = safePost($conn, "username");
+    $password = safePost($conn, "password");
+    $confirmPassword = safePost($conn, "ConfirmPassword");
 
 
     //make sure both passwords match
-    if(!empty($username)) {
+    if (!empty($username)) {
         if (($password != $confirmPassword)) {
             $errorMesg = "Passwords do not match please try again";
             echo "<script type='text/javascript'>alert('$errorMesg');</script>";
@@ -185,23 +183,13 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please Register!</h3>
+                    <h3 class="panel-title">Please Register</h3>
                 </div>
                 <div class="panel-body">
                     <fieldset>
                         <form name="registerForm" method="post" onsubmit="return validateInputForm()">
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Username" name="username" type="username"
-                                       autofocus value="<?php $username ?>">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password"
-                                       autofocus value="<?php $password ?>">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Confirm Password" name="ConfirmPassword"
-                                       type="password" autofocus value="<?php $confirmPassword ?>">
-                            </div>
+
+
                             <div class="form-group">
                                 <input class="form-control" placeholder="First Name" name="firstName" type="name"
                                        autofocus value="<?php $firstName ?>">
@@ -225,6 +213,18 @@
                             <div class="form-group">
                                 <input class="form-control" placeholder="PostCode" name="postcode" type="postcode"
                                        autofocus value="<?php $postcode ?>">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Username" name="username" type="username"
+                                       autofocus value="<?php $username ?>">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="password" type="password"
+                                       autofocus value="<?php $password ?>">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Confirm Password" name="ConfirmPassword"
+                                       type="password" autofocus value="<?php $confirmPassword ?>">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <input type="submit" value="Register" class="btn btn-lg btn-success btn-block"/>

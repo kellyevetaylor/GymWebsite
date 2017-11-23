@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <?php
-    if(!empty($_SESSION['isStaff'])){
+    if (!empty($_SESSION['isStaff'])) {
         header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
         exit();
     }
@@ -69,6 +69,30 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <script>
+        function validateInputForm() {
+            var activity = document.forms["updateForm"]["activity"].value;
+            var duration = document.forms["updateForm"]["time"].value;
+
+            var message = "";
+
+
+            if (activity == null || activity == "") {
+                message += " * Please enter an Activity\n";
+            }
+
+            if (duration == null || duration === "") {
+                message += " * Please enter the duration of your activity\n";
+            }
+
+            if (message != "") {
+                alert("Errors as follow:\n" + message);
+            }
+        }
+    </script>
+
+
 </head>
 
 <body>
@@ -101,7 +125,7 @@ function activityQuery($conn, $newdate)
         echo "</br>";
         echo "Activity: " . $row['Activity'];
         echo "</br>";
-        echo "Time " . $row['Duration'] . "mins";
+        echo "Time: " . $row['Duration'] . "mins";
         echo "</br>";
 
 
@@ -136,6 +160,8 @@ function classQuery($conn, $newdate)
 
 if (isset($_POST['addactivity'])) {
     $userId = $_SESSION['userId'];
+
+
     $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
     $conn->query($sql);
     unset($_POST['addactivity']);
@@ -360,7 +386,7 @@ if (isset($_POST['addactivity'])) {
                     </div>
                     <div class="col-lg-4">
 
-                        <form method="post">
+                        <form method="post" name ="updateForm" onsubmit="validateInputForm()">
                             <br>Add an activity from today:</br>
                             <input type="text" name="activity"></br>
                             Duration:</br>

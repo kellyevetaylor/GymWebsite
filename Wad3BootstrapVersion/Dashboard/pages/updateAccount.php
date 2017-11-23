@@ -17,11 +17,11 @@
 <head>
     <?php
     session_start();
-    if(!empty($_SESSION['isStaff'])){
+    if (!empty($_SESSION['isStaff'])) {
         header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
         exit();
     }
-    if(empty($_SESSION['userId'])){
+    if (empty($_SESSION['userId'])) {
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
@@ -57,6 +57,34 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <script>
+        function validateInputForm() {
+            var currentPassword = document.forms["updateForm"]["currentPassword"];
+            var newPassword1 = document.forms["updateForm"]["newPassword1"];
+            var newPassword2 = document.forms["updateForm"]["newPassword2"];
+
+            var message = "";
+
+            if (currentPassword.value == null || currentPassword.value == "") {
+                message += " * Please enter your old password\n";
+            }
+
+
+            if (newPassword1.value != newPassword2.value) {
+                message += " * New passwords don't match\n";
+            } else if (newPassword1.value == "" || newPassword2.value == "") {
+                message += " * Password must be stronger\n";
+            }
+
+
+            if (message != "") {
+                alert("Errors as follow:\n" + message);
+            }
+        }
+    </script>
+
+
 </head>
 
 <body>
@@ -77,6 +105,7 @@ function cleanInput($input)
     return $input;
 
 }
+
 function safePost($conn, $name)
 {
     if (isset($_POST[$name])) {
@@ -95,7 +124,7 @@ $email = "";
 $address = "";
 $city = "";
 $postcode = "";
-$password = "";
+$passwordError = "";
 
 //get user information
 $sql = "SELECT * FROM `Gym Membership` WHERE `id` = $userID";// change to a variable
@@ -110,17 +139,8 @@ while ($row = $result->fetch_assoc()) {
     $address = $row["address"];
     $city = $row["city"];
     $postcode = $row["postcode"];
-    $password = $row["password"];
+    $currentPasswordStored = $row["password"];
 }
-
-$newFirstName = safePost($conn, "newFirstName");
-$newSecondName = safePost($conn, "newSecondName");
-$newEmail = safePost($conn, "newEmail");
-$newAddress = safePost($conn, "newAddress");
-$newCity = safePost($conn, "newCity");
-$newPostcode = safePost($conn, "newPostcode");
-
-
 
 $newFirstName = isset($_POST["firstName"]) ? cleanInput($_POST["firstName"]) : $firstName;
 $newSecondName = isset($_POST["secondName"]) ? cleanInput($_POST["secondName"]) : $secondName;
@@ -129,48 +149,49 @@ $newAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : $addres
 $newCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : $city;
 $newPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
 
+$newFirstName = safePost($conn, "firstName");
+$newSecondName = safePost($conn, "secondName");
+$newEmail = safePost($conn, "email");
+$newAddress = safePost($conn, "address");
+$newCity = safePost($conn, "city");
+$newPostcode = safePost($conn, "postcode");
 
 
-if(isset($_POST["updateDetails"])){
+if (isset($_POST["updateDetails"])) {
     $userId = $_SESSION['userId'];
 
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
-    $result= $conn->query($sql);
+    $result = $conn->query($sql);
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
     }
     header("location:index.php");
-
 }
 
-$error = "";
-if(isset($_POST["updatePassword"])){
+if (isset($_POST["updatePassword"])) {
+
+
+    $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
+    $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
     $currentPassword = isset($_POST["currentPassword"]) ? cleanInput($_POST["currentPassword"]) : "";
-    $newPassword = isset($_POST["newPassword"]) ? cleanInput($_POST["newPassword"]) : "";
-    $confirmPassword = isset($_POST["confirmPassword"]) ? cleanInput($_POST["confirmPassword"]) : "";
-    echo $currentPassword;
-    $userId = $_SESSION['userId'];
-    if($newPassword == $confirmPassword){
-        if($password == $currentPassword){
-            $sql = "UPDATE `Gym Membership` SET `password`= '$newPassword' WHERE `Gym Membership`.`id` = '$userId' ";
-            $result= $conn->query($sql);
-            if (!$result) {
-                die("Query failed" . $conn->error);//get rid of error line
-            }
-            header("location:index.php");
-        }
-        else{
-            //display error message for enter wrong current password
-            $error = "Current Password is incorrect.";
-            echo "<script type='text/javascript'>alert('$error');</script>";
-        }
-    }
-    else{
-        //display error message for both passwords not matching
-        $error = "New and Confirm Passwords do not match.";
-        echo "<script type='text/javascript'>alert('$error');</script>";
+
+    $newPassword1 = safePost($conn, "newPassword1");
+    $newPassword2 = safePost($conn, "newPassword2");
+    $currentPassword = safePost($conn, "currentPassword");
+
+
+    if ($newPassword1 == $newPassword2 && $currentPassword == $currentPasswordStored) {
+        $newPassword1 = md5($newPassword1);
+        $userId = $_SESSION['userId'];
+        $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
+        $conn->query($sql);
+        header("location:index.php");
+    } else {
+        $passwordError = "Passwords don't match!";
+        echo "<script type='text/javascript'>alert('$passwordError');</script>";
     }
 }
+
 ?>
 
 <div id="wrapper">
@@ -184,7 +205,7 @@ if(isset($_POST["updatePassword"])){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="index.html"><?php echo $_SESSION['login'] ?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -203,7 +224,8 @@ if(isset($_POST["updatePassword"])){
                                     <span class="pull-right text-muted">40% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <span class="sr-only">40% Complete (success)</span>
                                     </div>
                                 </div>
@@ -219,7 +241,8 @@ if(isset($_POST["updatePassword"])){
                                     <span class="pull-right text-muted">20% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                         <span class="sr-only">20% Complete</span>
                                     </div>
                                 </div>
@@ -235,7 +258,8 @@ if(isset($_POST["updatePassword"])){
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -251,7 +275,8 @@ if(isset($_POST["updatePassword"])){
                                     <span class="pull-right text-muted">80% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -276,7 +301,8 @@ if(isset($_POST["updatePassword"])){
                 <ul class="dropdown-menu dropdown-user">
                     <li>
                         <form action="../../MainPage/index.php" method="post">
-                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout" class="btn btn-outline btn-primary"/>
+                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout"
+                                                                       class="btn btn-outline btn-primary"/>
                         </form>
                     </li>
                 </ul>
@@ -309,7 +335,6 @@ if(isset($_POST["updatePassword"])){
     </nav>
 
 
-
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -322,64 +347,69 @@ if(isset($_POST["updatePassword"])){
             <div class="col-lg-12">
                 <div class="panel panel-body">
                     <div class="col-lg-6">
-                        <form method="post" action="updateAccount.php">
-                        <p>
-                            Username:
-                        </p>
-                        <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
-                        <br/>
-                        <p>
-                            Current Password:
-                        </p>
-                        <input type="password" name="currentPassword" required value="" placeholder="Current Password" class="form-control">
-                        <br/>
-                        <p>
-                            New Password:
-                        </p>
-                        <input type="password" name="newPassword" required value="" placeholder="New Password" class="form-control">
-                        <br/>
-                        <p>
-                            Confirm New Password:
-                        </p>
-                        <input type="password" name="confirmPassword" required value="" placeholder="Confirm New Password" class="form-control">
-                        <br/>
-                        <input type="submit" name="updatePassword" value="UpdatePassword" class="btn btn-outline btn-primary"/>
-                        </form>
+                        <form name="updateForm" method="post" action="updateAccount.php" onsubmit="validateInputForm()">
+                            <p>
+                                Username:
+                            </p>
+                            <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
+                            <br/>
+                            <p>
+                                Current Password:
+                            </p>
+                            <input onchange="validateInputForm()" name="currentPassword" value=""
+                                   placeholder="Current Password" class="form-control">
+                            <br/>
+                            <p>
+                                New Password:
+                            </p>
+                            <input name="newPassword1" value="" placeholder="New Password" class="form-control">
+                            <br/>
+                            <p>
+                                Confirm New Password:
+                            </p>
+                            <input onchange="validateInputForm()" name="newPassword2" value=""
+                                   placeholder="Confirm New Password"
+                                   class="form-control">
+                            <br/>
+                            <input type="submit" value="Update Password" name="updatePassword"
+                                   class="btn btn-outline btn-primary"/>
                     </div>
+                    </form>
 
                     <div class="col-lg-6">
                         <form method="post" action="updateAccount.php">
-                        <p>
-                            First Name:
-                        </p>
-                        <input name="firstName" value = "<?php echo $firstName; ?>" required class="form-control">
-                        <br/>
-                        <p>
-                            Second Name:
-                        </p>
-                        <input name="secondName" value="<?php echo $secondName ?>" required class="form-control">
-                        <br/>
-                        <p>
-                            Email Address:
-                        </p>
-                        <input name="email" type="email" value="<?php echo $email ?>" required class="form-control">
-                        <br/>
-                        <p>
-                            Address:
-                        </p>
-                        <input name="address" value="<?php echo $address ?>" required class="form-control">
-                        <br/>
-                        <p>
-                            City:
-                        </p>
-                        <input name="city" value="<?php echo $city ?>" required class="form-control">
-                        <br/>
-                        <p>
-                            PostCode:
-                        </p>
-                        <input name="postcode" value="<?php echo $postcode ?>" required class="form-control">
-                        <br/>
-                            <input type="submit" name="updateDetails" value="update" class="btn btn-outline btn-primary"/>
+                            <p>
+                                First Name:
+                            </p>
+                            <input name="firstName" value="<?php echo $firstName; ?>" class="form-control">
+                            <br/>
+                            <p>
+                                Second Name:
+                            </p>
+                            <input name="secondName" value="<?php echo $secondName ?>" class="form-control">
+                            <br/>
+                            <p>
+                                Email Address:
+                            </p>
+                            <input name="email" type="email" value="<?php echo $email ?>" class="form-control">
+                            <br/>
+                            <p>
+                                Address:
+                            </p>
+                            <input name="address" value="<?php echo $address ?>" class="form-control">
+                            <br/>
+                            <p>
+                                City:
+                            </p>
+                            <input name="city" value="<?php echo $city ?>" class="form-control">
+                            <br/>
+                            <p>
+                                PostCode:
+                            </p>
+                            <input name="postcode" value="<?php echo $postcode ?>" class="form-control">
+                            <br/>
+                            <input type="submit" name="updateDetails" value="update"
+                                   class="btn btn-outline btn-primary"/>
                         </form>
                     </div>
                 </div>
