@@ -125,6 +125,7 @@ $newAddress = safePost($conn, "newAddress");
 $newCity = safePost($conn, "newCity");
 $newPostcode = safePost($conn, "newPostcode");
 
+
 $newPassword = isset($_POST["password"]) ? cleanInput($_POST["postcode"]) : $postcode;
 $confirmPassword = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
 
