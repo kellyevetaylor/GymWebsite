@@ -95,6 +95,7 @@ $email = "";
 $address = "";
 $city = "";
 $postcode = "";
+$password = "";
 
 //get user information
 $sql = "SELECT * FROM `Gym Membership` WHERE `id` = $userID";// change to a variable
@@ -109,14 +110,8 @@ while ($row = $result->fetch_assoc()) {
     $address = $row["address"];
     $city = $row["city"];
     $postcode = $row["postcode"];
+    $password = $row["password"];
 }
-
-$newFirstName = isset($_POST["firstName"]) ? cleanInput($_POST["firstName"]) : $firstName;
-$newSecondName = isset($_POST["secondName"]) ? cleanInput($_POST["secondName"]) : $secondName;
-$newEmail = isset($_POST["email"]) ? cleanInput($_POST["email"]) : $email;
-$newAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : $address;
-$newCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : $city;
-$newPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
 
 $newFirstName = safePost($conn, "newFirstName");
 $newSecondName = safePost($conn, "newSecondName");
@@ -125,8 +120,16 @@ $newAddress = safePost($conn, "newAddress");
 $newCity = safePost($conn, "newCity");
 $newPostcode = safePost($conn, "newPostcode");
 
-$newPassword = isset($_POST["password"]) ? cleanInput($_POST["postcode"]) : $postcode;
-$confirmPassword = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
+
+
+$newFirstName = isset($_POST["firstName"]) ? cleanInput($_POST["firstName"]) : $firstName;
+$newSecondName = isset($_POST["secondName"]) ? cleanInput($_POST["secondName"]) : $secondName;
+$newEmail = isset($_POST["email"]) ? cleanInput($_POST["email"]) : $email;
+$newAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : $address;
+$newCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : $city;
+$newPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : $postcode;
+
+
 
 if(isset($_POST["updateDetails"])){
     $userId = $_SESSION['userId'];
@@ -139,16 +142,33 @@ if(isset($_POST["updateDetails"])){
     header("location:index.php");
 }
 
+$error = "";
 if(isset($_POST["updatePassword"])){
+    $currentPassword = isset($_POST["currentPassword"]) ? cleanInput($_POST["currentPassword"]) : "";
+    $newPassword = isset($_POST["newPassword"]) ? cleanInput($_POST["newPassword"]) : "";
+    $confirmPassword = isset($_POST["confirmPassword"]) ? cleanInput($_POST["confirmPassword"]) : "";
+    echo $currentPassword;
     $userId = $_SESSION['userId'];
-
-
-    $sql = "UPDATE `Gym Membership` SET `password`= '$newPassword' WHERE `Gym Membership`.`id` = '$userId' ";
-    $result= $conn->query($sql);
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
+    if($newPassword == $confirmPassword){
+        if($password == $currentPassword){
+            $sql = "UPDATE `Gym Membership` SET `password`= '$newPassword' WHERE `Gym Membership`.`id` = '$userId' ";
+            $result= $conn->query($sql);
+            if (!$result) {
+                die("Query failed" . $conn->error);//get rid of error line
+            }
+            header("location:index.php");
+        }
+        else{
+            //display error message for enter wrong current password
+            $error = "Current Password is incorrect.";
+            echo "<script type='text/javascript'>alert('$error');</script>";
+        }
     }
-    header("location:index.php");
+    else{
+        //display error message for both passwords not matching
+        $error = "New and Confirm Passwords do not match.";
+        echo "<script type='text/javascript'>alert('$error');</script>";
+    }
 }
 ?>
 
@@ -301,6 +321,7 @@ if(isset($_POST["updatePassword"])){
             <div class="col-lg-12">
                 <div class="panel panel-body">
                     <div class="col-lg-6">
+                        <form method="post" action="updateAccount.php">
                         <p>
                             Username:
                         </p>
@@ -309,19 +330,20 @@ if(isset($_POST["updatePassword"])){
                         <p>
                             Current Password:
                         </p>
-                        <input name="currentPassword" value="" placeholder="Current Password" class="form-control">
+                        <input type="password" name="currentPassword" required value="" placeholder="Current Password" class="form-control">
                         <br/>
                         <p>
                             New Password:
                         </p>
-                        <input name="newPassword" value="" placeholder="New Password" class="form-control">
+                        <input type="password" name="newPassword" required value="" placeholder="New Password" class="form-control">
                         <br/>
                         <p>
                             Confirm New Password:
                         </p>
-                        <input name="confirmNewPassword" value="" placeholder="Confirm New Password" class="form-control">
+                        <input type="password" name="confirmPassword" required value="" placeholder="Confirm New Password" class="form-control">
                         <br/>
-                        <input type="submit" value="Update Password" class="btn btn-outline btn-primary"/>
+                        <input type="submit" name="updatePassword" value="UpdatePassword" class="btn btn-outline btn-primary"/>
+                        </form>
                     </div>
 
                     <div class="col-lg-6">
@@ -329,32 +351,32 @@ if(isset($_POST["updatePassword"])){
                         <p>
                             First Name:
                         </p>
-                        <input name="firstName" value = "<?php echo $firstName; ?>" class="form-control">
+                        <input name="firstName" value = "<?php echo $firstName; ?>" required class="form-control">
                         <br/>
                         <p>
                             Second Name:
                         </p>
-                        <input name="secondName" value="<?php echo $secondName ?>" class="form-control">
+                        <input name="secondName" value="<?php echo $secondName ?>" required class="form-control">
                         <br/>
                         <p>
                             Email Address:
                         </p>
-                        <input name="email" type="email" value="<?php echo $email ?>" class="form-control">
+                        <input name="email" type="email" value="<?php echo $email ?>" required class="form-control">
                         <br/>
                         <p>
                             Address:
                         </p>
-                        <input name="address" value="<?php echo $address ?>" class="form-control">
+                        <input name="address" value="<?php echo $address ?>" required class="form-control">
                         <br/>
                         <p>
                             City:
                         </p>
-                        <input name="city" value="<?php echo $city ?>" class="form-control">
+                        <input name="city" value="<?php echo $city ?>" required class="form-control">
                         <br/>
                         <p>
                             PostCode:
                         </p>
-                        <input name="postcode" value="<?php echo $postcode ?>" class="form-control">
+                        <input name="postcode" value="<?php echo $postcode ?>" required class="form-control">
                         <br/>
                             <input type="submit" name="updateDetails" value="update" class="btn btn-outline btn-primary"/>
                         </form>
