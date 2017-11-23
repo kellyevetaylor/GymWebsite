@@ -161,9 +161,6 @@ function updatePassword($conn){
 
     $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
     $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
-    $oldPassword = isset($_POST["oldPassword"]) ? cleanInput($_POST["oldPassword"]) : "";
-
-
 
 
 
