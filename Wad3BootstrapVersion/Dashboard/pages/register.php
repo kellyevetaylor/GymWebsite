@@ -117,7 +117,7 @@
                 echo "<script type='text/javascript'>alert('$errorUser');</script>";
             } else {
                 //creating the account
-                $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, Null , Null ,Null ,Null ,Null );";
+                $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, 0 , 0 ,0 ,0 ,0 );";
                 $conn->multi_query($sql);
 
                 $password = ($password);
