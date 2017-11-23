@@ -140,6 +140,7 @@ if(isset($_POST["updateDetails"])){
         die("Query failed" . $conn->error);//get rid of error line
     }
     header("location:index.php");
+
 }
 
 $error = "";
