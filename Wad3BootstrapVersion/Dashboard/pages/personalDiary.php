@@ -147,7 +147,7 @@ function classQuery($conn, $newdate)
             $classID = $row["ClassID"];
             $userId = $_SESSION['userId'];
 
-            if ($row["class$classID"] == $userId ) {
+            if ($row["class$classID"] == 1 ) {
 
                 echo "<br>";
                 echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";

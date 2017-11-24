@@ -36,6 +36,7 @@
             if(isset($_POST["Username"]) && isset($_POST["Password"])){
                 $username = htmlspecialchars($_POST['Username']);
                 $password = htmlspecialchars($_POST['Password']);
+                $password = md5($password);
                 //getting the account information.
                 $sql = "SELECT * FROM `Gym Membership`WHERE `username` = \"$username\" AND `password` = \"$password\"";// change to a variable
                 $result = $conn->query($sql);

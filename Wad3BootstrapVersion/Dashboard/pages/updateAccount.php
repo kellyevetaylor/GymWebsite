@@ -186,7 +186,7 @@ if (isset($_POST["updatePassword"])) {
         $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
         $conn->query($sql);
         header("location:index.php");
-    } elseif ($currentPasswordStored != $currentPassword) {
+    } elseif ($currentPasswordStored != md5($currentPassword)) {
         $loginError = "Current password does not match our records";
         echo "<script type='text/javascript'>alert('$loginError');</script>";
 
