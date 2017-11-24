@@ -4,12 +4,20 @@
     <bookmark url="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="Error Reporting">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" />
+=======
+    <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" />
+>>>>>>> origin/BootstrapVersionWAD3
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,12 +32,27 @@
       <file leaf-file-name="updateAccount.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="812">
               <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
               <folding>
                 <marker date="1511539620000" expanded="true" signature="3476:3520" ph="SELECT * FRO... Gym Membership" />
                 <marker date="1511539620000" expanded="true" signature="4785:5013" ph="UPDATE `Gym " />
                 <marker date="1511539620000" expanded="true" signature="5879:5958" ph="UPDATE `Gym " />
+=======
+            <state relative-caret-position="380">
+              <caret line="175" column="39" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+              <folding>
+                <element signature="e#110#204#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#6;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1511479951000" expanded="true" signature="3415:3459" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511479951000" expanded="true" signature="4725:4953" ph="UPDATE `Gym " />
+                <marker date="1511479951000" expanded="true" signature="5805:5884" ph="UPDATE `Gym " />
+>>>>>>> origin/BootstrapVersionWAD3
               </folding>
             </state>
           </provider>
@@ -38,10 +61,71 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="120">
               <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
               <folding>
                 <marker date="1511539491000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
+=======
+            <state relative-caret-position="-109">
+              <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <element signature="e#6#100#0#PHP" expanded="true" />
+                <marker date="1511265135000" expanded="true" signature="1204:1297" ph="SELECT * FRO... Gym Membership" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexStaff.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="104" column="15" lean-forward="false" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
+              <folding>
+                <element signature="e#6#100#0#PHP" expanded="true" />
+                <marker date="1511536019000" expanded="true" signature="2358:2393" ph="SELECT * FRO... Gym Membership" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateStaff.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="182" column="73" lean-forward="false" selection-start-line="182" selection-start-column="73" selection-end-line="182" selection-end-column="73" />
+              <folding>
+                <element signature="e#110#204#0#PHP" expanded="true" />
+                <marker date="1511535777000" expanded="true" signature="3258:3293" ph="SELECT * FRO... staff" />
+                <marker date="1511535777000" expanded="true" signature="4579:4781" ph="UPDATE `staf... " />
+                <marker date="1511535777000" expanded="true" signature="5638:5708" ph="UPDATE `staf... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminAccounts.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="25" />
+              <folding>
+                <element signature="e#6#100#0#PHP" expanded="true" />
+                <marker date="1511538513000" expanded="true" signature="2934:3174" ph="UPDATE `staf... " />
+                <marker date="1511538513000" expanded="true" signature="3942:3963" ph="SELECT * FRO... staff" />
+                <marker date="1511538513000" expanded="true" signature="3942:3988" ph="SELECT * FRO... staff" />
+                <marker date="1511538513000" expanded="true" signature="4267:4602" ph="INSERT INTO `staff`... " />
+                <marker date="1511538513000" expanded="true" signature="5067:5139" ph="UPDATE `staf... " />
+                <marker date="1511538513000" expanded="true" signature="5601:5677" ph="UPDATE `Gym " />
+                <marker date="1511538513000" expanded="true" signature="6446:6668" ph="UPDATE `staf... " />
+                <marker date="1511538513000" expanded="true" signature="7143:7178" ph="SELECT * FRO... staff" />
+                <marker date="1511538513000" expanded="true" signature="8175:8218" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511538513000" expanded="true" signature="8175:8219" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511538513000" expanded="true" signature="8798:8833" ph="SELECT * FRO... staff" />
+                <marker date="1511538513000" expanded="true" signature="17567:17597" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511538513000" expanded="true" signature="27871:27892" ph="SELECT * FRO... staff" />
+>>>>>>> origin/BootstrapVersionWAD3
               </folding>
             </state>
           </provider>
@@ -58,6 +142,22 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
+=======
+      <find>outline</find>
+      <find>$login</find>
+      <find>log</find>
+      <find>welcome</find>
+      <find>logo</find>
+      <find>form ac</find>
+      <find>s</find>
+      <find>sign up</find>
+      <find>my acc</find>
+      <find>text input</find>
+      <find>disabled in</find>
+      <find>hongy</find>
+      <find>mya</find>
+>>>>>>> origin/BootstrapVersionWAD3
       <find>advanc</find>
       <find>search</find>
       <find>classes</find>
@@ -81,6 +181,7 @@
       <find>login</find>
       <find>firstName</find>
       <find>form</find>
+<<<<<<< HEAD
       <find>updatef</find>
       <find>loginForm</find>
       <find>pass</find>
@@ -88,6 +189,17 @@
       <find>md5</find>
       <find>err</find>
       <find>md</find>
+=======
+      <find>testing</find>
+      <find>staffUsername</find>
+      <find>select menu</find>
+      <find>selected St</find>
+      <find>password</find>
+      <find>indexS</find>
+      <find>update</find>
+      <find>MainPa</find>
+      <find>create</find>
+>>>>>>> origin/BootstrapVersionWAD3
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,6 +247,11 @@
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/LoginCheck.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/contactUs.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/login.html" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffLogin.php" />
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" />
+>>>>>>> origin/BootstrapVersionWAD3
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php" />
@@ -145,6 +262,12 @@
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" />
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php" />
+>>>>>>> origin/BootstrapVersionWAD3
       </list>
     </option>
   </component>
@@ -156,9 +279,18 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
+<<<<<<< HEAD
     <option name="x" value="508" />
     <option name="width" value="932" />
     <option name="height" value="900" />
+=======
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+>>>>>>> origin/BootstrapVersionWAD3
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -237,6 +369,122 @@
       <recent name="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage" />
     </key>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/WAD3/MyAccount.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/register.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+>>>>>>> origin/BootstrapVersionWAD3
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -357,10 +605,14 @@
       <workItem from="1509975342476" duration="9716000" />
       <workItem from="1510675896388" duration="42112000" />
       <workItem from="1511262970759" duration="9018000" />
+<<<<<<< HEAD
       <workItem from="1511274839411" duration="266000" />
       <workItem from="1511348707741" duration="18000" />
       <workItem from="1511438016501" duration="9816000" />
       <workItem from="1511530006421" duration="7337000" />
+=======
+      <workItem from="1511274839411" duration="23381000" />
+>>>>>>> origin/BootstrapVersionWAD3
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -544,6 +796,7 @@
       <option name="project" value="LOCAL" />
       <updated>1511537702972</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00027" summary="Personal Diary needed session key">
       <created>1511538249053</created>
       <option name="number" value="00027" />
@@ -559,6 +812,38 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+=======
+    <task id="LOCAL-00023" summary="added session valiation for staff trying to access customer pages">
+      <created>1511385434146</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1511385434146</updated>
+    </task>
+    <task id="LOCAL-00024" summary="updated updateaccount &#10;also coded for updates in adminaccounts for staff and customers, but they can not change their id and username for both staff and customer">
+      <created>1511441725740</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1511441725740</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updated updateaccount &#10;also coded for updates in adminaccounts for staff and customers, but they can not change their id and username for both staff and customer">
+      <created>1511441818726</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1511441818726</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="114977000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+>>>>>>> origin/BootstrapVersionWAD3
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -567,9 +852,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14352942" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14752117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/BootstrapVersionWAD3
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -636,12 +925,20 @@
     <MESSAGE value="updated the about section on the index page&#10;and also" />
     <MESSAGE value="updated the files to be more in line with what ryans updated with the old wad pages" />
     <MESSAGE value="updated everything" />
+<<<<<<< HEAD
     <MESSAGE value="Classes now works in bootstrap" />
     <MESSAGE value="SafePost Completed" />
     <MESSAGE value="Error Reporting" />
     <MESSAGE value="password check" />
     <MESSAGE value="Personal Diary needed session key" />
     <option name="LAST_COMMIT_MESSAGE" value="Personal Diary needed session key" />
+=======
+    <MESSAGE value="updated wad folder" />
+    <MESSAGE value="added classes file" />
+    <MESSAGE value="added session valiation for staff trying to access customer pages" />
+    <MESSAGE value="updated updateaccount &#10;also coded for updates in adminaccounts for staff and customers, but they can not change their id and username for both staff and customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated updateaccount &#10;also coded for updates in adminaccounts for staff and customers, but they can not change their id and username for both staff and customer" />
+>>>>>>> origin/BootstrapVersionWAD3
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -867,6 +1164,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/contactUs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3251">
@@ -890,6 +1188,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/Classes.php">
+=======
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.html">
+>>>>>>> origin/BootstrapVersionWAD3
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="26" column="72" lean-forward="false" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
@@ -909,6 +1210,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/WAD3/MyAccount.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -921,12 +1223,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/scss/_variables.scss">
+=======
+    <entry file="file://$PROJECT_DIR$/WAD3/Classes.php">
+>>>>>>> origin/BootstrapVersionWAD3
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -938,6 +1244,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffLogin.php">
+=======
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/Classes.php">
+>>>>>>> origin/BootstrapVersionWAD3
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
@@ -966,16 +1275,56 @@
         <state relative-caret-position="297">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1511536581000" expanded="true" signature="3728:3790" ph="SELECT * FRO... Gym Membership" />
             <marker date="1511536581000" expanded="true" signature="4276:4393" ph="INSERT INTO `userClasses`... " />
             <marker date="1511536581000" expanded="true" signature="4508:4756" ph="INSERT INTO `Gym Membership`... " />
             <marker date="1511536581000" expanded="true" signature="5043:5136" ph="SELECT * FRO... Gym Membership" />
+=======
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511479947000" expanded="true" signature="2650:2812" ph="SELECT `user... userActivities" />
+            <marker date="1511479947000" expanded="true" signature="3117:3187" ph="SELECT * FRO... Classes" />
+            <marker date="1511479947000" expanded="true" signature="3900:4028" ph="INSERT INTO `userActivities`... " />
+            <marker date="1511479947000" expanded="true" signature="14057:14094" ph="SELECT * FRO... Classes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <marker date="1511350794000" expanded="true" signature="1565:1650" ph="SELECT * FRO... staff" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-503">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511350939000" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="494" column="62" lean-forward="true" selection-start-line="494" selection-start-column="62" selection-end-line="494" selection-end-column="62" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+>>>>>>> origin/BootstrapVersionWAD3
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="237">
           <caret line="149" column="42" lean-forward="false" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="42" />
           <folding>
@@ -983,12 +1332,33 @@
             <marker date="1511538425000" expanded="true" signature="3758:3828" ph="SELECT * FRO... Classes" />
             <marker date="1511538425000" expanded="true" signature="4588:4716" ph="INSERT INTO `userActivities`... " />
             <marker date="1511538425000" expanded="true" signature="14745:14782" ph="SELECT * FRO... Classes" />
+=======
+        <state relative-caret-position="246">
+          <caret line="99" column="29" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="29" />
+          <folding>
+            <marker date="1511479947000" expanded="true" signature="3728:3790" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511479947000" expanded="true" signature="4276:4393" ph="INSERT INTO `userClasses`... " />
+            <marker date="1511479947000" expanded="true" signature="4505:4753" ph="INSERT INTO `Gym Membership`... " />
+            <marker date="1511479947000" expanded="true" signature="5040:5133" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511265135000" expanded="true" signature="1204:1297" ph="SELECT * FRO... Gym Membership" />
+>>>>>>> origin/BootstrapVersionWAD3
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WAD3/PersonalDiary.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="147">
           <caret line="99" column="24" lean-forward="false" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
           <folding>
@@ -996,28 +1366,85 @@
             <marker date="1511279296000" expanded="true" signature="2509:2616" ph="SELECT * FRO... Classes" />
             <marker date="1511279296000" expanded="true" signature="3326:3454" ph="INSERT INTO `userActivities`... " />
             <marker date="1511279296000" expanded="true" signature="5246:5283" ph="SELECT * FRO... Classes" />
+=======
+        <state relative-caret-position="380">
+          <caret line="175" column="39" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="444" selection-end-column="0" />
+          <folding>
+            <element signature="e#110#204#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#6;n#ul#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1511479951000" expanded="true" signature="3415:3459" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511479951000" expanded="true" signature="4725:4953" ph="UPDATE `Gym " />
+            <marker date="1511479951000" expanded="true" signature="5805:5884" ph="UPDATE `Gym " />
+>>>>>>> origin/BootstrapVersionWAD3
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
           <folding>
             <marker date="1511539491000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
+=======
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="104" column="15" lean-forward="false" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511536019000" expanded="true" signature="2358:2393" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="182" column="73" lean-forward="false" selection-start-line="182" selection-start-column="73" selection-end-line="182" selection-end-column="73" />
+          <folding>
+            <element signature="e#110#204#0#PHP" expanded="true" />
+            <marker date="1511535777000" expanded="true" signature="3258:3293" ph="SELECT * FRO... staff" />
+            <marker date="1511535777000" expanded="true" signature="4579:4781" ph="UPDATE `staf... " />
+            <marker date="1511535777000" expanded="true" signature="5638:5708" ph="UPDATE `staf... " />
+>>>>>>> origin/BootstrapVersionWAD3
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="812">
           <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
             <marker date="1511539620000" expanded="true" signature="3476:3520" ph="SELECT * FRO... Gym Membership" />
             <marker date="1511539620000" expanded="true" signature="4785:5013" ph="UPDATE `Gym " />
             <marker date="1511539620000" expanded="true" signature="5879:5958" ph="UPDATE `Gym " />
+=======
+        <state relative-caret-position="465">
+          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511538513000" expanded="true" signature="2934:3174" ph="UPDATE `staf... " />
+            <marker date="1511538513000" expanded="true" signature="3942:3963" ph="SELECT * FRO... staff" />
+            <marker date="1511538513000" expanded="true" signature="3942:3988" ph="SELECT * FRO... staff" />
+            <marker date="1511538513000" expanded="true" signature="4267:4602" ph="INSERT INTO `staff`... " />
+            <marker date="1511538513000" expanded="true" signature="5067:5139" ph="UPDATE `staf... " />
+            <marker date="1511538513000" expanded="true" signature="5601:5677" ph="UPDATE `Gym " />
+            <marker date="1511538513000" expanded="true" signature="6446:6668" ph="UPDATE `staf... " />
+            <marker date="1511538513000" expanded="true" signature="7143:7178" ph="SELECT * FRO... staff" />
+            <marker date="1511538513000" expanded="true" signature="8175:8218" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511538513000" expanded="true" signature="8175:8219" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511538513000" expanded="true" signature="8798:8833" ph="SELECT * FRO... staff" />
+            <marker date="1511538513000" expanded="true" signature="17567:17597" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511538513000" expanded="true" signature="27871:27892" ph="SELECT * FRO... staff" />
+>>>>>>> origin/BootstrapVersionWAD3
           </folding>
         </state>
       </provider>
