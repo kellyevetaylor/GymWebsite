@@ -270,7 +270,12 @@ if (isset($_POST["updatePassword"])) {
             $newPassword1 = md5($newPassword1);
             $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
             $conn->query($sql);
-            header("location:index.php");
+            $updateSuccess = "Update complete";
+            echo "<script>
+     type='text/javascript'>alert('$updateSuccess');
+     window.location.href='https://devweb2017.cis.strath.ac.uk/~xwb15122/WadGymBootstrap/Wad3BootstrapVersion/MainPage/index.php';
+    </script> ";
+
         }
 } elseif
 ($currentPasswordStored != md5($currentPassword)){
