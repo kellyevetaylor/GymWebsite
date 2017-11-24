@@ -59,6 +59,48 @@
 
 
     <script>
+
+        function validateUpdateDetails() {
+            var firstName = document.forms["updateDetails"]["firstName"];
+            var secondName = document.forms["updateDetails"]["secondName"];
+            var email = document.forms["updateDetails"]["email"];
+            var address = document.forms["updateDetails"]["address"];
+            var city = document.forms["updateDetails"]["city"];
+            var postcode = document.forms["updateDetails"]["postcode"];
+
+
+            var errMessage = "";
+
+            if (firstName.value == "" || firstName.value == null) {
+                errMessage += " * Please enter your first name\n";
+
+            }
+
+            if (secondName.value == null || secondName.value == "") {
+                errMessage += " * Please enter your surname\n";
+
+            }
+            if (email.value == "" || email.value == null) {
+                errMessage += " * Please enter your email\n";
+
+            }
+            if (address.value == "" || address.value == null) {
+                errMessage += " * Please enter your address\n";
+
+            }
+            if (city.value == "" || city.value == null) {
+                errMessage += " * Please enter a city\n";
+
+            }
+            if (postcode.value == "" || postcode.value == null) {
+                errMessage += " * Please enter your postcode\n";
+
+            }
+            if (errMessage != "") {
+                alert("Errors as follow:\n" + errMessage);
+            }
+        }
+
         function validateInputForm() {
             var currentPassword = document.forms["updateForm"]["currentPassword"];
             var newPassword1 = document.forms["updateForm"]["newPassword1"];
@@ -77,6 +119,10 @@
                 message += " * New passwords don't match\n";
             } else if (newPassword1.value == "" || newPassword2.value == "") {
                 message += " * New password must be stronger\n";
+            }
+
+            if (currentPassword.value == newPassword1.value) {
+                message += "* New password must be different from original."
             }
 
 
@@ -105,6 +151,7 @@ function cleanInput($input)
     $input = stripslashes($input);
     $input = htmlspecialchars(strip_tags($input));
     return $input;
+
 
 }
 
@@ -160,13 +207,40 @@ $newPostcode = safePost($conn, "postcode");
 
 
 if (isset($_POST["updateDetails"])) {
+
+    if ($newFirstName == null || $newFirstName == "") {
+        $newFirstName = $firstName;
+    }
+
+    if ($newSecondName == null || $newSecondName == ""){
+        $newSecondName = $secondName;
+}
+    if ($newEmail == null || $newEmail == "") {
+        $newEmail = $email;
+    }
+    if ($newAddress == null || $newAddress == "") {
+        $newAddress = $address;
+    }
+    if ($newCity == null || $newCity == "") {
+        $newCity = $city;
+    }
+    if ($newPostcode == null || $newPostcode == "") {
+        $newPostcode = $postcode;
+    }
+
+
     $userId = $_SESSION['userId'];
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
     $result = $conn->query($sql);
+    header("location:updateAccount.php");
+    
+
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
+
     }
-    header("location:index.php");
+
+
 }
 
 if (isset($_POST["updatePassword"])) {
@@ -180,12 +254,15 @@ if (isset($_POST["updatePassword"])) {
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
 
-    if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword)==$currentPasswordStored)) {
-        $userId = $_SESSION['userId'];
-        $newPassword1 = md5($newPassword1);
-        $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-        $conn->query($sql);
-        header("location:index.php");
+
+    if ($currentPasswordStored != md5($newPassword1)) {
+        if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+            $userId = $_SESSION['userId'];
+            $newPassword1 = md5($newPassword1);
+            $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
+            $conn->query($sql);
+            header("location:index.php");
+        }
     } elseif ($currentPasswordStored != md5($currentPassword)) {
         $loginError = "Current password does not match our records";
         echo "<script type='text/javascript'>alert('$loginError');</script>";
@@ -379,7 +456,8 @@ if (isset($_POST["updatePassword"])) {
                     </form>
 
                     <div class="col-lg-6">
-                        <form method="post" action="updateAccount.php">
+                        <form method="post" name=updateDetails action="updateAccount.php"
+                              onsubmit="validateUpdateDetails()">
                             <p>
                                 First Name:
                             </p>
