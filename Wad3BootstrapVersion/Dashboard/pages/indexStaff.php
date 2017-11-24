@@ -84,6 +84,7 @@ $email = "";
 $address = "";
 $city = "";
 $postcode = "";
+$password = "";
 
 //get staff information
 $sql = "SELECT * FROM `staff` WHERE `id` = $userID";// change to a variable
@@ -98,6 +99,12 @@ while ($row = $result->fetch_assoc()) {
     $address = $row["address"];
     $city = $row["city"];
     $postcode = $row["postcode"];
+    $password = $row["password"];
+}
+
+if($password == "default123"){
+    $passwordError = "Please change your Password!";
+    echo "<script type='text/javascript'>alert('$passwordError');</script>";
 }
 
 
@@ -262,7 +269,7 @@ while ($row = $result->fetch_assoc()) {
                 <br/>
                 <p>PostCode: <?php echo $postcode ?></p>
                 <br/>
-                <form action="updateAccountStaff.php">
+                <form action="updateStaff.php">
                     <button type="submit" class="btn btn-outline btn-primary">Update Details</button>
                 </form>
             </div>

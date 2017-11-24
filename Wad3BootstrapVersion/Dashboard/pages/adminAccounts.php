@@ -112,6 +112,69 @@ if (isset($_POST["StaffUpdate"])) {
 
 }
 
+if (isset($_POST["create"])) {
+
+    $lastID = "";
+    $selectStaffID = "";
+    $selectStaffLevel = $_POST["selectLevel"];
+    $selectStaffFName = safePost($conn, "staffFName");
+    $selectStaffSName = safePost($conn, "staffSName");
+    $selectStaffUsername = "";
+    $selectStaffEmail = safePost($conn, "staffEmail");
+    $selectStaffAddress = safePost($conn, "staffAddress");
+    $selectStaffCity = safePost($conn, "staffCity");
+    $selectStaffPostcode = safePost($conn, "staffPostcode");
+
+    //get last staff
+    $sql = "SELECT * FROM `staff` ORDER BY id DESC LIMIT 1";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+        $lastID = $row["id"];
+    }
+
+    //new Username
+    $lastID = $lastID + 1;
+    $selectStaffUsername = "sta".$lastID;
+    //default password
+    $defaultPassword = "default123";
+
+    $sql = "INSERT INTO `staff`(`id`, `level`,`first name`, `second name`, `email`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$selectStaffLevel', '$selectStaffFName', '$selectStaffSName', '$selectStaffEmail', '$selectStaffAddress', '$selectStaffCity', '$selectStaffPostcode', '$selectStaffUsername', '$defaultPassword')";
+    $result = $conn->multi_query($sql);
+
+    if (!$result === TRUE) {
+        die("Error on insert" . $conn->error);
+    }
+    $error = "Staff Details Updated.Please make them aware of the default Password, and that they must change it immediately by logging in";
+    echo "<script type='text/javascript'>alert('$error');</script>";
+
+}
+
+if (isset($_POST["StaffReset"])) {
+    $selectStaffID = safePost($conn, "staffID");
+
+    //set staff information
+    $sql = "UPDATE `staff` SET `password`='default123' WHERE `id` = '$selectStaffID' ";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+    $errorreset = "Staff Account has been reset Please make them aware of new default poassword and that they must change it immediately.";
+    echo "<script type='text/javascript'>alert('$errorreset');</script>";
+}
+
+if (isset($_POST["reset"])) {
+    $selectID = safePost($conn, "custID");
+
+    //set staff information
+    $sql = "UPDATE `Gym Membership` SET `password`='default123' WHERE `id` = '$selectID' ";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+    $errorreset = "Customer Account has been reset Please make them aware of new default poassword and that they must change it immediately.";
+    echo "<script type='text/javascript'>alert('$errorreset');</script>";
+}
+
 if (isset($_POST["update"])) {
 
     $selectID = safePost($conn, "custID");
@@ -200,12 +263,14 @@ if (isset($_POST["SelectStaff"])) {
     $sql = "SELECT * FROM `staff` WHERE `id` = $selectStaffID";// change to a variable
     $result = $conn->query($sql);
     $rowNum = $result->num_rows;
+    $selectStaffLevel = "";
 
     while ($row = $result->fetch_assoc()) {
         $selectStaffID = $row["id"];
         $selectStaffFName = $row["first name"];
         $selectStaffSName = $row["second name"];
         $selectStaffUsername = $row["username"];
+        $selectStaffLevel = $row["level"];
         $selectStaffEmail = $row["email"];
         $selectStaffAddress = $row["address"];
         $selectStaffCity = $row["city"];
@@ -455,15 +520,15 @@ if (isset($_POST["SelectStaff"])) {
                                                 <input type="text" value="<?php echo $selectID; ?>"
                                                        placeholder="ID" disabled/>
                                                 <input type="hidden" name="custID" value="<?php echo $selectID; ?>"
-                                                       placeholder="ID"/>
+                                                       placeholder="ID" required/>
                                             </td>
                                             <td>
                                                 <input type="text" name="custFName" value="<?php echo $selectFName; ?>"
-                                                       placeholder="First Name"/>
+                                                       placeholder="First Name" required/>
                                             </td>
                                             <td>
                                                 <input type="text" name="custSName" value="<?php echo $selectSName; ?>"
-                                                       placeholder="Second Name"/>
+                                                       placeholder="Second Name" required/>
                                             </td>
                                             <td>
                                                 <input type="text" name="custUsername"
@@ -487,15 +552,15 @@ if (isset($_POST["SelectStaff"])) {
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input type="text" name="custAddress"
+                                                <input type="text" name="custAddress" required
                                                        value="<?php echo $selectAddress; ?>" placeholder="Address"/>
                                             </td>
                                             <td>
                                                 <input type="text" name="custCity" value="<?php echo $selectCity; ?>"
-                                                       placeholder="City"/>
+                                                       placeholder="City" required/>
                                             </td>
                                             <td>
-                                                <input type="text" name="custPostcode"
+                                                <input type="text" name="custPostcode" required
                                                        value="<?php echo $selectPostcode; ?>" placeholder="Postcode"/>
                                             </td>
                                             <td>
@@ -519,13 +584,14 @@ if (isset($_POST["SelectStaff"])) {
                                                     } ?>/>
                                             </td>
                                             <td>
-                                                <input type="submit" value="Reset Password" name="reset password"
+                                                <input type="submit" value="Reset Password" name="reset"
                                                        class="btn btn-outline btn-warning"
                                                     <?php if (!isset($_POST["SelectCust"])) {
                                                         echo "disabled";
                                                     } ?>/>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                            </td>
                                         </tr>
                                         </form>
                                         </tbody>
@@ -603,10 +669,11 @@ if (isset($_POST["SelectStaff"])) {
                                 <!-- /.table-responsive -->
                                 <div class="panel-body">
                                     <div class="table-responsive">
-                                        <h3>Selected Staff Account</h3>
+                                        <h3>Staff Account</h3>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
+                                                <th></th>
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
@@ -629,6 +696,7 @@ if (isset($_POST["SelectStaff"])) {
                                                     <td>
                                                         Username:
                                                     </td>
+                                                    <td>Level:</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
@@ -641,17 +709,36 @@ if (isset($_POST["SelectStaff"])) {
                                                     <td>
                                                         <input type="text" name="staffFName"
                                                                value="<?php echo $selectStaffFName; ?>"
-                                                               placeholder="First Name"/>
+                                                               placeholder="First Name" required/>
                                                     </td>
                                                     <td>
                                                         <input type="text" name="staffSName"
                                                                value="<?php echo $selectStaffSName; ?>"
-                                                               placeholder="Second Name"/>
+                                                               placeholder="Second Name" required/>
                                                     </td>
                                                     <td>
                                                         <input type="text" name="staffUsername"
                                                                value="<?php echo $selectStaffUsername; ?>"
                                                                placeholder="Username" disabled/>
+                                                    </td>
+                                                    <td>
+                                                        <?php if (!isset($_POST["SelectStaff"])) {
+                                                            ?>
+                                                            <select name="selectLevel" class="form-control">
+                                                                <option>admin</option>
+                                                                <option>manager</option>
+                                                                <option>supervisor</option>
+                                                                <option>Employee</option>
+                                                            </select>
+                                                            <?php
+                                                        }else{
+                                                            ?>
+                                                            <input type="text" name="staffLevel"
+                                                                   value="<?php echo $selectStaffLevel; ?>"
+                                                                   placeholder="Email" disabled/>
+                                                            <?php
+                                                        }
+                                                        ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -667,27 +754,31 @@ if (isset($_POST["SelectStaff"])) {
                                                     <td>
                                                         Email:
                                                     </td>
+                                                    <td></td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <input type="text" name="staffAddress"
                                                                value="<?php echo $selectStaffAddress; ?>"
-                                                               placeholder="Address"/>
+                                                               placeholder="Address" required/>
                                                     </td>
                                                     <td>
                                                         <input type="text" name="staffCity"
                                                                value="<?php echo $selectStaffCity; ?>"
-                                                               placeholder="City"/>
+                                                               placeholder="City" required/>
                                                     </td>
                                                     <td>
                                                         <input type="text" name="staffPostcode"
                                                                value="<?php echo $selectStaffPostcode; ?>"
-                                                               placeholder="Postcode"/>
+                                                               placeholder="Postcode" required/>
                                                     </td>
                                                     <td>
                                                         <input type="text" name="staffEmail"
                                                                value="<?php echo $selectStaffEmail; ?>"
-                                                               placeholder="Email"/>
+                                                               placeholder="Email" required/>
+                                                    </td>
+                                                    <td>
+
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -703,16 +794,26 @@ if (isset($_POST["SelectStaff"])) {
                                                                class="btn btn-outline btn-danger"
                                                         <?php if (!isset($_POST["SelectStaff"])) {
                                                             echo "disabled";
-                                                        } ?>//>
+                                                        } ?>/>
                                                     </td>
                                                     <td>
                                                         <input type="submit" value="Reset Password" name="StaffReset"
                                                                class="btn btn-outline btn-warning"
                                                         <?php if (!isset($_POST["SelectStaff"])) {
                                                             echo "disabled";
-                                                        } ?>//>
+                                                        } ?>/>
                                                     </td>
-                                                    <td></td>
+                                                    <td>
+                                                        <input type="submit" value="Create New Account" name="create"
+                                                               class="btn btn-outline btn-success"
+                                                            <?php if (isset($_POST["SelectStaff"])) {
+                                                                echo "disabled";
+                                                            } ?>/>
+                                                    </td>
+                                                    <td>
+                                                        <input type="submit" value="Clear" name="clear"
+                                                               class="btn btn-outline btn-info"/>
+                                                    </td>
                                                 </tr>
                                                 </form>
                                                 </tbody>
