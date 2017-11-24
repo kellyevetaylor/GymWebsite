@@ -134,7 +134,9 @@ function activityQuery($conn, $newdate)
 
 function classQuery($conn, $newdate)
 {
-    $sql = "SELECT * FROM `Classes`,`userClasses`WHERE `Classes`.Date = '$newdate'";
+    $userId = $_SESSION['userId'];
+
+    $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `Classes`.Date = '$newdate' AND `userClasses`.UserID = '$userId'";
     $result = $conn->query($sql);
 
     if (!$result) {
@@ -145,9 +147,8 @@ function classQuery($conn, $newdate)
         while ($row = $result->fetch_assoc()) {
 
             $classID = $row["ClassID"];
-            $userId = $_SESSION['userId'];
 
-            if ($row["class$classID"] == 1 ) {
+            if ($row["class$classID"] == 1) {
 
                 echo "<br>";
                 echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
@@ -388,7 +389,7 @@ if (isset($_POST['addactivity'])) {
                     </div>
                     <div class="col-lg-4">
 
-                        <form method="post" name ="updateForm" onsubmit="validateInputForm()">
+                        <form method="post" name="updateForm" onsubmit="validateInputForm()">
                             <br>Add an activity from today:</br>
                             <input type="text" name="activity"></br>
                             Duration:</br>

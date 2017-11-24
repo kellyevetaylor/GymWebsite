@@ -10,11 +10,11 @@
 <head>
     <?php
     session_start();
-    if(!empty($_SESSION['isStaff'])){
+    if (!empty($_SESSION['isStaff'])) {
         header("Location: ../../MainPage/indexStaff.php"); /* Redirect browser */
         exit();
     }
-    if(empty($_SESSION['userId'])){
+    if (empty($_SESSION['userId'])) {
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
@@ -33,6 +33,8 @@
         ob_start();
         ?>
     </script>
+
+
 
     <title>WAD Gym - Manage Classes</title>
 
@@ -71,8 +73,6 @@ $dbname = "cs312_a";
 $conn = new mysqli($host, $user, $password, $dbname);
 
 
-
-
 ?>
 
 <div id="wrapper">
@@ -86,7 +86,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="index.php"><?php echo $_SESSION['login'] ?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -105,7 +105,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                     <span class="pull-right text-muted">40% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <span class="sr-only">40% Complete (success)</span>
                                     </div>
                                 </div>
@@ -121,7 +122,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                     <span class="pull-right text-muted">20% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                         <span class="sr-only">20% Complete</span>
                                     </div>
                                 </div>
@@ -137,7 +139,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -153,7 +156,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                     <span class="pull-right text-muted">80% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -178,7 +182,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                 <ul class="dropdown-menu dropdown-user">
                     <li>
                         <form action="../../MainPage/index.php" method="post">
-                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout" class="btn btn-outline btn-primary"/>
+                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout"
+                                                                       class="btn btn-outline btn-primary"/>
                         </form>
                     </li>
                 </ul>
@@ -211,8 +216,6 @@ $conn = new mysqli($host, $user, $password, $dbname);
     </nav>
 
 
-
-
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -221,123 +224,123 @@ $conn = new mysqli($host, $user, $password, $dbname);
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        <form method="post">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-body">
-                    <div class="col-lg-6">
+        <form method="post"  action="Classes.php">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-body">
+                        <div class="col-lg-6">
 
 
-                        <h2>Classes Available</h2>
+                            <h2>Classes Available</h2>
 
-                        <table>
-                            <?php
+                            <table>
+                                <?php
 
-                            $userId = $_SESSION['userId'];
-                            $sql = "SELECT * FROM Classes,`userClasses` WHERE `userClasses`.UserID = '$userId'";
-                            $result = $conn->query($sql);
+                                $userId = $_SESSION['userId'];
+                                $sql = "SELECT * FROM Classes,`userClasses` WHERE `userClasses`.UserID = '$userId'";
+                                $result = $conn->query($sql);
 
-                            if (!$result) {
-                                die("Query failed" . $conn->error);//get rid of error line
-                            }
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
+                                if (!$result) {
+                                    die("Query failed" . $conn->error);//get rid of error line
+                                }
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
 
 
-                                    $limit = $row["classCapacity"];
-                                    $capacity= $row["Capacity"];
+                                        $limit = $row["classCapacity"];
+                                        $capacity = $row["Capacity"];
 
-                                    $i = $row["ClassID"];
-                                    if($row["class$i"]==0) {
-                                        echo "<tr>";
-                                        echo "<td>" . "<br>";
-                                        echo "Date: " . $row["Date"] . "<br>";
-                                        echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
-                                        echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' formaction='Classes.php' '>
+                                        $i = $row["ClassID"];
+                                        if ($row["class$i"] == 0) {
+                                            echo "<tr>";
+                                            echo "<td>" . "<br>";
+                                            echo "Date: " . $row["Date"] . "<br>";
+                                            echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                                            echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' '>
             </td>";
-                                        echo "</tr>";
-                                    }
-                                    if (isset($_POST["class$i"])) {
-                                        //$i is the id of classes class
-                                        $userId = $_SESSION['userId'];
+                                            echo "</tr>";
+                                        }
+                                        if (isset($_POST["class$i"])) {
+                                            //$i is the id of classes class
+                                            $userId = $_SESSION['userId'];
+                                            if ($capacity < $limit) {
+                                                $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i AND `Capacity`<`classCapacity`";
+                                                $conn->query($sql);
+                                                $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
+                                                $result1 = $conn->query($sql);
+                                                unset($_POST["class$i"]);
+                                                 header('location:Classes.php');
 
-                                        if($capacity<$limit){
-                                            $sql = "UPDATE `Classes` SET `Capacity`=`Capacity`+1 WHERE `ClassID`=$i AND `Capacity`<`classCapacity`";
-                                            $conn->query($sql);
-                                            $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
-                                            $result=   $conn->query($sql);
-                                        }else {
-                                            $sql = "UPDATE `userClasses` SET `class$i`= 0 WHERE `UserID` =\"$userId\"";
-                                            $result=   $conn->query($sql);
+                                            } else {
+                                                $sql = "UPDATE `userClasses` SET `class$i`= 0 WHERE `UserID` =\"$userId\"";
+                                                $result1 = $conn->query($sql);
+                                                $classFullErr = "Current class is full.";
+                                                echo "<script type='text/javascript'>alert('$classFullErr');</script>";
+
+                                            }
+
+                                            if (!$result1) {
+                                                die("Query Fail" . $conn->error);
+                                            }
+                                               //unset($_POST["class$i"]);
+                                                   // header('location:Classes.php');
                                         }
 
+                                    }
 
 
+                                }
+                                ?>
+                            </table>
 
-                                        if (!$result) {
-                                            die("Query Fail" . $conn->error);
+                        </div>
+
+                        <div class="col-lg-6">
+
+
+                            <h2>Current Classes</h2>
+
+                            <table>
+                                <?php
+
+
+                                $userId = $_SESSION['userId'];
+                                $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' ";
+                                $result = $conn->query($sql);
+
+                                if (!$result) {
+                                    die("Query failed" . $conn->error);//get rid of error line
+                                }
+                                if ($result->num_rows > 0) {
+
+                                    while ($row = $result->fetch_assoc()) {
+
+                                        $classID = $row["ClassID"];
+                                        if ($row["class$classID"] == 1) {
+
+                                            echo "<tr>";
+                                            echo "<td>" . "<br>";
+                                            echo "Date: " . $row["Date"] . "<br>";
+                                            echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
+                                            echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
+                                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . " </td>";
+                                            echo "</tr>";
                                         }
-                                        unset($_POST["class$i"]);
-                                        header('location:Classes.php');
                                     }
+
+
                                 }
 
-                            }
-                            ?>
-                        </table>
-
-                    </div>
-
-                    <div class="col-lg-6">
+                                ?>
+                            </table>
 
 
-
-                        <h2>Current Classes</h2>
-
-                        <table>
-                            <?php
-
-
-
-                            $userId = $_SESSION['userId'];
-                            $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' ";
-                            $result = $conn->query($sql);
-
-                            if (!$result) {
-                                die("Query failed" . $conn->error);//get rid of error line
-                            }
-                            if ($result->num_rows > 0) {
-
-                                while ($row = $result->fetch_assoc()) {
-
-                                    $classID =$row["ClassID"];
-                                    if ($row["class$classID"] == 1) {
-
-                                        echo "<tr>";
-                                        echo "<td>" . "<br>";
-                                        echo "Date: " . $row["Date"] . "<br>";
-                                        echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
-                                        echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                                            . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . " </td>";
-                                        echo "</tr>";
-                                    }
-                                }
-
-
-
-                            }
-
-                            ?>
-                        </table>
-
-
-
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- /.row -->
+            <!-- /.row -->
     </div>
     <!-- /#page-wrapper -->
 </div>
