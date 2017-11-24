@@ -117,8 +117,8 @@ $duration = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
 
 function activityQuery($conn, $newdate)
 {
-    $userId = $_SESSION['userId'];
 
+    $userId = $_SESSION['userId'];
     $sql = "SELECT `userActivities`.Activity, `userActivities`.Duration FROM `userActivities` WHERE `userActivities`.Date = '$newdate' AND `userActivities`.UserID = '$userId'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
@@ -164,13 +164,15 @@ function classQuery($conn, $newdate)
 if (isset($_POST['addactivity'])) {
     $userId = $_SESSION['userId'];
 
+    if ($activity == "" || $activity == null || !is_numeric($duration) || $duration == null || $duration == "") {
 
-    $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
-    $conn->query($sql);
-    unset($_POST['addactivity']);
-    header('location:personalDiary.php');
+    } else {
+        $sql = "INSERT INTO `userActivities` (`UserID`, `Date`, `Activity`, `Duration`) VALUES ($userId, CURRENT_DATE, '$activity', '$duration')";
+        $conn->query($sql);
+        unset($_POST['addactivity']);
+        header('location:personalDiary.php');
 
-
+    }
 }
 
 ?>

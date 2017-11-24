@@ -233,7 +233,7 @@ if (isset($_POST["updateDetails"])) {
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
     $result = $conn->query($sql);
     header("location:updateAccount.php");
-    
+
 
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
