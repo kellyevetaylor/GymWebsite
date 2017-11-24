@@ -66,6 +66,8 @@
 
             var message = "";
 
+            //still need to check against help password
+
             if (currentPassword.value == null || currentPassword.value == "") {
                 message += " * Please enter your old password\n";
             }
@@ -74,7 +76,7 @@
             if (newPassword1.value != newPassword2.value) {
                 message += " * New passwords don't match\n";
             } else if (newPassword1.value == "" || newPassword2.value == "") {
-                message += " * Password must be stronger\n";
+                message += " * New password must be stronger\n";
             }
 
 
@@ -159,7 +161,6 @@ $newPostcode = safePost($conn, "postcode");
 
 if (isset($_POST["updateDetails"])) {
     $userId = $_SESSION['userId'];
-
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
     $result = $conn->query($sql);
     if (!$result) {
@@ -179,18 +180,19 @@ if (isset($_POST["updatePassword"])) {
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
 
-
-    if ($newPassword1 == $newPassword2 && $currentPassword == $currentPasswordStored) {
-        $newPassword1 = md5($newPassword1);
+    if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword)==$currentPasswordStored)) {
         $userId = $_SESSION['userId'];
+        $newPassword1 = md5($newPassword1);
         $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
         $conn->query($sql);
         header("location:index.php");
-    } else {
-        $passwordError = "Passwords don't match!";
-        echo "<script type='text/javascript'>alert('$passwordError');</script>";
+    } elseif ($currentPasswordStored != $currentPassword) {
+        $loginError = "Current password does not match our records";
+        echo "<script type='text/javascript'>alert('$loginError');</script>";
+
     }
 }
+
 
 ?>
 
@@ -356,7 +358,7 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Current Password:
                             </p>
-                            <input onchange="validateInputForm()" name="currentPassword" value=""
+                            <input name="currentPassword" value=""
                                    placeholder="Current Password" class="form-control">
                             <br/>
                             <p>
@@ -367,7 +369,7 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input onchange="validateInputForm()" name="newPassword2" value=""
+                            <input name="newPassword2" value=""
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>
