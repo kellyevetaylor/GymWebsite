@@ -212,9 +212,9 @@ if (isset($_POST["updateDetails"])) {
         $newFirstName = $firstName;
     }
 
-    if ($newSecondName == null || $newSecondName == ""){
+    if ($newSecondName == null || $newSecondName == "") {
         $newSecondName = $secondName;
-}
+    }
     if ($newEmail == null || $newEmail == "") {
         $newEmail = $email;
     }
@@ -232,7 +232,7 @@ if (isset($_POST["updateDetails"])) {
     $userId = $_SESSION['userId'];
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
     $result = $conn->query($sql);
-    header("location:updateAccount.php");
+    // header("location:updateAccount.php");
 
 
     if (!$result) {
@@ -240,8 +240,17 @@ if (isset($_POST["updateDetails"])) {
 
     }
 
+    $updateSuccess = "Update complete";
+    echo "<script>
+     type='text/javascript'>alert('$updateSuccess');
+    </script> ";
+    header("location:index.php");
+
+
+
 
 }
+
 
 if (isset($_POST["updatePassword"])) {
 
@@ -263,11 +272,12 @@ if (isset($_POST["updatePassword"])) {
             $conn->query($sql);
             header("location:index.php");
         }
-    } elseif ($currentPasswordStored != md5($currentPassword)) {
-        $loginError = "Current password does not match our records";
-        echo "<script type='text/javascript'>alert('$loginError');</script>";
+} elseif
+($currentPasswordStored != md5($currentPassword)){
+$loginError = "Current password does not match our records";
+echo "<script type='text/javascript'>alert('$loginError');</script>";
 
-    }
+}
 }
 
 
