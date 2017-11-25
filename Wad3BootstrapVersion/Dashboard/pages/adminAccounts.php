@@ -450,6 +450,9 @@ if (isset($_POST["SelectStaff"])) {
                         <?php
                     }
                     ?>
+                    <li>
+                        <a href="staffClasses.php"><i class="fa fa-dashboard fa-fw"></i> Classes</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

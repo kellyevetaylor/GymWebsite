@@ -102,7 +102,7 @@ while ($row = $result->fetch_assoc()) {
     $password = $row["password"];
 }
 
-if($password == "default123"){
+if($password == md5("default123")){
     $passwordError = "Please change your Password!";
     echo "<script type='text/javascript'>alert('$passwordError');</script>";
 }
@@ -238,6 +238,9 @@ if($password == "default123"){
                         <?php
                     }
                     ?>
+                    <li>
+                        <a href="staffClasses.php"><i class="fa fa-dashboard fa-fw"></i> Classes</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
