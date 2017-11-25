@@ -136,7 +136,7 @@ if (isset($_POST["create"])) {
     $lastID = $lastID + 1;
     $selectStaffUsername = "sta".$lastID;
     //default password
-    $defaultPassword = "default123";
+    $defaultPassword = md5("default123");
 
     $sql = "INSERT INTO `staff`(`id`, `level`,`first name`, `second name`, `email`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$selectStaffLevel', '$selectStaffFName', '$selectStaffSName', '$selectStaffEmail', '$selectStaffAddress', '$selectStaffCity', '$selectStaffPostcode', '$selectStaffUsername', '$defaultPassword')";
     $result = $conn->multi_query($sql);
@@ -153,7 +153,8 @@ if (isset($_POST["StaffReset"])) {
     $selectStaffID = safePost($conn, "staffID");
 
     //set staff information
-    $sql = "UPDATE `staff` SET `password`='default123' WHERE `id` = '$selectStaffID' ";
+    $defPass = md5("default123");
+    $sql = "UPDATE `staff` SET `password`='$defPass' WHERE `id` = '$selectStaffID' ";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
@@ -165,13 +166,45 @@ if (isset($_POST["StaffReset"])) {
 if (isset($_POST["reset"])) {
     $selectID = safePost($conn, "custID");
 
-    //set staff information
-    $sql = "UPDATE `Gym Membership` SET `password`='default123' WHERE `id` = '$selectID' ";
+    //reset customer password
+    $newPassword = md5("default123");
+    $sql = "UPDATE `Gym Membership` SET `password`='$newPassword' WHERE `id` = '$selectID' ";
     $result = $conn->query($sql);
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
     }
     $errorreset = "Customer Account has been reset Please make them aware of new default poassword and that they must change it immediately.";
+    echo "<script type='text/javascript'>alert('$errorreset');</script>";
+}
+
+if (isset($_POST["delete"])) {
+    $selectID = safePost($conn, "custID");
+
+    //deleting customer accounts
+    $sql = "DELETE FROM `Gym Membership` WHERE `id` = '$selectID' ";
+    $result = $conn->query($sql);
+
+    $sql = "DELETE FROM `userActivities` WHERE `UserID` = '$selectID' ";
+    $result = $conn->query($sql);
+
+    $sql = "DELETE FROM `userClasses` WHERE `UserID` = '$selectID' ";
+    $result = $conn->query($sql);
+
+    $errorreset = "Customer Account has been deleted.";
+    echo "<script type='text/javascript'>alert('$errorreset');</script>";
+}
+
+if (isset($_POST["StaffDelete"])) {
+    $selectID = safePost($conn, "staffID");
+
+    //deleting customer accounts
+    $sql = "DELETE FROM `staff` WHERE `id` = '$selectID' ";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+
+    $errorreset = "Staff Account has been deleted.";
     echo "<script type='text/javascript'>alert('$errorreset');</script>";
 }
 

@@ -118,8 +118,8 @@
                 $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES (Null, 0 , 0 ,0 ,0 ,0 );";
                 $conn->multi_query($sql);
 
-                $password = md5($password);
-                $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$password')";
+                $newPassword = md5($password);
+                $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES (NULL, '$firstName', '$secondName', '$email', '$address', '$city', '$postcode', '$username', '$newPassword')";
                 $result = $conn->multi_query($sql);
 
                 if (!$result === TRUE) {

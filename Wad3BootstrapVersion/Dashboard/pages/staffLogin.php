@@ -56,9 +56,10 @@
     if(isset($_POST["login"])){
         $username = htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
+        $checkPassword = md5($password);
         //sql search for account
         //getting the account information.
-        $sql = "SELECT * FROM `staff` WHERE `username` = \"$username\" AND `password` = \"$password\"";// change to a variable
+        $sql = "SELECT * FROM `staff` WHERE `username` = \"$username\" AND `password` = \"$checkPassword\"";// change to a variable
         $result = $conn->query($sql);
         $rowNum = $result->num_rows;
         //ro results from database will redirect back to index.
