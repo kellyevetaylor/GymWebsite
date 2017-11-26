@@ -175,6 +175,7 @@ if (isset($_POST["updatePassword"])) {
     $newPassword1 = safePost($conn, "newPassword1");
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
+    $currentPassword = md5($currentPassword);
 
 
     if ($newPassword1 == $newPassword2 && $currentPassword == $currentPasswordStored) {
@@ -348,23 +349,23 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Username:
                             </p>
-                            <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
+                            <input type="password" name="username" value="<?php echo $username ?>" class="form-control" disabled>
                             <br/>
                             <p>
                                 Current Password:
                             </p>
-                            <input onchange="validateInputForm()" name="currentPassword" value=""
+                            <input type="password" onchange="validateInputForm()" name="currentPassword" value=""
                                    placeholder="Current Password" class="form-control">
                             <br/>
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" class="form-control">
+                            <input type="password" name="newPassword1" value="" placeholder="New Password" class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input onchange="validateInputForm()" name="newPassword2" value=""
+                            <input type="password" onchange="validateInputForm()" name="newPassword2" value=""
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>
