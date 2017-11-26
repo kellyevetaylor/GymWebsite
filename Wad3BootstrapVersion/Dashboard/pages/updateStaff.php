@@ -354,19 +354,19 @@ if (isset($_POST["updatePassword"])) {
                                 Current Password:
                             </p>
                             <input onchange="validateInputForm()" name="currentPassword" value=""
-                                   placeholder="Current Password" class="form-control">
+                                   placeholder="Current Password" class="form-control" type="password">
                             <br/>
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" class="form-control">
+                            <input name="newPassword1" value="" placeholder="New Password" class="form-control" type="password">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
                             <input onchange="validateInputForm()" name="newPassword2" value=""
                                    placeholder="Confirm New Password"
-                                   class="form-control">
+                                   class="form-control" type="password">
                             <br/>
                             <input type="submit" value="Update Password" name="updatePassword"
                                    class="btn btn-outline btn-primary"/>
