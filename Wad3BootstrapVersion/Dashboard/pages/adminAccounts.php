@@ -70,6 +70,53 @@
 
 </head>
 
+
+
+<script>
+//not working//
+    function validateUpdateDetails() {
+        var firstName = document.forms["updateCustDetails"]["custFName"];
+        var secondName = document.forms["updateCustDetails"]["custSName"];
+        var email = document.forms["updateCustDetails"]["custEmail"];
+        var address = document.forms["updateCustDetails"]["custAddress"];
+        var city = document.forms["updateCustDetails"]["custCity"];
+        var postcode = document.forms["updateCustDetails"]["custPostcode"];
+
+
+        var errMessage = "";
+
+        if (firstName.value == "" || firstName.value == null) {
+            errMessage += " * Please enter your first name\n";
+
+        }
+
+        if (secondName.value == null || secondName.value == "") {
+            errMessage += " * Please enter your surname\n";
+
+        }
+        if (email.value == "" || email.value == null) {
+            errMessage += " * Please enter your email\n";
+
+        }
+        if (address.value == "" || address.value == null) {
+            errMessage += " * Please enter your address\n";
+
+        }
+        if (city.value == "" || city.value == null) {
+            errMessage += " * Please enter a city\n";
+
+        }
+        if (postcode.value == "" || postcode.value == null) {
+            errMessage += " * Please enter your postcode\n";
+
+        }
+        if (errMessage != "") {
+            alert("Errors as follow:\n" + errMessage);
+        }
+    }
+
+</script>
+
 <body>
 
 <?php
@@ -175,21 +222,26 @@ if (isset($_POST["createUser"])) {
     //new Username
     $lastID = $lastID + 1;
 
+    if ($selectFName == null || $selectFName == ""||$selectSName == null || $selectSName == ""||$selectEmail == null || $selectEmail == "" ||$selectAddress == null || $selectAddress == "" || $selectCity == null || $selectCity == ""||$selectPostcode == null || $selectPostcode == "" ) {
 
-    //creating the account
-            $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES ($lastID, 0 , 0 ,0 ,0 ,0 );";
-            $conn->multi_query($sql);
 
-            $password = md5($password);
-            $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES ($lastID, '$selectFName', '$selectSName', '$selectEmail', '$selectAddress', '$selectCity', '$selectPostcode', '$selectUsername', '$defaultPassword')";
-            $result = $conn->multi_query($sql);
+    }else {
 
-    if (!$result === TRUE) {
-        die("Error on insert" . $conn->error);
+
+        //creating the account
+        $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES ($lastID, 0 , 0 ,0 ,0 ,0 );";
+        $conn->multi_query($sql);
+
+        $password = md5($password);
+        $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES ($lastID, '$selectFName', '$selectSName', '$selectEmail', '$selectAddress', '$selectCity', '$selectPostcode', '$selectUsername', '$defaultPassword')";
+        $result = $conn->multi_query($sql);
+
+        if (!$result === TRUE) {
+            die("Error on insert" . $conn->error);
+        }
+        $error = "Customer Account Created:\nPlease make them aware of the default Password(default123), and that they must change it immediately by logging in";
+        echo "<script type='text/javascript'>alert('$error');</script>";
     }
-    $error = "Customer Account Created:\nPlease make them aware of the default Password(default123), and that they must change it immediately by logging in";
-    echo "<script type='text/javascript'>alert('$error');</script>";
-
 
 
 }
@@ -299,15 +351,18 @@ while ($row = $result->fetch_assoc()) {
 
 }
 
-$selectID = "";
-$selectFName = "";
-$selectSName = "";
-$selectUsername = "";
-$selectEmail = "";
-$selectAddress = "";
-$selectCity = "";
-$selectPostcode = "";
-$selectUsername = "";
+
+
+$selectID       = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
+$selectFName    = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
+$selectSName    = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
+$selectUsername = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
+$selectEmail    = isset($_POST["email address"]) ? cleanInput($_POST["email address"]) : "";
+$selectAddress  = isset($_POST["address"]) ? cleanInput($_POST["address"]) : "";
+$selectCity     = isset($_POST["city"]) ? cleanInput($_POST["city"]) : "";
+$selectPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
+
+
 
 $selectID = safePost($conn, "SelectCust");
 $selectFName = safePost($conn, "first name");
@@ -581,7 +636,7 @@ if (isset($_POST["SelectStaff"])) {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <form method="post" action="adminAccounts.php">
+                                        <form method="post" action="adminAccounts.php" name = updateCustDetails onsubmit="validateUpdateDetails()">
                                             <tr>
                                                 <td>
                                                     ID:
@@ -606,7 +661,7 @@ if (isset($_POST["SelectStaff"])) {
                                                 <td>
                                                     <input type="text" name="custFName"
                                                            value="<?php echo $selectFName; ?>"
-                                                           placeholder="First Name" required/>
+                                                           placeholder="First Name" />
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custSName"

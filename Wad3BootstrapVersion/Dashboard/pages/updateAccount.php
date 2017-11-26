@@ -101,6 +101,8 @@
             }
         }
 
+
+
         function validateInputForm() {
             var currentPassword = document.forms["updateForm"]["currentPassword"];
             var newPassword1 = document.forms["updateForm"]["newPassword1"];

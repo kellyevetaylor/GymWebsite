@@ -395,8 +395,8 @@ if (isset($_POST["update"])) {
                                                            placeholder="Class" required/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="date" value="<?php echo $date; ?>"
-                                                           placeholder="Date" required/>
+                                                    <input type=text  name="date" value="<?php echo $date; ?>"
+                                                           placeholder="YYYY/MM/DD" />
                                                 </td>
                                                 <td>
                                                     <input type="text" name="time" required
