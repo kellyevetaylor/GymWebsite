@@ -277,12 +277,12 @@ if (isset($_POST["updatePassword"])) {
     </script> ";
 
         }
-} elseif
-($currentPasswordStored != md5($currentPassword)){
-$loginError = "Current password does not match our records";
-echo "<script type='text/javascript'>alert('$loginError');</script>";
+    } elseif
+    ($currentPasswordStored != md5($currentPassword)){
+        $loginError = "Current password does not match our records";
+        echo "<script type='text/javascript'>alert('$loginError');</script>";
 
-}
+    }
 }
 
 

@@ -270,7 +270,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                                 $sql = "UPDATE `userClasses` SET `class$i`= 1 WHERE `UserID` =\"$userId\"";
                                                 $result1 = $conn->query($sql);
                                                 unset($_POST["class$i"]);
-                                                 header('location:Classes.php');
+                                                header('location:Classes.php');
 
                                             } else {
                                                 $sql = "UPDATE `userClasses` SET `class$i`= 0 WHERE `UserID` =\"$userId\"";
@@ -283,8 +283,8 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                             if (!$result1) {
                                                 die("Query Fail" . $conn->error);
                                             }
-                                               //unset($_POST["class$i"]);
-                                                   // header('location:Classes.php');
+                                            //unset($_POST["class$i"]);
+                                            // header('location:Classes.php');
                                         }
 
                                     }
