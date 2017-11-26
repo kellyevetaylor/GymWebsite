@@ -52,14 +52,57 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
     <script>
+
+        function validateUpdateDetails() {
+            var firstName = document.forms["updateDetails"]["firstName"];
+            var secondName = document.forms["updateDetails"]["secondName"];
+            var email = document.forms["updateDetails"]["email"];
+            var address = document.forms["updateDetails"]["address"];
+            var city = document.forms["updateDetails"]["city"];
+            var postcode = document.forms["updateDetails"]["postcode"];
+
+
+            var errMessage = "";
+
+            if (firstName.value == "" || firstName.value == null) {
+                errMessage += " * Please enter your first name\n";
+
+            }
+
+            if (secondName.value == null || secondName.value == "") {
+                errMessage += " * Please enter your surname\n";
+
+            }
+            if (email.value == "" || email.value == null) {
+                errMessage += " * Please enter your email\n";
+
+            }
+            if (address.value == "" || address.value == null) {
+                errMessage += " * Please enter your address\n";
+
+            }
+            if (city.value == "" || city.value == null) {
+                errMessage += " * Please enter a city\n";
+
+            }
+            if (postcode.value == "" || postcode.value == null) {
+                errMessage += " * Please enter your postcode\n";
+
+            }
+            if (errMessage != "") {
+                alert("Errors as follow:\n" + errMessage);
+            }
+        }
+
         function validateInputForm() {
             var currentPassword = document.forms["updateForm"]["currentPassword"];
             var newPassword1 = document.forms["updateForm"]["newPassword1"];
             var newPassword2 = document.forms["updateForm"]["newPassword2"];
 
             var message = "";
+
+            //still need to check against help password
 
             if (currentPassword.value == null || currentPassword.value == "") {
                 message += " * Please enter your old password\n";
@@ -69,7 +112,11 @@
             if (newPassword1.value != newPassword2.value) {
                 message += " * New passwords don't match\n";
             } else if (newPassword1.value == "" || newPassword2.value == "") {
-                message += " * Password must be stronger\n";
+                message += " * New password must be stronger\n";
+            }
+
+            if (currentPassword.value == newPassword1.value) {
+                message += "* New password must be different from original."
             }
 
 
@@ -155,14 +202,42 @@ $newPostcode = safePost($conn, "postcode");
 
 
 if (isset($_POST["updateDetails"])) {
+
+    if ($newFirstName == null || $newFirstName == "") {
+        $newFirstName = $firstName;
+    }
+
+    if ($newSecondName == null || $newSecondName == "") {
+        $newSecondName = $secondName;
+    }
+    if ($newEmail == null || $newEmail == "") {
+        $newEmail = $email;
+    }
+    if ($newAddress == null || $newAddress == "") {
+        $newAddress = $address;
+    }
+    if ($newCity == null || $newCity == "") {
+        $newCity = $city;
+    }
+    if ($newPostcode == null || $newPostcode == "") {
+        $newPostcode = $postcode;
+    }
     $userId = $_SESSION['userId'];
 
     $sql = "UPDATE `staff` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `staff`.`id` = '$userId' ";
     $result = $conn->query($sql);
+
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
     }
-    header("location:indexStaff.php");
+    //  header("location:indexStaff.php");
+
+
+    $updateSuccess = "Update complete";
+    echo "<script>
+     type='text/javascript'>alert('$updateSuccess');
+     window.location.href='https://devweb2017.cis.strath.ac.uk/~xwb15122/WadGymBootstrap/Wad3BootstrapVersion/MainPage/index.php';
+    </script> ";
 }
 
 if (isset($_POST["updatePassword"])) {
@@ -175,20 +250,26 @@ if (isset($_POST["updatePassword"])) {
     $newPassword1 = safePost($conn, "newPassword1");
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
-    $currentPassword = md5($currentPassword);
 
+    if ($currentPasswordStored != md5($newPassword1)) {
+        if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+            $newPassword1 = md5($newPassword1);
+            $userId = $_SESSION['userId'];
+            $sql = "UPDATE `staff` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
+            $conn->query($sql);
+            $updateSuccess = "Update complete";
+            echo "<script>
+     type='text/javascript'>alert('$updateSuccess');
+     window.location.href='https://devweb2017.cis.strath.ac.uk/~xwb15122/WadGymBootstrap/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php';
+    </script> ";
+        }
+    } elseif($currentPasswordStored != md5($currentPassword)){
 
-    if ($newPassword1 == $newPassword2 && $currentPassword == $currentPasswordStored) {
-        $newPassword1 = md5($newPassword1);
-        $userId = $_SESSION['userId'];
-        $sql = "UPDATE `staff` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-        $conn->query($sql);
-        header("location:index.php");
-    } else {
-        $passwordError = "Passwords don't match!";
-        echo "<script type='text/javascript'>alert('$passwordError');</script>";
+        $loginError = "Current password does not match our records";
+        echo "<script type='text/javascript'>alert('$loginError');</script>";
     }
 }
+
 
 ?>
 
@@ -349,23 +430,23 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Username:
                             </p>
-                            <input type="password" name="username" value="<?php echo $username ?>" class="form-control" disabled>
+                            <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
                             <br/>
                             <p>
                                 Current Password:
                             </p>
-                            <input type="password" onchange="validateInputForm()" name="currentPassword" value=""
+                            <input name="currentPassword" value=""
                                    placeholder="Current Password" class="form-control">
                             <br/>
                             <p>
                                 New Password:
                             </p>
-                            <input type="password" name="newPassword1" value="" placeholder="New Password" class="form-control">
+                            <input name="newPassword1" value="" placeholder="New Password" class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input type="password" onchange="validateInputForm()" name="newPassword2" value=""
+                            <input name="newPassword2" value=""
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>
@@ -375,7 +456,7 @@ if (isset($_POST["updatePassword"])) {
                     </form>
 
                     <div class="col-lg-6">
-                        <form method="post" action="updateStaff.php">
+                        <form method="post" name="updateDetails" action="updateStaff.php" onsubmit="validateUpdateDetails()">
                             <p>
                                 Level:
                             </p>
