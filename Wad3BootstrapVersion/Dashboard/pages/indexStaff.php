@@ -102,11 +102,6 @@ while ($row = $result->fetch_assoc()) {
     $password = $row["password"];
 }
 
-if($password == md5("default123")){
-    $passwordError = "Please change your Password!";
-    echo "<script type='text/javascript'>alert('$passwordError');</script>";
-}
-
 
 ?>
 

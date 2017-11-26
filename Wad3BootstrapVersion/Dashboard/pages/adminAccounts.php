@@ -763,8 +763,6 @@ if (isset($_POST["SelectStaff"])) {
                                                             <select name="selectLevel" class="form-control">
                                                                 <option>admin</option>
                                                                 <option>manager</option>
-                                                                <option>supervisor</option>
-                                                                <option>Employee</option>
                                                             </select>
                                                             <?php
                                                         }else{
