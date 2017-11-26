@@ -175,14 +175,14 @@ if (isset($_POST["updatePassword"])) {
     $newPassword1 = safePost($conn, "newPassword1");
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
+    $currentPasswordMD5 = md5($currentPassword);
 
-
-    if ($newPassword1 == $newPassword2 && $currentPassword == $currentPasswordStored) {
-        $newPassword1 = md5($newPassword1);
+    if ($newPassword1 == $newPassword2 && $currentPasswordMD5 == $currentPasswordStored) {
+        $password = md5($newPassword1);
         $userId = $_SESSION['userId'];
-        $sql = "UPDATE `staff` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-        $conn->query($sql);
-        header("location:index.php");
+        $sql = "UPDATE `staff` SET `password` = '$password' WHERE id = \"$userId\"";
+        $result = $conn->query($sql);
+        header("location:indexStaff.php");
     } else {
         $passwordError = "Passwords don't match!";
         echo "<script type='text/javascript'>alert('$passwordError');</script>";
@@ -370,8 +370,9 @@ if (isset($_POST["updatePassword"])) {
                             <br/>
                             <input type="submit" value="Update Password" name="updatePassword"
                                    class="btn btn-outline btn-primary"/>
+                        </form>
                     </div>
-                    </form>
+
 
                     <div class="col-lg-6">
                         <form method="post" action="updateStaff.php">
