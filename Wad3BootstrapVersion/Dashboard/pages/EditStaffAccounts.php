@@ -73,7 +73,7 @@
 
 
 <script>
-//not working//
+    //not working//
     function validateUpdateDetails() {
         var firstName = document.forms["updateCustDetails"]["custFName"];
         var secondName = document.forms["updateCustDetails"]["custSName"];
@@ -352,47 +352,6 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-
-$selectID       = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
-$selectFName    = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
-$selectSName    = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
-$selectUsername = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
-$selectEmail    = isset($_POST["email address"]) ? cleanInput($_POST["email address"]) : "";
-$selectAddress  = isset($_POST["address"]) ? cleanInput($_POST["address"]) : "";
-$selectCity     = isset($_POST["city"]) ? cleanInput($_POST["city"]) : "";
-$selectPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
-
-
-
-$selectID = safePost($conn, "SelectCust");
-$selectFName = safePost($conn, "first name");
-$selectSName = safePost($conn, "second name");
-$selectUsername = safePost($conn, "username");
-$selectEmail = safePost($conn, "email address");
-$selectAddress = safePost($conn, "address");
-$selectCity = safePost($conn, "city");
-$selectPostcode = safePost($conn, "postcode");
-
-if (isset($_POST["SelectCust"])) {
-    //get customer information
-    $selectID = $_POST["SelectCust"];
-    $sql = "SELECT * FROM `Gym Membership` WHERE `id` = $selectID";// change to a variable
-    $result = $conn->query($sql);
-    $rowNum = $result->num_rows;
-
-    while ($row = $result->fetch_assoc()) {
-        $selectFName = $row["first name"];
-        $selectSName = $row["second name"];
-        $selectUsername = $row["username"];
-        $selectEmail = $row["email address"];
-        $selectAddress = $row["address"];
-        $selectCity = $row["city"];
-        $selectPostcode = $row["postcode"];
-        $selectUsername = $row["username"];
-    }
-}
-
-
 if (isset($_POST["SelectStaff"])) {
     //get customer information
     $selectStaffID = $_POST["SelectStaff"];
@@ -428,7 +387,7 @@ if (isset($_POST["SelectStaff"])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="indexStaff.php"><?php echo $_SESSION['login'] ?></a>
+            <a class="navbar-brand" href="indexStaff.php"><?php echo $_SESSION['login']?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -447,8 +406,7 @@ if (isset($_POST["SelectStaff"])) {
                                     <span class="pull-right text-muted">40% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <span class="sr-only">40% Complete (success)</span>
                                     </div>
                                 </div>
@@ -464,8 +422,7 @@ if (isset($_POST["SelectStaff"])) {
                                     <span class="pull-right text-muted">20% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                         <span class="sr-only">20% Complete</span>
                                     </div>
                                 </div>
@@ -481,8 +438,7 @@ if (isset($_POST["SelectStaff"])) {
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -498,8 +454,7 @@ if (isset($_POST["SelectStaff"])) {
                                     <span class="pull-right text-muted">80% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -524,8 +479,7 @@ if (isset($_POST["SelectStaff"])) {
                 <ul class="dropdown-menu dropdown-user">
                     <li>
                         <form action="../../MainPage/index.php" method="post">
-                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout"
-                                                                       class="btn btn-outline btn-primary"/>
+                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout" class="btn btn-outline btn-primary"/>
                         </form>
                     </li>
                 </ul>
@@ -542,14 +496,23 @@ if (isset($_POST["SelectStaff"])) {
                         <a href="indexStaff.php"><i class="fa fa-dashboard fa-fw"></i> My Account</a>
                     </li>
                     <?php
-                    if ($level == "admin") {
+                    if($level == "admin" ){
                         ?>
+
                         <li>
-                            <a href="adminAccounts.php"><i class="fa fa-users fa-fw"></i> Staff/Customer Accounts</a>
+                            <a href="EditStaffAccounts.php"><i class="fa fa-users fa-fw"></i> Staff Accounts</a>
                         </li>
+
+
                         <?php
                     }
+
+
                     ?>
+
+                    <li>
+                        <a href="EditCustomerAccounts.php"><i class="fa fa-users fa-fw"></i> Customer Accounts</a>
+                    </li>
                     <li>
                         <a href="staffClasses.php"><i class="fa fa-dashboard fa-fw"></i> Classes</a>
                     </li>
@@ -570,200 +533,7 @@ if (isset($_POST["SelectStaff"])) {
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Customer Accounts
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover"
-                                   id="dataTables-customer">
-                                <thead>
-                                <tr>
-                                    <th>customer id</th>
-                                    <th>first name</th>
-                                    <th>second name</th>
-                                    <th>username</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                //get staff information
-                                $sql = "SELECT * FROM `Gym Membership`";
-                                $result = $conn->query($sql);
-                                $rowNum = $result->num_rows;
 
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<tr class=\"odd gradeX\">";
-                                    echo "<form method=\"post\" action=\"adminAccounts.php\">";
-                                    echo "<td>";
-                                    echo $row["id"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row["first name"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row["second name"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row["username"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo "<input type=\"submit\" value=\"Select\" name=\"Select\" class=\"btn btn-outline btn-primary\"/>";
-                                    ?>
-                                    <input type="hidden" value="<?php echo $row["id"]; ?>" name="SelectCust"/>
-                                    <?php
-                                    echo "</td>";
-                                    echo "</form>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <h3>Selected Customer Account</h3>
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <form method="post" action="adminAccounts.php" name = updateCustDetails onsubmit="validateUpdateDetails()">
-                                            <tr>
-                                                <td>
-                                                    ID:
-                                                </td>
-                                                <td>
-                                                    First Name:
-                                                </td>
-                                                <td>
-                                                    Second Name:
-                                                </td>
-                                                <td>
-                                                    Username:
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" value="<?php echo $selectID; ?>"
-                                                           placeholder="ID" disabled/>
-                                                    <input type="hidden" name="custID" value="<?php echo $selectID; ?>"
-                                                           placeholder="ID" required/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="custFName"
-                                                           value="<?php echo $selectFName; ?>"
-                                                           placeholder="First Name" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="custSName"
-                                                           value="<?php echo $selectSName; ?>"
-                                                           placeholder="Second Name" required/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="custUsername"
-                                                           value="<?php echo $selectUsername; ?>"
-                                                           placeholder="Username"
-                                                        <?php if (isset($_POST["SelectCust"])) {
-                                                            echo "disabled";
-                                                        } ?>/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>
-                                                    Address:
-                                                </td>
-                                                <td>
-                                                    City:
-                                                </td>
-                                                <td>
-                                                    PostCode:
-                                                </td>
-                                                <td>
-                                                    Email:
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="custAddress" required
-                                                           value="<?php echo $selectAddress; ?>" placeholder="Address"/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="custCity"
-                                                           value="<?php echo $selectCity; ?>"
-                                                           placeholder="City" required/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="custPostcode" required
-                                                           value="<?php echo $selectPostcode; ?>"
-                                                           placeholder="Postcode"/>
-                                                </td>
-                                                <td>
-                                                    <input type="email" name="custEmail"
-                                                           value="<?php echo $selectEmail; ?>"
-                                                           placeholder="Email"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="submit" value="Update" name="update"
-                                                           class="btn btn-outline btn-primary"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
-                                                            echo "disabled";
-                                                        } ?>/>
-                                                </td>
-                                                <td>
-                                                    <input type="submit" value="Delete" name="delete"
-                                                           class="btn btn-outline btn-danger"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
-                                                            echo "disabled";
-                                                        } ?>/>
-                                                </td>
-                                                <td>
-                                                    <input type="submit" value="Reset Password" name="reset"
-                                                           class="btn btn-outline btn-warning"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
-                                                            echo "disabled";
-                                                        } ?>/>
-                                                </td>
-                                                <td>
-                                                    <input type="submit" value="Create New Account" name="createUser"
-                                                           class="btn btn-outline btn-success"
-                                                        <?php if (isset($_POST["SelectCust"])) {
-                                                            echo "disabled";
-                                                        } ?>/>
-                                                </td>
-                                                <td>
-                                                    <input type="submit" value="Clear" name="clear"
-                                                           class="btn btn-outline btn-info"/>
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                        </form>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.table-responsive -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -810,12 +580,12 @@ if (isset($_POST["SelectStaff"])) {
                                         echo "</td>";
                                         echo "<td>";
                                         ?>
-                                        <form method="post" action="adminAccounts.php">
+                                        <form method="post" action="EditStaffAccounts.php">
                                             <input type="submit" value="Select" name="SelectedStaff"
                                                    class="btn btn-outline btn-primary"
                                                 <?php if ($userID==$row["id"]) {
-                                                echo "disabled";
-                                            } ?>/>
+                                                    echo "disabled";
+                                                } ?>/>
                                             <input type="hidden" value="<?php echo $row["id"]; ?>" name="SelectStaff"/>
                                         </form>
                                         <?php
@@ -841,7 +611,7 @@ if (isset($_POST["SelectStaff"])) {
                                             </thead>
 
                                             <tbody>
-                                            <form method="post" action="adminAccounts.php">
+                                            <form method="post" action="EditStaffAccounts.php">
                                                 <tr>
                                                     <td>
                                                         ID:
@@ -884,8 +654,8 @@ if (isset($_POST["SelectStaff"])) {
                                                         <?php if (!isset($_POST["SelectStaff"])) {
                                                             ?>
                                                             <select name="selectLevel" class="form-control">
-                                                                <option>admin</option>
-                                                                <option>manager</option>
+                                                                <option>Admin</option>
+                                                                <option>Employee</option>
                                                             </select>
                                                             <?php
                                                         } else {

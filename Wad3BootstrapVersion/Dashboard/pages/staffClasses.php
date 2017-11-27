@@ -260,14 +260,23 @@ if (isset($_POST["update"])) {
                         <a href="indexStaff.php"><i class="fa fa-dashboard fa-fw"></i> My Account</a>
                     </li>
                     <?php
-                    if($level == "admin"){
+                    if($level == "admin" ){
                         ?>
+
                         <li>
-                            <a href="adminAccounts.php"><i class="fa fa-users fa-fw"></i> Staff/Customer Accounts</a>
+                            <a href="EditStaffAccounts.php"><i class="fa fa-users fa-fw"></i> Staff Accounts</a>
                         </li>
+
+
                         <?php
                     }
+
+
                     ?>
+
+                    <li>
+                        <a href="EditCustomerAccounts.php"><i class="fa fa-users fa-fw"></i> Customer Accounts</a>
+                    </li>
                     <li>
                         <a href="staffClasses.php"><i class="fa fa-dashboard fa-fw"></i> Classes</a>
                     </li>

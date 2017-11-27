@@ -401,7 +401,7 @@ if (isset($_POST["updatePassword"])) {
                     if ($level == "admin") {
                         ?>
                         <li>
-                            <a href="adminAccounts.php"><i class="fa fa-users fa-fw"></i> Staff/Customer Accounts</a>
+                            <a href="EditCustomerAccounts.php"><i class="fa fa-users fa-fw"></i> Staff/Customer Accounts</a>
                         </li>
                         <?php
                     }
