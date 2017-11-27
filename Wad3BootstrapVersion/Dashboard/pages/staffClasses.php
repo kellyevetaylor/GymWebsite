@@ -428,7 +428,7 @@ if (isset($_POST["update"])) {
                                                            placeholder="Trainer" required/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="capacity" disabled
+                                                    <input type="text" name="capacity"
                                                            value="<?php echo $capacity; ?>" placeholder="Capacity"/>
                                                 </td>
                                                 <td>

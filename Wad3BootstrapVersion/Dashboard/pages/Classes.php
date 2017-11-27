@@ -237,7 +237,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                 <?php
 
                                 $userId = $_SESSION['userId'];
-                                $sql = "SELECT * FROM Classes,`userClasses` WHERE `userClasses`.UserID = '$userId'";
+                                $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' AND `Classes`.Date >= CURRENT_DATE ";
                                 $result = $conn->query($sql);
 
                                 if (!$result) {
@@ -306,7 +306,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
 
 
                                 $userId = $_SESSION['userId'];
-                                $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' ";
+                                $sql = "SELECT * FROM `Classes`,`userClasses` WHERE `userClasses`.UserID = '$userId' AND `Classes`.Date >= CURRENT_DATE ";
                                 $result = $conn->query($sql);
 
                                 if (!$result) {

@@ -708,7 +708,7 @@ if (isset($_POST["SelectStaff"])) {
                                                            placeholder="Postcode"/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="custEmail"
+                                                    <input type="email" name="custEmail"
                                                            value="<?php echo $selectEmail; ?>"
                                                            placeholder="Email"/>
                                                 </td>
@@ -930,7 +930,7 @@ if (isset($_POST["SelectStaff"])) {
                                                                placeholder="Postcode" required/>
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="staffEmail"
+                                                        <input type="email" name="staffEmail"
                                                                value="<?php echo $selectStaffEmail; ?>"
                                                                placeholder="Email" required/>
                                                     </td>
