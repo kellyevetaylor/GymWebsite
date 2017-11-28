@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,6 +78,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="46" selection-end-column="89" />
+              <folding>
+                <element signature="e#6#100#0#PHP" expanded="true" />
+                <marker date="1511626535000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="staffClasses.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,21 +148,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <marker date="1511701492000" expanded="true" signature="3728:3790" ph="SELECT * FRO... Gym Membership" />
-                <marker date="1511701492000" expanded="true" signature="4276:4393" ph="INSERT INTO `userClasses`... " />
-                <marker date="1511701492000" expanded="true" signature="4747:4756" ph="INSERT INTO `Gym Membership`... " />
-                <marker date="1511701492000" expanded="true" signature="5043:5136" ph="SELECT * FRO... Gym Membership" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Classes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/Classes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -203,24 +197,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateStaff.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="updateStaff.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="329" column="74" lean-forward="false" selection-start-line="329" selection-start-column="74" selection-end-line="329" selection-end-column="74" />
+            <state relative-caret-position="304">
+              <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
               <folding>
                 <element signature="e#110#204#0#PHP" expanded="true" />
-                <marker date="1511871167000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
-                <marker date="1511871167000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
-                <marker date="1511871167000" expanded="true" signature="7255:7453" ph="..." />
-                <marker date="1511871167000" expanded="true" signature="8233:8303" ph="UPDATE `staf... " />
-                <marker date="1511871167000" expanded="true" signature="8411:8621" ph="..." />
+                <marker date="1511871953000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
+                <marker date="1511871953000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
+                <marker date="1511871953000" expanded="true" signature="7255:7366" ph="..." />
+                <marker date="1511871953000" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
+                <marker date="1511871953000" expanded="true" signature="8325:8436" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditCustomerAccounts.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditCustomerAccounts.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -347,8 +341,8 @@
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php" />
-        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php" />
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
       </list>
     </option>
   </component>
@@ -565,7 +559,7 @@
       <workItem from="1511262970759" duration="9018000" />
       <workItem from="1511274839411" duration="38315000" />
       <workItem from="1511804745224" duration="339000" />
-      <workItem from="1511870655123" duration="628000" />
+      <workItem from="1511870655123" duration="1607000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -791,11 +785,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511707679221</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="changed the classes icon">
+      <created>1511871428630</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1511871428630</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130878000" />
+    <option name="totallyTimeSpent" value="131857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -856,7 +857,8 @@
     <MESSAGE value="staff update password now works" />
     <MESSAGE value="added code to mad5 current password, and make all them type password" />
     <MESSAGE value="removed change password popup&#10;also removed supervisor and employee" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed change password popup&#10;also removed supervisor and employee" />
+    <MESSAGE value="changed the classes icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the classes icon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1079,13 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1283,21 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="329" column="74" lean-forward="false" selection-start-line="329" selection-start-column="74" selection-end-line="329" selection-end-column="74" />
-          <folding>
-            <element signature="e#110#204#0#PHP" expanded="true" />
-            <marker date="1511871167000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
-            <marker date="1511871167000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
-            <marker date="1511871167000" expanded="true" signature="7255:7453" ph="..." />
-            <marker date="1511871167000" expanded="true" signature="8233:8303" ph="UPDATE `staf... " />
-            <marker date="1511871167000" expanded="true" signature="8411:8621" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1320,6 +1300,32 @@
             <marker date="1511871410000" expanded="true" signature="13195:13239" ph="SELECT * FRO... Gym Membership" />
             <marker date="1511871410000" expanded="true" signature="13862:13897" ph="SELECT * FRO... staff" />
             <marker date="1511871410000" expanded="true" signature="18617:18647" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="46" selection-end-column="89" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511626535000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
+          <folding>
+            <element signature="e#110#204#0#PHP" expanded="true" />
+            <marker date="1511871953000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
+            <marker date="1511871953000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
+            <marker date="1511871953000" expanded="true" signature="7255:7366" ph="..." />
+            <marker date="1511871953000" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
+            <marker date="1511871953000" expanded="true" signature="8325:8436" ph="..." />
           </folding>
         </state>
       </provider>
