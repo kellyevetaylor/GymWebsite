@@ -148,42 +148,42 @@ if (isset($_POST["update"])) {
     $errorMessage="";
     $id = $selectId;
     if (trim($selectClass) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Class\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Class\\n";
 
 
     }
     if (trim($selectDate) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Date\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Date\\n";
 
 
 
     }
     if (trim($selectTime) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Time\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Time\\n";
 
 
 
     }
     if (trim($selectLength) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Length\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Length\\n";
 
 
 
     }
     if (trim($selectTrainer) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Trainer\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Trainer\\n";
 
 
 
     }
        if (trim($selectCapacity) == "") {
-           $errorMessage=$errorMessage." * Incorrect Input for Capacity\\n";
+           $errorMessage=$errorMessage." * Invalid Input for Capacity\\n";
 
 
 
     }
     if (trim($selectClassCap) == "") {
-        $errorMessage=$errorMessage." * Incorrect Input for Class Capacity\\n";
+        $errorMessage=$errorMessage." * Invalid Input for Class Capacity\\n";
 
 
 

@@ -71,7 +71,6 @@
 </head>
 
 
-
 <script>
     //not working//
     function validateUpdateDetails() {
@@ -136,6 +135,8 @@ $email = "";
 $address = "";
 $city = "";
 $postcode = "";
+$isSelected = false;
+
 
 
 if (isset($_POST["StaffUpdate"])) {
@@ -222,10 +223,10 @@ if (isset($_POST["createUser"])) {
     //new Username
     $lastID = $lastID + 1;
 
-    if ($selectFName == null || $selectFName == ""||$selectSName == null || $selectSName == ""||$selectEmail == null || $selectEmail == "" ||$selectAddress == null || $selectAddress == "" || $selectCity == null || $selectCity == ""||$selectPostcode == null || $selectPostcode == "" ) {
+    if ($selectFName == null || $selectFName == "" || $selectSName == null || $selectSName == "" || $selectEmail == null || $selectEmail == "" || $selectAddress == null || $selectAddress == "" || $selectCity == null || $selectCity == "" || $selectPostcode == null || $selectPostcode == "") {
 
 
-    }else {
+    } else {
 
 
         //creating the account
@@ -307,6 +308,16 @@ if (isset($_POST["StaffDelete"])) {
 
 if (isset($_POST["update"])) {
 
+
+    $selectID = isset($_POST["custID"]) ? cleanInput($_POST["custID"]) : "";
+    $selectFName = isset($_POST["custFName"]) ? cleanInput($_POST["custFName"]) : "";
+    $selectSName = isset($_POST["custSName"]) ? cleanInput($_POST["custSName"]) : "";
+    $selectEmail = isset($_POST["custEmail"]) ? cleanInput($_POST["custEmail"]) : "";
+    $selectAddress = isset($_POST["custAddress"]) ? cleanInput($_POST["custAddress"]) : "";
+    $selectCity = isset($_POST["custCity"]) ? cleanInput($_POST["custCity"]) : "";
+    $selectPostcode = isset($_POST["custPostcode"]) ? cleanInput($_POST["custPostcode"]) : "";
+
+
     $selectID = safePost($conn, "custID");
     $selectFName = safePost($conn, "custFName");
     $selectSName = safePost($conn, "custSName");
@@ -315,15 +326,66 @@ if (isset($_POST["update"])) {
     $selectCity = safePost($conn, "custCity");
     $selectPostcode = safePost($conn, "custPostcode");
 
-    //set staff information
-    $sql = "UPDATE `Gym Membership` SET `first name`= '$selectFName',`second name`= '$selectSName',`email address`= '$selectEmail',`address`= '$selectAddress',`city`= '$selectCity',`postcode`='$selectPostcode' WHERE `id` = '$selectID' ";
-    $result = $conn->query($sql);
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-    $error = "Customer Details Updated.";
-    echo "<script type='text/javascript'>alert('$error');</script>";
+    $errorMessage = "";
+    $selectUsername= $_POST["custUsername"];
+    if (trim($selectFName) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for First Name\\n";
 
+
+    }
+    if (trim($selectSName) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for Surname\\n";
+
+
+    }
+    if (trim($selectEmail) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for Email\\n";
+
+
+    }
+    if (trim($selectAddress) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for Address\\n";
+
+
+    }
+    if (trim($selectCity) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for City\\n";
+
+
+    }
+    if (trim($selectPostcode) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for Postcode\\n";
+    }
+
+
+
+    if ($errorMessage == "") {
+
+        //set staff information
+        $sql = "UPDATE `Gym Membership` SET `first name`= '$selectFName',`second name`= '$selectSName',`email address`= '$selectEmail',`address`= '$selectAddress',`city`= '$selectCity',`postcode`='$selectPostcode' WHERE `id` = '$selectID' ";
+        $result = $conn->query($sql);
+        if (!$result) {
+            die("Query failed" . $conn->error);//get rid of error line
+        }
+        $error = "Customer Details Updated.";
+        echo "<script type='text/javascript'>alert('$error');</script>";
+
+    } else {
+
+        $selectID = $_POST["custID"];
+        $selectFName = $_POST["FNameStored"];
+        $selectSName = $_POST["SNameStored"];
+        $selectCity = $_POST["CityStored"];
+        $selectAddress = $_POST["AddressStored"];
+        $selectPostcode = $_POST["PostcodeStored"];
+        $selectEmail = $_POST["EmailStored"];
+
+
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+
+    }
+
+    $isSelected = true;
 }
 
 $selectStaffID = "";
@@ -352,16 +414,14 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-
-$selectID       = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
-$selectFName    = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
-$selectSName    = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
+$selectID = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
+$selectFName = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
+$selectSName = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
 $selectUsername = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
-$selectEmail    = isset($_POST["email address"]) ? cleanInput($_POST["email address"]) : "";
-$selectAddress  = isset($_POST["address"]) ? cleanInput($_POST["address"]) : "";
-$selectCity     = isset($_POST["city"]) ? cleanInput($_POST["city"]) : "";
+$selectEmail = isset($_POST["email address"]) ? cleanInput($_POST["email address"]) : "";
+$selectAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : "";
+$selectCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : "";
 $selectPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
-
 
 
 $selectID = safePost($conn, "SelectCust");
@@ -558,7 +618,8 @@ if (isset($_POST["SelectStaff"])) {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <form method="post" action="EditCustomerAccounts.php" name = updateCustDetails onsubmit="validateUpdateDetails()">
+                                        <form method="post" action="EditCustomerAccounts.php" name=updateCustDetails
+                                              onsubmit="validateUpdateDetails()">
                                             <tr>
                                                 <td>
                                                     ID:
@@ -584,17 +645,21 @@ if (isset($_POST["SelectStaff"])) {
                                                     <input type="text" name="custFName"
                                                            value="<?php echo $selectFName; ?>"
                                                            placeholder="First Name" required/>
+                                                    <input type="hidden" name="FNameStored" value="<?php echo $selectFName; ?>"
+                                                           placeholder="ID" required/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custSName"
                                                            value="<?php echo $selectSName; ?>"
                                                            placeholder="Second Name" required/>
+                                                    <input type="hidden" name="SNameStored" value="<?php echo $selectSName; ?>"
+                                                           placeholder="ID" required/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custUsername"
                                                            value="<?php echo $selectUsername; ?>"
                                                            placeholder="Username"
-                                                        <?php if (isset($_POST["SelectCust"])) {
+                                                        <?php if (isset($_POST["SelectCust"]) && $isSelected == true) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
@@ -618,49 +683,56 @@ if (isset($_POST["SelectStaff"])) {
                                                 <td>
                                                     <input type="text" name="custAddress" required
                                                            value="<?php echo $selectAddress; ?>" placeholder="Address"/>
+                                                    <input type="hidden" name="AddressStored" value="<?php echo $selectAddress; ?>"
+                                                           placeholder="ID" required/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custCity"
                                                            value="<?php echo $selectCity; ?>"
                                                            placeholder="City" required/>
+                                                    <input type="hidden" name="CityStored" value="<?php echo $selectCity; ?>"
+                                                           placeholder="ID" required/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custPostcode" required
-                                                           value="<?php echo $selectPostcode; ?>"
-                                                           placeholder="Postcode"/>
+                                                           value="<?php echo $selectPostcode; ?>" placeholder="Postcode"/>
+                                                    <input type="hidden" name="PostcodeStored" value="<?php echo $selectPostcode; ?>"
+                                                            required/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="custEmail"
                                                            value="<?php echo $selectEmail; ?>"
                                                            placeholder="Email"/>
+                                                    <input type="hidden" name="EmailStored" value="<?php echo $selectEmail; ?>"
+                                                           placeholder="ID" required/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="submit" value="Update" name="update"
                                                            class="btn btn-outline btn-primary"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
+                                                        <?php if (!isset($_POST["SelectCust"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Delete" name="delete"
                                                            class="btn btn-outline btn-danger"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
+                                                        <?php if (!isset($_POST["SelectCust"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Reset Password" name="reset"
                                                            class="btn btn-outline btn-warning"
-                                                        <?php if (!isset($_POST["SelectCust"])) {
+                                                        <?php if (!isset($_POST["SelectCust"])&& $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Create New Account" name="createUser"
                                                            class="btn btn-outline btn-success"
-                                                        <?php if (isset($_POST["SelectCust"])) {
+                                                        <?php if (isset($_POST["SelectCust"]) && $isSelected == true) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
@@ -686,40 +758,40 @@ if (isset($_POST["SelectStaff"])) {
                 <!-- /.row -->
             </div>
 
-        <!-- /#page-wrapper -->
-    </div>
-    <!-- /#wrapper -->
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+        <!-- DataTables JavaScript -->
+        <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+        <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-        $(document).ready(function () {
-            $('#dataTables-customer').DataTable({
-                responsive: true
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-customer').DataTable({
+                    responsive: true
+                });
             });
-        });
-        $(document).ready(function () {
-            $('#dataTables-staff').DataTable({
-                responsive: true
+            $(document).ready(function () {
+                $('#dataTables-staff').DataTable({
+                    responsive: true
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
