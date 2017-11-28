@@ -145,6 +145,7 @@ $selectStaffAddress = "";
 $selectStaffCity = "";
 $selectStaffPostcode = "";
 
+
 $isSelected=false;
 
 if (isset($_POST["StaffUpdate"])) {
@@ -157,6 +158,7 @@ if (isset($_POST["StaffUpdate"])) {
     $selectStaffAddress = isset($_POST["staffAddress"]) ? cleanInput($_POST["staffAddress"]) : "";
     $selectStaffCity = isset($_POST["staffCity"]) ? cleanInput($_POST["staffCity"]) : "";
     $selectStaffPostcode = isset($_POST["staffPostcode"]) ? cleanInput($_POST["staffPostcode"]) : "";
+    $selectStaffLevel = isset($_POST["staffLevel"]) ? cleanInput($_POST["staffLevel"]) : "";
 
 
     $selectStaffID = safePost($conn, "staffID");
