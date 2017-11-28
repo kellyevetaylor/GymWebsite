@@ -328,12 +328,12 @@ if (isset($_POST["update"])) {
     $selectPostcode = isset($_POST["custPostcode"]) ? cleanInput($_POST["custPostcode"]) : "";
 
 
-    $selectID = safePost($conn, "custID");
-    $selectFName = safePost($conn, "custFName");
-    $selectSName = safePost($conn, "custSName");
-    $selectEmail = safePost($conn, "custEmail");
-    $selectAddress = safePost($conn, "custAddress");
-    $selectCity = safePost($conn, "custCity");
+    $selectID       = safePost($conn, "custID");
+    $selectFName    = safePost($conn, "custFName");
+    $selectSName    = safePost($conn, "custSName");
+    $selectEmail    = safePost($conn, "custEmail");
+    $selectAddress  = safePost($conn, "custAddress");
+    $selectCity     = safePost($conn, "custCity");
     $selectPostcode = safePost($conn, "custPostcode");
 
     $errorMessage = "";
@@ -380,7 +380,20 @@ if (isset($_POST["update"])) {
         $error = "Customer Details Updated.";
         echo "<script type='text/javascript'>alert('$error');</script>";
 
+
+        $selectID = ""; //Check
+        $selectFName =  "";
+        $selectSName =  "";
+        $selectUsername = "";
+        $selectEmail = "";
+        $selectAddress ="";
+        $selectCity = "";
+        $selectPostcode ="";
+
+
+
     } else {
+
 
         $selectID = $_POST["custID"];
         $selectFName = $_POST["FNameStored"];

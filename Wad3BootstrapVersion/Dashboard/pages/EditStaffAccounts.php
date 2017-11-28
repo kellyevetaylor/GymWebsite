@@ -209,6 +209,18 @@ if (isset($_POST["StaffUpdate"])) {
         if (!$result) {
             die("Query failed" . $conn->error);//get rid of error line
         }
+
+        $selectStaffID = "";
+        $selectStaffFName = "";
+        $selectStaffSName = "";
+        $selectStaffUsername = "";
+        $selectStaffEmail = "";
+        $selectStaffAddress = "";
+        $selectStaffCity = "";
+        $selectStaffPostcode = "";
+
+
+
         $error = "Staff Details Updated.";
         echo "<script type='text/javascript'>alert('$error');</script>";
 
@@ -225,12 +237,13 @@ if (isset($_POST["StaffUpdate"])) {
         $selectStaffLevel = $_POST["staffLevelStored"];
 
 
-        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+    echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 
-    }
+}
 
     $isSelected = true;
 }
+
 
 
 if (isset($_POST["create"])) {
