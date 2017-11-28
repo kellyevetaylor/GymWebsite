@@ -105,12 +105,12 @@
             }
             if (inUsername == "" || inPassword == "") {
                 alert(message);
-                return false;
-            }
+        return false;
         }
-    </script>
+        }
+        </script>
 
-    <style>
+          <style>
         #errorMessFont {
 
             color: red;
@@ -154,10 +154,9 @@
                 <div class="col-lg-8 mx-auto">
                     <h1 class="brand-heading">WAD GYM</h1>
                     <p class="intro-text">
-                        WAD GYM offers really next generation equipment
+                        WAD GYM offers top quality, next generation equipment for fitness enthusiasts as well beginners.
                         <br>
-                        We offer everything you could think of when its comes to fitness.
-                        So join today with no Joining Fee.
+                        Everything you could need is here so join today with no joining fee!
                     </p>
                     <a href="#about" class="btn btn-circle js-scroll-trigger">
                         <i class="fa fa-angle-double-down animated"></i>
@@ -175,13 +174,11 @@
             <div class="col-lg-8 mx-auto">
                 <h2>About WAD GYM</h2>
                 <p>
-                    We have over 500 gyms across UK, each gym contains over 30 personal trainers
+                    We have over 200 gyms across UK with each gym containing roughly 15 personal trainers who are well educated in fitness and are kept up to date with the latest fitness trends and information to ensure quality programs designed specific to you.
                     <br>
-                    who are kept up to date with the latest equipment and health knowledge
+                    Our gyms are also kept up to date with the latest technology and receive regular inspections to ensure consistent high quality for customers.
                     <br>
-                    our gym is also kept up to date and have regular inspections
-                    <br>
-                    to make sure each gym meets our high standard
+                    So join today for the opportunity to make a new you!
                 <p>
             </div>
         </div>
