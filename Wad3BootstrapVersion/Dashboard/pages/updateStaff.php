@@ -327,7 +327,7 @@ if (isset($_POST["updatePassword"])) {
                         <a href="EditCustomerAccounts.php"><i class="fa fa-users fa-fw"></i> Customer Accounts</a>
                     </li>
                     <li>
-                        <a href="staffClasses.php"><i class="fa fa-dashboard fa-fw"></i> Classes</a>
+                        <a href="staffClasses.php"><i class="fa fa-tasks   fa-fw"></i> Classes</a>
                     </li>
                 </ul>
             </div>
