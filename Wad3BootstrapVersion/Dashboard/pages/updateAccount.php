@@ -61,6 +61,7 @@
     <script>
 
         function validateUpdateDetails() {
+
             var firstName = document.forms["updateDetails"]["firstName"];
             var secondName = document.forms["updateDetails"]["secondName"];
             var email = document.forms["updateDetails"]["email"];
@@ -69,30 +70,33 @@
             var postcode = document.forms["updateDetails"]["postcode"];
 
 
+
             var errMessage = "";
 
-            if (firstName.value == "" || firstName.value == null) {
+
+
+            if (firstName.value == "" || firstName.value == null ||firstName.value.trim().length==0 ) {
                 errMessage += " * Please enter your first name\n";
 
             }
 
-            if (secondName.value == null || secondName.value == "") {
+            if (secondName.value == null || secondName.value == ""||secondName.value.trim().length==0) {
                 errMessage += " * Please enter your surname\n";
 
             }
-            if (email.value == "" || email.value == null) {
+            if (email.value == "" || email.value == null||email.value.trim().length==0) {
                 errMessage += " * Please enter your email\n";
 
             }
-            if (address.value == "" || address.value == null) {
+            if (address.value == "" || address.value == null||address.value.trim().length==0) {
                 errMessage += " * Please enter your address\n";
 
             }
-            if (city.value == "" || city.value == null) {
+            if (city.value == "" || city.value == null||city.value.trim().length==0) {
                 errMessage += " * Please enter a city\n";
 
             }
-            if (postcode.value == "" || postcode.value == null) {
+            if (postcode.value == "" || postcode.value == null||postcode.value.trim().length==0) {
                 errMessage += " * Please enter your postcode\n";
 
             }
@@ -112,19 +116,24 @@
 
             //still need to check against help password
 
-            if (currentPassword.value == null || currentPassword.value == "") {
+            if (currentPassword.value == null || currentPassword.value == ""||currentPassword.value.trim().length==0) {
                 message += " * Please enter your old password\n";
             }
 
+            if(newPassword1.value.trim().length==0||newPassword2.value.trim().length==0) {
 
-            if (newPassword1.value != newPassword2.value) {
-                message += " * New passwords don't match\n";
-            } else if (newPassword1.value == "" || newPassword2.value == "") {
-                message += " * New password must be stronger\n";
-            }
+                    message =+ " * Please enter value for new password";
+            }else{
 
-            if (currentPassword.value == newPassword1.value) {
-                message += "* New password must be different from original."
+                if (newPassword1.value != newPassword2.value) {
+                    message += " * New passwords don't match\n";
+                } else if (newPassword1.value == "" || newPassword2.value == "") {
+                    message += " * New password must be stronger\n";
+                }
+
+                if (currentPassword.value == newPassword1.value) {
+                    message += "* New password must be different from original."
+                }
             }
 
 
@@ -210,23 +219,23 @@ $newPostcode = safePost($conn, "postcode");
 
 if (isset($_POST["updateDetails"])) {
 
-    if ($newFirstName == null || $newFirstName == "") {
+    if ($newFirstName == null || $newFirstName == ""|| trim($newFirstName)=="") {
         $newFirstName = $firstName;
     }
 
-    if ($newSecondName == null || $newSecondName == "") {
+    if ($newSecondName == null || $newSecondName == ""||trim($newSecondName)=="") {
         $newSecondName = $secondName;
     }
-    if ($newEmail == null || $newEmail == "") {
+    if ($newEmail == null || $newEmail == ""||trim($newEmail)=="") {
         $newEmail = $email;
     }
-    if ($newAddress == null || $newAddress == "") {
+    if ($newAddress == null || $newAddress == ""||trim($newAddress)=="") {
         $newAddress = $address;
     }
-    if ($newCity == null || $newCity == "") {
+    if ($newCity == null || $newCity == ""||trim($newCity)=="") {
         $newCity = $city;
     }
-    if ($newPostcode == null || $newPostcode == "") {
+    if ($newPostcode == null || $newPostcode == ""||trim($newPostcode)=="") {
         $newPostcode = $postcode;
     }
 
@@ -279,6 +288,12 @@ if (isset($_POST["updatePassword"])) {
     </script> ";
 
         }
+        else{
+
+            $loginError = "Current password does not match our records";
+            echo "<script type='text/javascript'>alert('$loginError');</script>";
+        }
+
     } elseif
     ($currentPasswordStored != md5($currentPassword)){
         $loginError = "Current password does not match our records";

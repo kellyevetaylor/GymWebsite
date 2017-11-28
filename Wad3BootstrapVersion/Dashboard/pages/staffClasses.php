@@ -10,7 +10,7 @@
 <head>
     <?php
     session_start();
-    if(empty($_SESSION['userId']) || empty($_SESSION['isStaff'])){
+    if (empty($_SESSION['userId']) || empty($_SESSION['isStaff'])) {
         session_destroy();
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
@@ -24,6 +24,7 @@
         return $input;
 
     }
+
     function safePost($conn, $name)
     {
         if (isset($_POST[$name])) {
@@ -32,6 +33,7 @@
             return "";
         }
     }
+
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -88,7 +90,6 @@ while ($row = $result->fetch_assoc()) {
 }
 
 
-
 $id = "";
 $class = "";
 $date = "";
@@ -97,9 +98,12 @@ $length = "";
 $trainer = "";
 $capacity = "";
 $classCap = "";
+$isSelected = false;
+
 
 if (isset($_POST["SelectClass"])) {
     $id = safePost($conn, "SelectClass");
+
 
     //get all classes information
     $sql1 = "SELECT * FROM `Classes` WHERE `ClassID` = $id";
@@ -113,10 +117,22 @@ if (isset($_POST["SelectClass"])) {
         $trainer = $row["Trainer"];
         $capacity = $row["Capacity"];
         $classCap = $row["classCapacity"];
+
     }
 }
 
 if (isset($_POST["update"])) {
+
+
+    $selectId = isset($_POST["classid"]) ? cleanInput($_POST["classid"]) : "";
+    $selectClass = isset($_POST["class"]) ? cleanInput($_POST["class"]) : "";
+    $selectDate = isset($_POST["date"]) ? cleanInput($_POST["date"]) : "";
+    $selectTime = isset($_POST["time"]) ? cleanInput($_POST["time"]) : "";
+    $selectLength = isset($_POST["length"]) ? cleanInput($_POST["length"]) : "";
+    $selectTrainer = isset($_POST["trainer"]) ? cleanInput($_POST["trainer"]) : "";
+    $selectCapacity = isset($_POST["capacity"]) ? cleanInput($_POST["capacity"]) : "";
+    $selectClassCap = isset($_POST["classcap"]) ? cleanInput($_POST["classcap"]) : "";
+
     $selectId = safePost($conn, "classid");
     $selectClass = safePost($conn, "class");
     $selectDate = safePost($conn, "date");
@@ -124,19 +140,92 @@ if (isset($_POST["update"])) {
     $selectLength = safePost($conn, "length");
     $selectTrainer = safePost($conn, "trainer");
     $selectCapacity = safePost($conn, "capacity");
-    $selectCapacity=(int)$selectCapacity;
+    $selectCapacity = (int)$selectCapacity;
     $selectClassCap = safePost($conn, "classcap");
-    $selectClassCap=(int)$selectClassCap;
+    $selectClassCap = (int)$selectClassCap;
 
-    //update the class information
-    $sql = "UPDATE `Classes` SET `Class`= '$selectClass',`Date`= '$selectDate',`Time`= '$selectTime',`Length`= '$selectLength',`Trainer`='$selectTrainer',`Capacity`='$selectCapacity' ,`classCapacity`='$selectClassCap'WHERE `ClassID` = '$selectId' ";
 
-    $result = $conn->query($sql);
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
+    $errorMessage="";
+    $id = $selectId;
+    if (trim($selectClass) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Class\\n";
+
+
     }
-    $error = "Class Updated.";
-    echo "<script type='text/javascript'>alert('$error');</script>";
+    if (trim($selectDate) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Date\\n";
+
+
+
+    }
+    if (trim($selectTime) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Time\\n";
+
+
+
+    }
+    if (trim($selectLength) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Length\\n";
+
+
+
+    }
+    if (trim($selectTrainer) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Trainer\\n";
+
+
+
+    }
+       if (trim($selectCapacity) == "") {
+           $errorMessage=$errorMessage." * Incorrect Input for Capacity\\n";
+
+
+
+    }
+    if (trim($selectClassCap) == "") {
+        $errorMessage=$errorMessage." * Incorrect Input for Class Capacity\\n";
+
+
+
+    }
+
+
+
+
+    if ($errorMessage == "") {
+        //update the class information
+        $sql = "UPDATE `Classes` SET `Class`= '$selectClass',`Date`= '$selectDate',`Time`= '$selectTime',`Length`= '$selectLength',`Trainer`='$selectTrainer',`Capacity`='$selectCapacity' ,`classCapacity`='$selectClassCap'WHERE `ClassID` = '$selectId' ";
+
+        $result = $conn->query($sql);
+        if (!$result) {
+            die("Query failed" . $conn->error);//get rid of error line
+        }
+        $id = "";
+        $error = "Class Updated.";
+        echo "<script type='text/javascript'>alert('$error');</script>";
+    }
+    else{
+
+        $class = $_POST["classStored"];
+        $date = $_POST["dateStored"];
+        $classCap = $_POST["classcapStored"];
+        $capacity = $_POST["capacityStored"];
+        $length = $_POST["lengthStored"];
+        $time = $_POST["timeStored"];
+        $trainer = $_POST["trainerStored"];
+
+
+
+
+
+
+
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+
+    }
+
+    $isSelected = true;
+
 }
 ?>
 
@@ -151,7 +240,7 @@ if (isset($_POST["update"])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="indexStaff.php"><?php echo $_SESSION['login']?></a>
+            <a class="navbar-brand" href="indexStaff.php"><?php echo $_SESSION['login'] ?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -164,7 +253,8 @@ if (isset($_POST["update"])) {
                 <ul class="dropdown-menu dropdown-user">
                     <li>
                         <form action="../../MainPage/index.php" method="post">
-                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout" class="btn btn-outline btn-primary"/>
+                            <i class="fa fa-sign-out fa-fw"></i><input type="submit" name="Logout" value="Logout"
+                                                                       class="btn btn-outline btn-primary"/>
                         </form>
                     </li>
                 </ul>
@@ -181,7 +271,7 @@ if (isset($_POST["update"])) {
                         <a href="indexStaff.php"><i class="fa fa-dashboard fa-fw"></i> My Account</a>
                     </li>
                     <?php
-                    if($level == "admin" ){
+                    if ($level == "admin") {
                         ?>
 
                         <li>
@@ -323,14 +413,20 @@ if (isset($_POST["update"])) {
                                                 <td>
                                                     <input type="text" name="class" value="<?php echo $class; ?>"
                                                            placeholder="Class" required/>
+                                                    <input type="hidden" name="classStored"
+                                                           value="<?php echo $class; ?>"/>
                                                 </td>
                                                 <td>
-                                                    <input type=text  name="date" value="<?php echo $date; ?>"
-                                                           placeholder="YYYY/MM/DD" />
+                                                    <input type=text name="date" value="<?php echo $date; ?>"
+                                                           placeholder="YYYY/MM/DD"/>
+                                                    <input type="hidden" name="dateStored"
+                                                           value="<?php echo $date; ?>"/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="time" required
                                                            value="<?php echo $time; ?>" placeholder="Time"/>
+                                                    <input type="hidden" name="timeStored"
+                                                           value="<?php echo $time; ?>"/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -352,25 +448,34 @@ if (isset($_POST["update"])) {
                                                 <td>
                                                     <input type="text" name="length" required
                                                            value="<?php echo $length; ?>" placeholder="Length"/>
+                                                    <input type="hidden" name="lengthStored"
+                                                           value="<?php echo $length; ?>"/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="trainer" value="<?php echo $trainer; ?>"
                                                            placeholder="Trainer" required/>
+                                                    <input type="hidden" name="trainerStored"
+                                                           value="<?php echo $trainer; ?>"/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name="capacity"
                                                            value="<?php echo $capacity; ?>" placeholder="Capacity"/>
+                                                    <input type="hidden" name="capacityStored"
+                                                           value="<?php echo $capacity; ?>"/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="classcap" required value="<?php echo $classCap; ?>"
+                                                    <input type="text" name="classcap" required
+                                                           value="<?php echo $classCap; ?>"
                                                            placeholder="Class Capacity"/>
+                                                    <input type="hidden" name="classcapStored"
+                                                           value="<?php echo $classCap; ?>"/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="submit" value="Update" name="update"
                                                            class="btn btn-outline btn-primary"
-                                                        <?php if (!isset($_POST["SelectClass"])) {
+                                                        <?php if (!isset($_POST["SelectClass"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
