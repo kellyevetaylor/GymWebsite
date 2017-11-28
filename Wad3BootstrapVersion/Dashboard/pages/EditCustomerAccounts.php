@@ -137,6 +137,16 @@ $city = "";
 $postcode = "";
 $isSelected = false;
 
+$selectID = ""; //Check
+$selectFName =  "";
+$selectSName =  "";
+$selectUsername = "";
+$selectEmail = "";
+$selectAddress ="";
+$selectCity = "";
+$selectPostcode ="";
+
+
 
 
 if (isset($_POST["StaffUpdate"])) {
@@ -413,27 +423,8 @@ while ($row = $result->fetch_assoc()) {
 
 }
 
-/*
-$selectID = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
-$selectFName = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
-$selectSName = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
-$selectUsername = isset($_POST["username"]) ? cleanInput($_POST["username"]) : "";
-$selectEmail = isset($_POST["email address"]) ? cleanInput($_POST["email address"]) : "";
-$selectAddress = isset($_POST["address"]) ? cleanInput($_POST["address"]) : "";
-$selectCity = isset($_POST["city"]) ? cleanInput($_POST["city"]) : "";
-$selectPostcode = isset($_POST["postcode"]) ? cleanInput($_POST["postcode"]) : "";
 
 
-$selectID = safePost($conn, "SelectCust");
-$selectFName = safePost($conn, "first name");
-$selectSName = safePost($conn, "second name");
-$selectUsername = safePost($conn, "username");
-$selectEmail = safePost($conn, "email address");
-$selectAddress = safePost($conn, "address");
-$selectCity = safePost($conn, "city");
-$selectPostcode = safePost($conn, "postcode");
-
-*/
 
 if (isset($_POST["SelectCust"])) {
     //get customer information
