@@ -211,7 +211,7 @@ $newPostcode = safePost($conn, "postcode");
 
 if (isset($_POST["updateDetails"])) {
 
-    if ($newFirstName == null || $newFirstName == "") {
+    if ($newFirstName == null || $newFirstName == ""|| trim($newFirstName)=="") {
         $newFirstName = $firstName;
     }
 

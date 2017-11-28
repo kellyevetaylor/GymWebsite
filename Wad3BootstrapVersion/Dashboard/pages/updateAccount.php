@@ -268,7 +268,7 @@ if (isset($_POST["updatePassword"])) {
             $updateSuccess = "Update complete";
             echo "<script>
      type='text/javascript'>alert('$updateSuccess');
-     window.location.href='https://devweb2017.cis.strath.ac.uk/~xwb15122/WadGymBootstrap/Wad3BootstrapVersion/MainPage/index.php';
+     window.location.href='index.php';
     </script> ";
 
         } else {
