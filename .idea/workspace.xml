@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,225 +20,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="39" selection-end-column="26" />
+              <folding>
+                <element signature="e#6#100#0#PHP" expanded="true" />
+                <marker date="1511884313722" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="updateAccount.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4080">
-              <caret line="277" column="73" lean-forward="false" selection-start-line="277" selection-start-column="73" selection-end-line="277" selection-end-column="73" />
+            <state relative-caret-position="113">
+              <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
               <folding>
-                <element signature="e#110#204#0#PHP" expanded="true" />
-                <marker date="1511870821000" expanded="true" signature="9763:10548" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9763:11503" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9763:15438" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9763:16017" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9796:10502" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9872:9979" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10036:10443" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10061:10421" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10140:10395" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10255:10363" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10648:11454" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10702:11399" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10750:11380" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10775:10897" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="10922:11056" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11081:11199" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11224:11358" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11533:15403" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11559:11730" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11595:11682" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11779:15369" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11815:15354" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11862:15335" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="11905:13382" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12026:13376" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12058:12133" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12198:12214" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12313:12396" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12464:12551" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12617:12696" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="12875:12962" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13027:13153" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13283:13355" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13454:15312" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13545:15285" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13642:13719" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13785:13803" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="13893:13971" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14038:14056" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14146:14226" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14301:14314" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14404:14478" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14542:14557" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14647:14718" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14779:14791" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="14881:14956" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="15021:15037" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="15181:15253" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="46" selection-end-column="89" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-                <marker date="1511626535000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staffClasses.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="201" column="74" lean-forward="false" selection-start-line="201" selection-start-column="74" selection-end-line="201" selection-end-column="74" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-                <marker date="1511871159000" expanded="true" signature="2238:2273" ph="SELECT * FRO... staff" />
-                <marker date="1511871159000" expanded="true" signature="2674:2716" ph="SELECT * FRO... Classes" />
-                <marker date="1511871159000" expanded="true" signature="3592:3826" ph="UPDATE `Clas... " />
-                <marker date="1511871159000" expanded="true" signature="3592:3827" ph="UPDATE `Clas... " />
-                <marker date="1511871159000" expanded="true" signature="8255:8278" ph="SELECT * FRO... Classes" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexStaff.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/indexStaff.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="166" column="74" lean-forward="false" selection-start-line="166" selection-start-column="74" selection-end-line="166" selection-end-column="74" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-                <marker date="1511871125000" expanded="true" signature="2358:2393" ph="SELECT * FRO... Gym Membership" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditStaffAccounts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
-              <folding>
-                <marker date="1511871137000" expanded="true" signature="4373:4613" ph="UPDATE `staf... " />
-                <marker date="1511871137000" expanded="true" signature="5381:5427" ph="SELECT * FRO... staff" />
-                <marker date="1511871137000" expanded="true" signature="5714:6052" ph="INSERT INTO `staff`... " />
-                <marker date="1511871137000" expanded="true" signature="6904:6959" ph="SELECT * FRO... Gym Membership" />
-                <marker date="1511871137000" expanded="true" signature="7473:7593" ph="INSERT INTO `userClasses`... " />
-                <marker date="1511871137000" expanded="true" signature="7684:7975" ph="INSERT INTO `Gym Membership`... " />
-                <marker date="1511871137000" expanded="true" signature="8522:8592" ph="UPDATE `staf... " />
-                <marker date="1511871137000" expanded="true" signature="9094:9172" ph="UPDATE `Gym " />
-                <marker date="1511871137000" expanded="true" signature="9643:9696" ph="DELETE FROM " />
-                <marker date="1511871137000" expanded="true" signature="9747:9804" ph="DELETE FROM " />
-                <marker date="1511871137000" expanded="true" signature="9855:9909" ph="DELETE FROM " />
-                <marker date="1511871137000" expanded="true" signature="10207:10251" ph="DELETE FROM " />
-                <marker date="1511871137000" expanded="true" signature="10931:11153" ph="UPDATE `Gym " />
-                <marker date="1511871137000" expanded="true" signature="11628:11663" ph="SELECT * FRO... staff" />
-                <marker date="1511871137000" expanded="true" signature="12148:12183" ph="SELECT * FRO... staff" />
-                <marker date="1511871137000" expanded="true" signature="16944:16965" ph="SELECT * FRO... staff" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Classes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/Classes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="187" column="59" lean-forward="false" selection-start-line="187" selection-start-column="59" selection-end-line="187" selection-end-column="59" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-                <marker date="1511870821000" expanded="true" signature="8986:10285" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10323" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10356" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10383" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10406" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10425" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10457" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="8986:10463" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9100:9228" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9290:10250" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9367:10214" ph="..." />
-                <marker date="1511870821000" expanded="true" signature="9510:10176" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-              <folding>
-                <element signature="e#6#100#0#PHP" expanded="true" />
-                <marker date="1511870821000" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/forms.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="494" column="62" lean-forward="true" selection-start-line="494" selection-start-column="62" selection-end-line="494" selection-end-column="62" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateStaff.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
-              <folding>
-                <element signature="e#110#204#0#PHP" expanded="true" />
-                <marker date="1511871953000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
-                <marker date="1511871953000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
-                <marker date="1511871953000" expanded="true" signature="7255:7366" ph="..." />
-                <marker date="1511871953000" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
-                <marker date="1511871953000" expanded="true" signature="8325:8436" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditCustomerAccounts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="472" column="44" lean-forward="false" selection-start-line="472" selection-start-column="44" selection-end-line="472" selection-end-column="44" />
-              <folding>
-                <marker date="1511871410000" expanded="true" signature="4373:4613" ph="UPDATE `staf... " />
-                <marker date="1511871410000" expanded="true" signature="5381:5427" ph="SELECT * FRO... staff" />
-                <marker date="1511871410000" expanded="true" signature="5714:6052" ph="INSERT INTO `staff`... " />
-                <marker date="1511871410000" expanded="true" signature="6904:6959" ph="SELECT * FRO... Gym Membership" />
-                <marker date="1511871410000" expanded="true" signature="7473:7593" ph="INSERT INTO `userClasses`... " />
-                <marker date="1511871410000" expanded="true" signature="7684:7975" ph="INSERT INTO `Gym Membership`... " />
-                <marker date="1511871410000" expanded="true" signature="8522:8592" ph="UPDATE `staf... " />
-                <marker date="1511871410000" expanded="true" signature="9094:9172" ph="UPDATE `Gym " />
-                <marker date="1511871410000" expanded="true" signature="9643:9696" ph="DELETE FROM " />
-                <marker date="1511871410000" expanded="true" signature="9747:9804" ph="DELETE FROM " />
-                <marker date="1511871410000" expanded="true" signature="9855:9909" ph="DELETE FROM " />
-                <marker date="1511871410000" expanded="true" signature="10207:10251" ph="DELETE FROM " />
-                <marker date="1511871410000" expanded="true" signature="10931:11153" ph="UPDATE `Gym " />
-                <marker date="1511871410000" expanded="true" signature="11628:11663" ph="SELECT * FRO... staff" />
-                <marker date="1511871410000" expanded="true" signature="13195:13239" ph="SELECT * FRO... Gym Membership" />
-                <marker date="1511871410000" expanded="true" signature="13862:13897" ph="SELECT * FRO... staff" />
-                <marker date="1511871410000" expanded="true" signature="18617:18647" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511908078150" expanded="true" signature="5610:5654" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511908078150" expanded="true" signature="7630:7858" ph="UPDATE `Gym " />
+                <marker date="1511908078150" expanded="true" signature="7954:8152" ph="..." />
+                <marker date="1511908078150" expanded="true" signature="8932:9011" ph="UPDATE `Gym " />
+                <marker date="1511908078150" expanded="true" signature="9119:9317" ph="..." />
               </folding>
             </state>
           </provider>
@@ -253,12 +60,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>advanc</find>
       <find>search</find>
       <find>adva</find>
       <find>striped r</find>
       <find>logout</find>
-      <find>header</find>
       <find>form</find>
       <find>testing</find>
       <find>staffUsername</find>
@@ -267,7 +72,6 @@
       <find>indexS</find>
       <find>update</find>
       <find>create</find>
-      <find>password</find>
       <find>StaffDelete</find>
       <find>delete</find>
       <find>MainPa</find>
@@ -283,6 +87,9 @@
       <find>passwo</find>
       <find>change</find>
       <find>classes</find>
+      <find>password</find>
+      <find>heade</find>
+      <find>header</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -332,7 +139,6 @@
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/Classes.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/contactUs.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/personalDiary.php" />
-        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage/index.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/register.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffLogin.php" />
@@ -343,6 +149,7 @@
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/staffClasses.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php" />
         <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
+        <option value="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
       </list>
     </option>
   </component>
@@ -353,14 +160,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="820" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -376,50 +182,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
+              <item name="CS312-WAD-Project3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312-WAD-Project3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
-              <item name="WAD3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
+              <item name="CS312-WAD-Project3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312-WAD-Project3" type="462c0819:PsiDirectoryNode" />
               <item name="Wad3BootstrapVersion" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
+              <item name="CS312-WAD-Project3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312-WAD-Project3" type="462c0819:PsiDirectoryNode" />
               <item name="Wad3BootstrapVersion" type="462c0819:PsiDirectoryNode" />
               <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
+              <item name="CS312-WAD-Project3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS312-WAD-Project3" type="462c0819:PsiDirectoryNode" />
               <item name="Wad3BootstrapVersion" type="462c0819:PsiDirectoryNode" />
               <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS312BootstrapVersion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CS312BootstrapVersion" type="462c0819:PsiDirectoryNode" />
-              <item name="Wad3BootstrapVersion" type="462c0819:PsiDirectoryNode" />
-              <item name="MainPage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -436,6 +231,117 @@
       <recent name="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/js" />
       <recent name="$PROJECT_DIR$/Wad3BootstrapVersion/MainPage" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -560,6 +466,7 @@
       <workItem from="1511274839411" duration="38315000" />
       <workItem from="1511804745224" duration="339000" />
       <workItem from="1511870655123" duration="1607000" />
+      <workItem from="1511903260177" duration="1989000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -796,10 +703,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131857000" />
+    <option name="totallyTimeSpent" value="134504000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -809,13 +716,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14752117" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15220949" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18168813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -827,9 +734,39 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.060556464" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -961,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="206" column="45" lean-forward="true" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="88" column="15" lean-forward="true" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="107" column="4" lean-forward="true" selection-start-line="107" selection-start-column="4" selection-end-line="158" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="119" column="28" lean-forward="false" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="108" column="97" lean-forward="false" selection-start-line="108" selection-start-column="75" selection-end-line="108" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,21 +993,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WAD3/Classes.php" />
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/contactUs.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <marker date="1511870821000" expanded="true" signature="2039:2083" ph="SELECT * FRO... Gym Membership" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,13 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511870821000" expanded="true" signature="3290:3452" ph="SELECT `user... userActivities" />
-            <marker date="1511870821000" expanded="true" signature="3794:3902" ph="SELECT * FRO... Classes" />
-            <marker date="1511870821000" expanded="true" signature="4749:4877" ph="INSERT INTO `userActivities`... " />
-            <marker date="1511870821000" expanded="true" signature="10539:10576" ph="SELECT * FRO... Classes" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1073">
           <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <marker date="1511628207000" expanded="true" signature="1606:1696" ph="SELECT * FRO... staff" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,12 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <marker date="1511701492000" expanded="true" signature="3728:3790" ph="SELECT * FRO... Gym Membership" />
-            <marker date="1511701492000" expanded="true" signature="4276:4393" ph="INSERT INTO `userClasses`... " />
-            <marker date="1511701492000" expanded="true" signature="4747:4756" ph="INSERT INTO `Gym Membership`... " />
-            <marker date="1511701492000" expanded="true" signature="5043:5136" ph="SELECT * FRO... Gym Membership" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,108 +1026,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
           <caret line="187" column="59" lean-forward="false" selection-start-line="187" selection-start-column="59" selection-end-line="187" selection-end-column="59" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511870821000" expanded="true" signature="8986:10285" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10323" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10356" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10383" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10406" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10425" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10457" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="8986:10463" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9100:9228" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9290:10250" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9367:10214" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9510:10176" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="277" column="73" lean-forward="false" selection-start-line="277" selection-start-column="73" selection-end-line="277" selection-end-column="73" />
-          <folding>
-            <element signature="e#110#204#0#PHP" expanded="true" />
-            <marker date="1511870821000" expanded="true" signature="9763:10548" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9763:11503" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9763:15438" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9763:16017" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9796:10502" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="9872:9979" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10036:10443" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10061:10421" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10140:10395" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10255:10363" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10648:11454" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10702:11399" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10750:11380" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10775:10897" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="10922:11056" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11081:11199" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11224:11358" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11533:15403" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11559:11730" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11595:11682" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11779:15369" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11815:15354" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11862:15335" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="11905:13382" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12026:13376" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12058:12133" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12198:12214" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12313:12396" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12464:12551" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12617:12696" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="12875:12962" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13027:13153" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13283:13355" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13454:15312" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13545:15285" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13642:13719" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13785:13803" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="13893:13971" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14038:14056" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14146:14226" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14301:14314" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14404:14478" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14542:14557" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14647:14718" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14779:14791" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="14881:14956" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="15021:15037" ph="..." />
-            <marker date="1511870821000" expanded="true" signature="15181:15253" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11460">
-          <caret line="764" column="88" lean-forward="false" selection-start-line="764" selection-start-column="88" selection-end-line="764" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511870821000" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/adminAccounts.php" />
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="494" column="62" lean-forward="true" selection-start-line="494" selection-start-column="62" selection-end-line="494" selection-end-column="62" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,10 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="166" column="74" lean-forward="false" selection-start-line="166" selection-start-column="74" selection-end-line="166" selection-end-column="74" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511871125000" expanded="true" signature="2358:2393" ph="SELECT * FRO... Gym Membership" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,24 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
-          <folding>
-            <marker date="1511871137000" expanded="true" signature="4373:4613" ph="UPDATE `staf... " />
-            <marker date="1511871137000" expanded="true" signature="5381:5427" ph="SELECT * FRO... staff" />
-            <marker date="1511871137000" expanded="true" signature="5714:6052" ph="INSERT INTO `staff`... " />
-            <marker date="1511871137000" expanded="true" signature="6904:6959" ph="SELECT * FRO... Gym Membership" />
-            <marker date="1511871137000" expanded="true" signature="7473:7593" ph="INSERT INTO `userClasses`... " />
-            <marker date="1511871137000" expanded="true" signature="7684:7975" ph="INSERT INTO `Gym Membership`... " />
-            <marker date="1511871137000" expanded="true" signature="8522:8592" ph="UPDATE `staf... " />
-            <marker date="1511871137000" expanded="true" signature="9094:9172" ph="UPDATE `Gym " />
-            <marker date="1511871137000" expanded="true" signature="9643:9696" ph="DELETE FROM " />
-            <marker date="1511871137000" expanded="true" signature="9747:9804" ph="DELETE FROM " />
-            <marker date="1511871137000" expanded="true" signature="9855:9909" ph="DELETE FROM " />
-            <marker date="1511871137000" expanded="true" signature="10207:10251" ph="DELETE FROM " />
-            <marker date="1511871137000" expanded="true" signature="10931:11153" ph="UPDATE `Gym " />
-            <marker date="1511871137000" expanded="true" signature="11628:11663" ph="SELECT * FRO... staff" />
-            <marker date="1511871137000" expanded="true" signature="12148:12183" ph="SELECT * FRO... staff" />
-            <marker date="1511871137000" expanded="true" signature="16944:16965" ph="SELECT * FRO... staff" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1267,14 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="201" column="74" lean-forward="false" selection-start-line="201" selection-start-column="74" selection-end-line="201" selection-end-column="74" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511871159000" expanded="true" signature="2238:2273" ph="SELECT * FRO... staff" />
-            <marker date="1511871159000" expanded="true" signature="2674:2716" ph="SELECT * FRO... Classes" />
-            <marker date="1511871159000" expanded="true" signature="3592:3826" ph="UPDATE `Clas... " />
-            <marker date="1511871159000" expanded="true" signature="3592:3827" ph="UPDATE `Clas... " />
-            <marker date="1511871159000" expanded="true" signature="8255:8278" ph="SELECT * FRO... Classes" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1282,25 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="472" column="44" lean-forward="false" selection-start-line="472" selection-start-column="44" selection-end-line="472" selection-end-column="44" />
-          <folding>
-            <marker date="1511871410000" expanded="true" signature="4373:4613" ph="UPDATE `staf... " />
-            <marker date="1511871410000" expanded="true" signature="5381:5427" ph="SELECT * FRO... staff" />
-            <marker date="1511871410000" expanded="true" signature="5714:6052" ph="INSERT INTO `staff`... " />
-            <marker date="1511871410000" expanded="true" signature="6904:6959" ph="SELECT * FRO... Gym Membership" />
-            <marker date="1511871410000" expanded="true" signature="7473:7593" ph="INSERT INTO `userClasses`... " />
-            <marker date="1511871410000" expanded="true" signature="7684:7975" ph="INSERT INTO `Gym Membership`... " />
-            <marker date="1511871410000" expanded="true" signature="8522:8592" ph="UPDATE `staf... " />
-            <marker date="1511871410000" expanded="true" signature="9094:9172" ph="UPDATE `Gym " />
-            <marker date="1511871410000" expanded="true" signature="9643:9696" ph="DELETE FROM " />
-            <marker date="1511871410000" expanded="true" signature="9747:9804" ph="DELETE FROM " />
-            <marker date="1511871410000" expanded="true" signature="9855:9909" ph="DELETE FROM " />
-            <marker date="1511871410000" expanded="true" signature="10207:10251" ph="DELETE FROM " />
-            <marker date="1511871410000" expanded="true" signature="10931:11153" ph="UPDATE `Gym " />
-            <marker date="1511871410000" expanded="true" signature="11628:11663" ph="SELECT * FRO... staff" />
-            <marker date="1511871410000" expanded="true" signature="13195:13239" ph="SELECT * FRO... Gym Membership" />
-            <marker date="1511871410000" expanded="true" signature="13862:13897" ph="SELECT * FRO... staff" />
-            <marker date="1511871410000" expanded="true" signature="18617:18647" ph="SELECT * FRO... Gym Membership" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1308,24 +1069,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="46" selection-end-column="89" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <marker date="1511626535000" expanded="true" signature="1248:1341" ph="SELECT * FRO... Gym Membership" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
+        <state relative-caret-position="266">
+          <caret line="367" column="106" lean-forward="false" selection-start-line="367" selection-start-column="106" selection-end-line="367" selection-end-column="106" />
           <folding>
-            <element signature="e#110#204#0#PHP" expanded="true" />
-            <marker date="1511871953000" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
-            <marker date="1511871953000" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
-            <marker date="1511871953000" expanded="true" signature="7255:7366" ph="..." />
-            <marker date="1511871953000" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
-            <marker date="1511871953000" expanded="true" signature="8325:8436" ph="..." />
+            <marker date="1511907343889" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
+            <marker date="1511907343889" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
+            <marker date="1511907343889" expanded="true" signature="7255:7366" ph="..." />
+            <marker date="1511907343889" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
+            <marker date="1511907343889" expanded="true" signature="8325:8436" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <folding>
+            <marker date="1511908078150" expanded="true" signature="5610:5654" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511908078150" expanded="true" signature="7630:7858" ph="UPDATE `Gym " />
+            <marker date="1511908078150" expanded="true" signature="7954:8152" ph="..." />
+            <marker date="1511908078150" expanded="true" signature="8932:9011" ph="UPDATE `Gym " />
+            <marker date="1511908078150" expanded="true" signature="9119:9317" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <marker date="1511884313722" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
           </folding>
         </state>
       </provider>
