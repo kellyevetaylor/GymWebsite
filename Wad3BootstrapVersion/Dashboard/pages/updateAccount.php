@@ -115,7 +115,7 @@
                 message += " * Please enter your old password\n";
             }
 
-            if (newPassword1.value.trim().length == 0 || newPassword2.value.trim().length == 0) {
+            if (newPassword1.value.trim().length == 0 || newPassword2.value.trim().length == 0 ||newPassword1 == null|| newPassword2 == null||newPassword1==""||newPassword2=="") {
 
                 message += " * Please enter value for new password";
             } else {
@@ -257,7 +257,7 @@ if (isset($_POST["updatePassword"])) {
     $currentPassword = safePost($conn, "currentPassword");
 
 
-    if ($currentPasswordStored != md5($newPassword1)) {
+    if ($currentPasswordStored != md5($newPassword1) ) {
         if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
             $userId = $_SESSION['userId'];
             $newPassword1 = md5($newPassword1);

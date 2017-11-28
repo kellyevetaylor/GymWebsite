@@ -84,28 +84,28 @@
 
         var errMessage = "";
 
-        if (firstName.value == "" || firstName.value == null) {
+        if (firstName.value == "" || firstName.value == null||firstName.value.trim().length==0) {
             errMessage += " * Please enter your first name\n";
 
         }
 
-        if (secondName.value == null || secondName.value == "") {
+        if (secondName.value == null || secondName.value == ""||secondName.value.trim().length==0) {
             errMessage += " * Please enter your surname\n";
 
         }
-        if (email.value == "" || email.value == null) {
+        if (email.value == "" || email.value == null||email.value.trim().length==0) {
             errMessage += " * Please enter your email\n";
 
         }
-        if (address.value == "" || address.value == null) {
+        if (address.value == "" || address.value == null||address.value.trim().length==0) {
             errMessage += " * Please enter your address\n";
 
         }
-        if (city.value == "" || city.value == null) {
+        if (city.value == "" || city.value == null||city.value.trim().length==0) {
             errMessage += " * Please enter a city\n";
 
         }
-        if (postcode.value == "" || postcode.value == null) {
+        if (postcode.value == "" || postcode.value == null||postcode.value.trim().length==0) {
             errMessage += " * Please enter your postcode\n";
 
         }
@@ -203,7 +203,7 @@ if (isset($_POST["create"])) {
     if (!$result === TRUE) {
         die("Error on insert" . $conn->error);
     }
-    $error = "Staff Details Updated.Please make them aware of the default Password, and that they must change it immediately by logging in";
+    $error = "Staff Details Updated. Password: default123. Please chanege once logged in.";
     echo "<script type='text/javascript'>alert('$error');</script>";
 
 }
@@ -411,30 +411,7 @@ if (isset($_POST["update"])) {
     $isSelected = true;
 }
 
-$selectStaffID = "";
-$selectStaffFName = "";
-$selectStaffSName = "";
-$selectStaffUsername = "";
-$selectStaffEmail = "";
-$selectStaffAddress = "";
-$selectStaffCity = "";
-$selectStaffPostcode = "";
 
-//get staff information
-$sql = "SELECT * FROM `staff` WHERE `id` = $userID";// change to a variable
-$result = $conn->query($sql);
-$rowNum = $result->num_rows;
-
-while ($row = $result->fetch_assoc()) {
-    $firstName = $row["first name"];
-    $secondName = $row["second name"];
-    $level = $row["level"];
-    $email = $row["email"];
-    $address = $row["address"];
-    $city = $row["city"];
-    $postcode = $row["postcode"];
-
-}
 
 
 
@@ -459,26 +436,7 @@ if (isset($_POST["SelectCust"])) {
 }
 
 
-if (isset($_POST["SelectStaff"])) {
-    //get customer information
-    $selectStaffID = $_POST["SelectStaff"];
-    $sql = "SELECT * FROM `staff` WHERE `id` = $selectStaffID";// change to a variable
-    $result = $conn->query($sql);
-    $rowNum = $result->num_rows;
-    $selectStaffLevel = "";
 
-    while ($row = $result->fetch_assoc()) {
-        $selectStaffID = $row["id"];
-        $selectStaffFName = $row["first name"];
-        $selectStaffSName = $row["second name"];
-        $selectStaffUsername = $row["username"];
-        $selectStaffLevel = $row["level"];
-        $selectStaffEmail = $row["email"];
-        $selectStaffAddress = $row["address"];
-        $selectStaffCity = $row["city"];
-        $selectStaffPostcode = $row["postcode"];
-    }
-}
 
 
 ?>
