@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87019390-1d13-4583-8631-d2b25211eb96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/blank.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/buttons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/flot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/forms.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/icons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/morris.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/notifications.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/panels-wells.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/tables.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/typography.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" afterPath="$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="249">
+              <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
               <folding>
                 <element signature="e#6#100#0#PHP" expanded="true" />
                 <marker date="1511884313722" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
@@ -33,17 +44,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateAccount.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="updateAccount.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+            <state relative-caret-position="436">
+              <caret line="120" column="20" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
               <folding>
-                <marker date="1511908078150" expanded="true" signature="5610:5654" ph="SELECT * FRO... Gym Membership" />
-                <marker date="1511908078150" expanded="true" signature="7630:7858" ph="UPDATE `Gym " />
-                <marker date="1511908078150" expanded="true" signature="7954:8152" ph="..." />
-                <marker date="1511908078150" expanded="true" signature="8932:9011" ph="UPDATE `Gym " />
-                <marker date="1511908078150" expanded="true" signature="9119:9317" ph="..." />
+                <marker date="1511909794570" expanded="true" signature="5553:5597" ph="SELECT * FRO... Gym Membership" />
+                <marker date="1511909794570" expanded="true" signature="7573:7801" ph="UPDATE `Gym " />
+                <marker date="1511909794570" expanded="true" signature="7897:8004" ph="..." />
+                <marker date="1511909794570" expanded="true" signature="8784:8863" ph="UPDATE `Gym " />
+                <marker date="1511909794570" expanded="true" signature="8971:9077" ph="..." />
               </folding>
             </state>
           </provider>
@@ -60,12 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>adva</find>
-      <find>striped r</find>
-      <find>logout</find>
-      <find>form</find>
-      <find>testing</find>
       <find>staffUsername</find>
       <find>select menu</find>
       <find>selected St</find>
@@ -89,7 +94,13 @@
       <find>classes</find>
       <find>password</find>
       <find>heade</find>
+      <find>session</find>
+      <find>destroy</find>
       <find>header</find>
+      <find>updatesu</find>
+      <find>updates</find>
+      <find>href</find>
+      <find>message</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -246,8 +257,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditCustomerAccounts.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/EditStaffAccounts.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -466,7 +477,7 @@
       <workItem from="1511274839411" duration="38315000" />
       <workItem from="1511804745224" duration="339000" />
       <workItem from="1511870655123" duration="1607000" />
-      <workItem from="1511903260177" duration="1989000" />
+      <workItem from="1511903260177" duration="3833000" />
     </task>
     <task id="LOCAL-00001" summary="Create new membership page added. Inserts into a database called WADGym.">
       <created>1509360060137</created>
@@ -699,11 +710,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511871428630</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Started fixing some bugs">
+      <created>1511908207906</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1511908207906</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134504000" />
+    <option name="totallyTimeSpent" value="136348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -716,7 +734,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15220949" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5188216" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -724,6 +742,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -736,7 +755,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -795,7 +813,8 @@
     <MESSAGE value="added code to mad5 current password, and make all them type password" />
     <MESSAGE value="removed change password popup&#10;also removed supervisor and employee" />
     <MESSAGE value="changed the classes icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the classes icon" />
+    <MESSAGE value="Started fixing some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started fixing some bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1072,20 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="367" column="106" lean-forward="false" selection-start-line="367" selection-start-column="106" selection-end-line="367" selection-end-column="106" />
-          <folding>
-            <marker date="1511907343889" expanded="true" signature="4952:4987" ph="SELECT * FRO... staff" />
-            <marker date="1511907343889" expanded="true" signature="6819:7021" ph="UPDATE `staf... " />
-            <marker date="1511907343889" expanded="true" signature="7255:7366" ph="..." />
-            <marker date="1511907343889" expanded="true" signature="8147:8217" ph="UPDATE `staf... " />
-            <marker date="1511907343889" expanded="true" signature="8325:8436" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1094,27 +1099,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateStaff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="246" column="41" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="41" />
           <folding>
-            <marker date="1511908078150" expanded="true" signature="5610:5654" ph="SELECT * FRO... Gym Membership" />
-            <marker date="1511908078150" expanded="true" signature="7630:7858" ph="UPDATE `Gym " />
-            <marker date="1511908078150" expanded="true" signature="7954:8152" ph="..." />
-            <marker date="1511908078150" expanded="true" signature="8932:9011" ph="UPDATE `Gym " />
-            <marker date="1511908078150" expanded="true" signature="9119:9317" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="1655:2179" ph="{...}" />
+            <marker date="1511908454777" expanded="true" signature="4681:16599" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="4689:9155" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="4902:5039" ph="{...}" />
+            <marker date="1511908454777" expanded="true" signature="5072:5215" ph="{...}" />
+            <marker date="1511908454777" expanded="true" signature="5106:5180" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="5188:5212" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="5435:5470" ph="SELECT * FRO... staff" />
+            <marker date="1511908454777" expanded="true" signature="5602:5908" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="6707:7855" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="6764:6805" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="6865:6908" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="6957:6990" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7043:7080" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7127:7158" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7213:7252" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7302:7504" ph="UPDATE `staf... " />
+            <marker date="1511908454777" expanded="true" signature="7562:7634" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7738:7849" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="7896:9151" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="8409:8938" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="8518:8932" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="8630:8700" ph="UPDATE `staf... " />
+            <marker date="1511908454777" expanded="true" signature="8808:8919" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="8996:9149" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9176:16020" ph="..." />
+            <marker date="1511908454777" expanded="false" signature="9285:9301" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9302:11822" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9338:9785" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9449:9675" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9740:9765" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9874:10661" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9909:10615" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="9985:10092" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10149:10556" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10174:10534" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10253:10508" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10368:10476" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10761:11773" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10815:11718" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10863:11699" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="10888:11016" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11043:11360" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11088:11338" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11143:11286" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11386:11527" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11552:11677" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11852:15985" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11878:12049" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="11914:12001" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12098:15951" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12134:15936" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12181:15917" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12224:13747" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12343:13741" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12375:12450" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12515:12531" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12630:12713" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12797:12884" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="12950:13029" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13224:13311" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13392:13518" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13648:13720" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13819:15894" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13945:15867" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="13977:14049" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14111:14125" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14224:14301" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14367:14385" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14475:14553" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14620:14638" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14728:14808" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14883:14896" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="14986:15060" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15124:15139" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15229:15300" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15361:15373" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15463:15538" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15603:15619" ph="..." />
+            <marker date="1511908454777" expanded="true" signature="15763:15835" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="249">
+          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
           <folding>
             <element signature="e#6#100#0#PHP" expanded="true" />
             <marker date="1511884313722" expanded="true" signature="2439:2483" ph="SELECT * FRO... Gym Membership" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wad3BootstrapVersion/Dashboard/pages/updateAccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="120" column="20" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+          <folding>
+            <marker date="1511909794570" expanded="true" signature="5553:5597" ph="SELECT * FRO... Gym Membership" />
+            <marker date="1511909794570" expanded="true" signature="7573:7801" ph="UPDATE `Gym " />
+            <marker date="1511909794570" expanded="true" signature="7897:8004" ph="..." />
+            <marker date="1511909794570" expanded="true" signature="8784:8863" ph="UPDATE `Gym " />
+            <marker date="1511909794570" expanded="true" signature="8971:9077" ph="..." />
           </folding>
         </state>
       </provider>

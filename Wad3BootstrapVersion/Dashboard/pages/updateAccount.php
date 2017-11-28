@@ -111,15 +111,13 @@
 
             var message = "";
 
-            //still need to check against help password
-
             if (currentPassword.value == null || currentPassword.value == "" || currentPassword.value.trim().length == 0) {
                 message += " * Please enter your old password\n";
             }
 
             if (newPassword1.value.trim().length == 0 || newPassword2.value.trim().length == 0) {
 
-                message = +" * Please enter value for new password";
+                message += " * Please enter value for new password";
             } else {
 
                 if (newPassword1.value != newPassword2.value) {
@@ -244,7 +242,7 @@ if (isset($_POST["updateDetails"])) {
     $updateSuccess = "Update complete";
     echo "<script>
      type='text/javascript'>alert('$updateSuccess');
-     window.location.href= 'indexStaff.php';
+     window.location.href= 'index.php';
     </script> ";
 }
 
@@ -268,7 +266,7 @@ if (isset($_POST["updatePassword"])) {
             $updateSuccess = "Update complete";
             echo "<script>
      type='text/javascript'>alert('$updateSuccess');
-     window.location.href='https://devweb2017.cis.strath.ac.uk/~xwb15122/WadGymBootstrap/Wad3BootstrapVersion/MainPage/index.php';
+     window.location.href='index.php';
     </script> ";
 
         } else {
