@@ -413,7 +413,7 @@ while ($row = $result->fetch_assoc()) {
 
 }
 
-
+/*
 $selectID = isset($_POST["SelectCust"]) ? cleanInput($_POST["SelectCust"]) : ""; //Check
 $selectFName = isset($_POST["first name"]) ? cleanInput($_POST["first name"]) : "";
 $selectSName = isset($_POST["second name"]) ? cleanInput($_POST["second name"]) : "";
@@ -432,6 +432,8 @@ $selectEmail = safePost($conn, "email address");
 $selectAddress = safePost($conn, "address");
 $selectCity = safePost($conn, "city");
 $selectPostcode = safePost($conn, "postcode");
+
+*/
 
 if (isset($_POST["SelectCust"])) {
     //get customer information
