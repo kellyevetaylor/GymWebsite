@@ -292,10 +292,10 @@ if (isset($_POST["update"])) {
     $selectPostcode = safePost($conn, "custPostcode");
 
     $errorMessage = "";
-    $selectUsername= $_POST["custUsername"];
-    if (trim($selectFName) == "") {
-        $errorMessage = $errorMessage . " * Invalid Input for First Name\\n";
+   // $selectUsername= $_POST["custUsername"];
 
+    if ($selectFName==null||$selectFName==""||trim($selectFName) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for First Name\\n";
 
     }
     if (trim($selectSName) == "") {
@@ -346,7 +346,7 @@ if (isset($_POST["update"])) {
         $selectPostcode ="";
 
 
-        $isSelected = true;
+        $isSelected = false;
 
     } else {
         $errorMessage = $errorMessage."\\n New changes will not be applied\\n";
@@ -362,7 +362,7 @@ if (isset($_POST["update"])) {
 
 
         echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-        $isSelected = false;
+        $isSelected = true;
 
     }
 
@@ -681,7 +681,7 @@ if (isset($_POST["SelectCust"])) {
 
                                                     <input type="submit" value="Create New Account" name="createUser"
                                                            class="btn btn-outline btn-success"
-                                                        <?php if (isset($_POST["SelectCust"])||$isSelected == true) {
+                                                        <?php if (isset($_POST["SelectCust"])|| $isSelected == true) {
                                                             echo "disabled";
                                                         } ?> />
                                                 </td>
