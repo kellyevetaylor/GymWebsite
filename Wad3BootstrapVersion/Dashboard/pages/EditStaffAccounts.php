@@ -110,7 +110,7 @@
 
         }
         if (errMessage != "") {
-            alert("Errors as follow:\n" + errMessage+"\n New changes will not be applied\n");
+            alert("Errors as follow:\n" + errMessage + "\n New changes will not be applied\n");
         }
     }
 
@@ -146,7 +146,7 @@ $selectStaffCity = "";
 $selectStaffPostcode = "";
 
 
-$isSelected=false;
+$isSelected = false;
 
 if (isset($_POST["StaffUpdate"])) {
 
@@ -220,13 +220,12 @@ if (isset($_POST["StaffUpdate"])) {
         $selectStaffPostcode = "";
 
 
-
         $error = "Staff Details Updated.";
         echo "<script type='text/javascript'>alert('$error');</script>";
 
     } else {
 
-        $errorMessage = $errorMessage."\\n New changes will not be applied\\n";
+        $errorMessage = $errorMessage . "\\n New changes will not be applied\\n";
 
         $selectStaffID = $_POST["staffID"];
         $selectStaffFName = $_POST["staffFNameStored"];
@@ -239,13 +238,12 @@ if (isset($_POST["StaffUpdate"])) {
         $selectStaffLevel = $_POST["staffLevelStored"];
 
 
-    echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+        $isSelected = true;
+    }
+
 
 }
-
-    $isSelected = true;
-}
-
 
 
 if (isset($_POST["create"])) {
@@ -261,79 +259,96 @@ if (isset($_POST["create"])) {
     $selectStaffCity = safePost($conn, "staffCity");
     $selectStaffPostcode = safePost($conn, "staffPostcode");
 
-    //get last staff
-    $sql = "SELECT * FROM `staff` ORDER BY id DESC LIMIT 1";
-    $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc()) {
-        $lastID = $row["id"];
+    $errorMsg = "";
+    $errorCheck = false;
+    if ($selectStaffFName == null || $selectStaffFName == "" || trim($selectStaffFName) == "") {
+        $selectStaffFName = $firstName;
+        $errorMsg = $errorMsg . "* Invalid Input for First Name\\n";
+        $errorCheck = true;
     }
 
-    //new Username
-    $lastID = $lastID + 1;
-    $selectStaffUsername = "sta" . $lastID;
-    //default password
-    $defaultPassword = md5("default123");
+    if ($selectStaffSName == null || $selectStaffSName == "" || trim($selectStaffSName) == "") {
+        $selectStaffSName = $secondName;
+        $errorMsg = $errorMsg . "* Invalid Input for Second Name\\n";
 
-
-    $sql = "INSERT INTO `staff`(`id`, `level`,`first name`, `second name`, `email`, `address`, `city`, `postcode`, `username`, `password`) VALUES ($lastID, '$selectStaffLevel', '$selectStaffFName', '$selectStaffSName', '$selectStaffEmail', '$selectStaffAddress', '$selectStaffCity', '$selectStaffPostcode', '$selectStaffUsername', '$defaultPassword')";
-    $result = $conn->multi_query($sql);
-
-    if (!$result === TRUE) {
-        die("Error on insert" . $conn->error);
+        $errorCheck = true;
     }
-    $error = "Staff Details Updated.Please make them aware of the default Password, and that they must change it immediately by logging in";
-    echo "<script type='text/javascript'>alert('$error');</script>";
+    if ($selectStaffEmail == null || $selectStaffEmail == "" || trim($selectStaffEmail) == "") {
+        $selectStaffEmail = $email;
+        $errorMsg = $errorMsg . "* Invalid Input for Email\\n";
 
-}
+        $errorCheck = true;
+    }
+    if ($selectStaffAddress == null || $selectStaffAddress == "" || trim($selectStaffAddress) == "") {
+        $selectStaffAddress = $address;
+        $errorMsg = $errorMsg . "* Invalid Input for Address\\n";
 
+        $errorCheck = true;
+    }
+    if ($selectStaffCity == null || $selectStaffCity == "" || trim($selectStaffCity) == "") {
+        $selectStaffCity = $city;
+        $errorMsg = $errorMsg . "* Invalid Input for City\\n";
 
-if (isset($_POST["createUser"])) {
+        $errorCheck = true;
+    }
+    if ($selectStaffPostcode == null || $selectStaffPostcode == "" || trim($selectStaffPostcode) == "") {
+        $selectStaffPostcode = $postcode;
+        $errorMsg = $errorMsg . "* Invalid Input for Postcode\\n";
 
-    $lastID = "";
-
-
-    $selectID = safePost($conn, "custID");
-    $selectUsername = safePost($conn, "custUsername");
-    $selectFName = safePost($conn, "custFName");
-    $selectSName = safePost($conn, "custSName");
-    $selectEmail = safePost($conn, "custEmail");
-    $selectAddress = safePost($conn, "custAddress");
-    $selectCity = safePost($conn, "custCity");
-    $selectPostcode = safePost($conn, "custPostcode");
-    $defaultPassword = md5("default123");
-
-    $sql = "SELECT * FROM `Gym Membership` ORDER BY id DESC LIMIT 1";
-    $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc()) {
-        $lastID = $row["id"];
+        $errorCheck = true;
     }
 
-    //new Username
-    $lastID = $lastID + 1;
+    if ($errorCheck == false) {
 
-    if ($selectFName == null || $selectFName == "" || $selectSName == null || $selectSName == "" || $selectEmail == null || $selectEmail == "" || $selectAddress == null || $selectAddress == "" || $selectCity == null || $selectCity == "" || $selectPostcode == null || $selectPostcode == "") {
+        //get last staff
+        $sql = "SELECT * FROM `staff` ORDER BY id DESC LIMIT 1";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $lastID = $row["id"];
+        }
+
+        //new Username
+        $lastID = $lastID + 1;
+        $selectStaffUsername = "sta" . $lastID;
+        //default password
+        $defaultPassword = md5("default123");
 
 
-    } else {
-
-
-        //creating the account
-        $sql = "INSERT INTO `userClasses` (`UserID`, `class1`, `class2`, `class3`, `class4`, `class5`) VALUES ($lastID, 0 , 0 ,0 ,0 ,0 );";
-        $conn->multi_query($sql);
-
-        $password = md5($password);
-        $sql = "INSERT INTO `Gym Membership`(`id`, `first name`, `second name`, `email address`, `address`, `city`, `postcode`, `username`, `password`) VALUES ($lastID, '$selectFName', '$selectSName', '$selectEmail', '$selectAddress', '$selectCity', '$selectPostcode', '$selectUsername', '$defaultPassword')";
+        $sql = "INSERT INTO `staff`(`id`, `level`,`first name`, `second name`, `email`, `address`, `city`, `postcode`, `username`, `password`) VALUES ($lastID, '$selectStaffLevel', '$selectStaffFName', '$selectStaffSName', '$selectStaffEmail', '$selectStaffAddress', '$selectStaffCity', '$selectStaffPostcode', '$selectStaffUsername', '$defaultPassword')";
         $result = $conn->multi_query($sql);
 
         if (!$result === TRUE) {
             die("Error on insert" . $conn->error);
         }
-        $error = "Customer Account Created:\nPlease make them aware of the default Password(default123), and that they must change it immediately by logging in";
+        $error = "Staff Details Updated.Please make them aware of the default Password, and that they must change it immediately by logging in";
         echo "<script type='text/javascript'>alert('$error');</script>";
+
+        $selectStaffID = "";
+        $selectStaffFName = "";
+        $selectStaffSName = "";
+        $selectStaffUsername = "";
+        $selectStaffEmail = "";
+        $selectStaffAddress = "";
+        $selectStaffCity = "";
+        $selectStaffPostcode = "";
+    } else {
+        $error = "Please enter valid data\\n" . $errorMsg . "\\n Current Account will not be created.";
+        echo "<script type='text/javascript'>alert('$error');</script>";
+
+        $selectStaffID = "";
+        $selectStaffFName = "";
+        $selectStaffSName = "";
+        $selectStaffUsername = "";
+        $selectStaffEmail = "";
+        $selectStaffAddress = "";
+        $selectStaffCity = "";
+        $selectStaffPostcode = "";
     }
 
 
 }
+
+
 
 if (isset($_POST["StaffReset"])) {
     $selectStaffID = safePost($conn, "staffID");
@@ -345,40 +360,11 @@ if (isset($_POST["StaffReset"])) {
     if (!$result) {
         die("Query failed" . $conn->error);//get rid of error line
     }
-    $errorreset = "Staff Account has been reset Please make them aware of new default poassword and that they must change it immediately.";
+    $errorreset = "Password reset to: default123\\nPlease advise staff to change the password immediately ";
     echo "<script type='text/javascript'>alert('$errorreset');</script>";
 }
 
-if (isset($_POST["reset"])) {
-    $selectID = safePost($conn, "custID");
 
-    //reset customer password
-    $newPassword = md5("default123");
-    $sql = "UPDATE `Gym Membership` SET `password`='$newPassword' WHERE `id` = '$selectID' ";
-    $result = $conn->query($sql);
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-    $errorreset = "Customer Account has been reset Please make them aware of new default poassword and that they must change it immediately.";
-    echo "<script type='text/javascript'>alert('$errorreset');</script>";
-}
-
-if (isset($_POST["delete"])) {
-    $selectID = safePost($conn, "custID");
-
-    //deleting customer accounts
-    $sql = "DELETE FROM `Gym Membership` WHERE `id` = '$selectID' ";
-    $result = $conn->query($sql);
-
-    $sql = "DELETE FROM `userActivities` WHERE `UserID` = '$selectID' ";
-    $result = $conn->query($sql);
-
-    $sql = "DELETE FROM `userClasses` WHERE `UserID` = '$selectID' ";
-    $result = $conn->query($sql);
-
-    $errorreset = "Customer Account has been deleted.";
-    echo "<script type='text/javascript'>alert('$errorreset');</script>";
-}
 
 if (isset($_POST["StaffDelete"])) {
     $selectID = safePost($conn, "staffID");
@@ -394,26 +380,7 @@ if (isset($_POST["StaffDelete"])) {
     echo "<script type='text/javascript'>alert('$errorreset');</script>";
 }
 
-if (isset($_POST["update"])) {
 
-    $selectID = safePost($conn, "custID");
-    $selectFName = safePost($conn, "custFName"); 
-    $selectSName = safePost($conn, "custSName");
-    $selectEmail = safePost($conn, "custEmail");
-    $selectAddress = safePost($conn, "custAddress");
-    $selectCity = safePost($conn, "custCity");
-    $selectPostcode = safePost($conn, "custPostcode");
-
-    //set staff information
-    $sql = "UPDATE `Gym Membership` SET `first name`= '$selectFName',`second name`= '$selectSName',`email address`= '$selectEmail',`address`= '$selectAddress',`city`= '$selectCity',`postcode`='$selectPostcode' WHERE `id` = '$selectID' ";
-    $result = $conn->query($sql);
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-    $error = "Customer Details Updated.";
-    echo "<script type='text/javascript'>alert('$error');</script>";
-
-}
 
 
 //get staff information
@@ -657,10 +624,11 @@ if (isset($_POST["SelectStaff"])) {
                                                            value="<?php echo $selectStaffUsername; ?>"
                                                            placeholder="Username" disabled/>
                                                     <input type="hidden" name="staffUsernameStored"
-                                                           value="<?php echo $selectStaffUsername; ?>" placeholder="ID"/>
+                                                           value="<?php echo $selectStaffUsername; ?>"
+                                                           placeholder="ID"/>
                                                 </td>
                                                 <td>
-                                                    <?php if (!isset($_POST["SelectStaff"])&&$isSelected==false) {
+                                                    <?php if (!isset($_POST["SelectStaff"]) && $isSelected == false) {
                                                         ?>
                                                         <select name="selectLevel" class="form-control">
                                                             <option>Admin</option>
@@ -673,7 +641,8 @@ if (isset($_POST["SelectStaff"])) {
                                                                value="<?php echo $selectStaffLevel; ?>"
                                                                placeholder="Level" disabled/>
                                                         <input type="hidden" name="staffLevelStored"
-                                                               value="<?php echo $selectStaffLevel; ?>" placeholder="ID"/>
+                                                               value="<?php echo $selectStaffLevel; ?>"
+                                                               placeholder="ID"/>
 
                                                         <?php
                                                     }
@@ -715,7 +684,8 @@ if (isset($_POST["SelectStaff"])) {
                                                            value="<?php echo $selectStaffPostcode; ?>"
                                                            placeholder="Postcode" required/>
                                                     <input type="hidden" name="staffPostcodeStored"
-                                                           value="<?php echo $selectStaffPostcode; ?>" placeholder="ID"/>
+                                                           value="<?php echo $selectStaffPostcode; ?>"
+                                                           placeholder="ID"/>
                                                 </td>
                                                 <td>
                                                     <input type="email" name="staffEmail"
@@ -732,28 +702,28 @@ if (isset($_POST["SelectStaff"])) {
                                                 <td>
                                                     <input type="submit" value="Update" name="StaffUpdate"
                                                            class="btn btn-outline btn-primary"
-                                                        <?php if (!isset($_POST["SelectStaff"])&& $isSelected == false) {
+                                                        <?php if (!isset($_POST["SelectStaff"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Delete" name="StaffDelete"
                                                            class="btn btn-outline btn-danger"
-                                                        <?php if (!isset($_POST["SelectStaff"])&& $isSelected == false) {
+                                                        <?php if (!isset($_POST["SelectStaff"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Reset Password" name="StaffReset"
                                                            class="btn btn-outline btn-warning"
-                                                        <?php if (!isset($_POST["SelectStaff"])&& $isSelected == false) {
+                                                        <?php if (!isset($_POST["SelectStaff"]) && $isSelected == false) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
                                                 <td>
                                                     <input type="submit" value="Create New Account" name="create"
                                                            class="btn btn-outline btn-success"
-                                                        <?php if (isset($_POST["SelectStaff"])|| $isSelected == true) {
+                                                        <?php if (isset($_POST["SelectStaff"]) || $isSelected == true) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
