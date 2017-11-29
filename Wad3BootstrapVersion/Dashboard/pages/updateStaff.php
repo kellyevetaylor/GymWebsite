@@ -1,17 +1,4 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: pavindersingh
- * Date: 16/11/2017
- * Time: 23:29
- */ ?>
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: pavindersingh
- * Date: 14/11/2017
- * Time: 21:38
- */ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +12,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -56,7 +42,6 @@
     <script>
 
         function validateUpdateDetails() {
-
             var firstName = document.forms["updateDetails"]["firstName"];
             var secondName = document.forms["updateDetails"]["secondName"];
             var email = document.forms["updateDetails"]["email"];
@@ -67,29 +52,28 @@
 
             var errMessage = "";
 
-
-            if (firstName.value == "" || firstName.value == null || firstName.value.trim().length == 0) {
+            if (firstName.value == "" || firstName.value == null||firstName.value.trim().length==0 ) {
                 errMessage += " * Please enter your first name\n";
 
             }
 
-            if (secondName.value == null || secondName.value == "" || secondName.value.trim().length == 0) {
+            if (secondName.value == null || secondName.value == ""||secondName.value.trim().length==0 ) {
                 errMessage += " * Please enter your surname\n";
 
             }
-            if (email.value == "" || email.value == null || email.value.trim().length == 0) {
+            if (email.value == "" || email.value == null||email.value.trim().length==0 ) {
                 errMessage += " * Please enter your email\n";
 
             }
-            if (address.value == "" || address.value == null || address.value.trim().length == 0) {
+            if (address.value == "" || address.value == null||address.value.trim().length==0 ) {
                 errMessage += " * Please enter your address\n";
 
             }
-            if (city.value == "" || city.value == null || city.value.trim().length == 0) {
+            if (city.value == "" || city.value == null||city.value.trim().length==0 ) {
                 errMessage += " * Please enter a city\n";
 
             }
-            if (postcode.value == "" || postcode.value == null || postcode.value.trim().length == 0) {
+            if (postcode.value == "" || postcode.value == null||postcode.value.trim().length==0 ) {
                 errMessage += " * Please enter your postcode\n";
 
             }
@@ -117,7 +101,7 @@
 
             if(newPassword1.value.trim().length==0||newPassword2.value.trim().length==0) {
 
-                message =+ " * Please enter value for new password";
+                message += " * Please enter value for new password";
             }else{
 
                 if (newPassword1.value != newPassword2.value) {
@@ -136,7 +120,6 @@
                 alert("Errors as follow:\n" + message);
             }
         }
-        </scrip
     </script>
 
 
@@ -183,7 +166,7 @@ $postcode = "";
 $passwordError = "";
 
 //get user information
-$sql = "SELECT * FROM `staff` WHERE `id` = $userID";// change to a variable
+$sql = "SELECT * FROM staff WHERE id = $userID";// change to a variable
 $result = $conn->query($sql);
 $rowNum = $result->num_rows;
 
@@ -217,53 +200,38 @@ $newPostcode = safePost($conn, "postcode");
 if (isset($_POST["updateDetails"])) {
 
     $errorCheck = false;
-    if ($newFirstName == null || $newFirstName == "" || trim($newFirstName) == "") {
+    $errorMsg = "";
+
+    if ($newFirstName == null || $newFirstName == ""|| trim($newFirstName) == "") {
         $newFirstName = $firstName;
         $errorCheck = true;
     }
 
-    if ($newSecondName == null || $newSecondName == "" || trim($newSecondName) == "") {
+    if ($newSecondName == null || $newSecondName == ""|| trim($newSecondName) == "") {
         $newSecondName = $secondName;
         $errorCheck = true;
     }
-    if ($newEmail == null || $newEmail == "" || trim($newEmail) == "") {
+    if ($newEmail == null || $newEmail == ""|| trim($newEmail) == "") {
         $newEmail = $email;
         $errorCheck = true;
     }
-    if ($newAddress == null || $newAddress == "" || trim($newAddress) == "") {
+    if ($newAddress == null || $newAddress == ""|| trim($newAddress) == "") {
         $newAddress = $address;
         $errorCheck = true;
     }
-    if ($newCity == null || $newCity == "" || trim($newCity) == "") {
+    if ($newCity == null || $newCity == ""|| trim($newCity) == "") {
         $newCity = $city;
         $errorCheck = true;
     }
-    if ($newPostcode == null || $newPostcode == "" || trim($newPostcode) == "") {
+    if ($newPostcode == null || $newPostcode == ""|| trim($newPostcode) == "") {
         $newPostcode = $postcode;
         $errorCheck = true;
     }
 
-
-    if($errorCheck == false){
-        $userId = $_SESSION['userId'];
-        $sql = "UPDATE `staff` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `staff`.`id` = '$userId' ";
-        $result = $conn->query($sql);
-
-        $updateSuccess = "Update complete";
-        echo "<script>
-     type='text/javascript'>alert('$updateSuccess');
-     window.location.href= 'indexStaff.php';
-    </script> ";
-    }
-
-
-
-
-    /*
-    if($errorCheck = false) {
+    if($errorCheck == false) {
         $userId = $_SESSION['userId'];
 
-        $sql = "UPDATE `staff` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `staff`.`id` = '$userId' ";
+        $sql = "UPDATE staff SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE staff.`id` = '$userId' ";
         $result = $conn->query($sql);
 
         if (!$result) {
@@ -278,17 +246,12 @@ if (isset($_POST["updateDetails"])) {
      window.location.href='indexStaff.php';
     </script> ";
     }
-    else{
-        $updateFail = "Invalid Input as follows:\\n".$errorMsg;
-        echo "<script>
-     type='text/javascript'>alert('$updateFail');
-    </script> ";
-    }
-    */
+
 
 }
 
 if (isset($_POST["updatePassword"])) {
+
 
     $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
     $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
@@ -298,49 +261,24 @@ if (isset($_POST["updatePassword"])) {
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
 
-    $curPas = trim($currentPassword);
-    $newPass1 = trim($newPassword1);
-    $newPass2 = trim($newPassword2);
-
-    if(strlen($curPas) == 0 || strlen($curPas) == 0 || strlen($curPas) == 0){
-        //do nothing
-    }
-    else {
-        if ($currentPasswordStored != md5($newPassword1)) {
-            if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)&& md5($newPassword1)) {
-                $userId = $_SESSION['userId'];
-                $newPassword1 = md5($newPassword1);
-                $sql = "UPDATE `staff` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-                $conn->query($sql);
-                $updateSuccess = "Update complete";
-                echo "<script>
+    if ($currentPasswordStored != md5($newPassword1)) {
+        if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+            $newPassword1 = md5($newPassword1);
+            $userId = $_SESSION['userId'];
+            $sql = "UPDATE staff SET password = '$newPassword1' WHERE id = \"$userId\"";
+            $conn->query($sql);
+            $updateSuccess = "Update complete";
+            echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='indexStaff.php';
     </script> ";
-
-            } else {
-
-                $loginError = "Current password does not match our records";
-                echo "<script type='text/javascript'>alert('$loginError');</script>";
-            }
-
-        } else if ($currentPasswordStored != md5($currentPassword)) {
-            $loginError = "Current password does not match our records";
-            echo "<script type='text/javascript'>alert('$loginError');</script>";
-
         }
+    } elseif($currentPasswordStored != md5($currentPassword)){
+
+        $loginError = "Current password does not match our records";
+        echo "<script type='text/javascript'>alert('$loginError');</script>";
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
@@ -451,8 +389,7 @@ if (isset($_POST["updatePassword"])) {
                     </form>
 
                     <div class="col-lg-6">
-                        <form method="post" name=updateDetails action="updateStaff.php"
-                              onsubmit="validateUpdateDetails()">
+                        <form method="post" name="updateDetails" action="updateStaff.php" onsubmit="validateUpdateDetails()">
                             <p>
                                 Level:
                             </p>
@@ -521,4 +458,3 @@ if (isset($_POST["updatePassword"])) {
 </body>
 
 </html>
-
