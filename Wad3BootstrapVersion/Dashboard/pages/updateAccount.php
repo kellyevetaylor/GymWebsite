@@ -1,17 +1,4 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: pavindersingh
- * Date: 16/11/2017
- * Time: 23:29
- */ ?>
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: pavindersingh
- * Date: 14/11/2017
- * Time: 21:38
- */ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -247,12 +234,13 @@ if (isset($_POST["updateDetails"])) {
 
 
     if($errorCheck == false){
-    $userId = $_SESSION['userId'];
-    $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
-    $result = $conn->query($sql);
+        $userId = $_SESSION['userId'];
+        $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
+        $result = $conn->query($sql);
 
-    $updateSuccess = "Update complete";
-    echo "<script>
+        $_SESSION['login'] = "Welcome, ".$newFirstName . " " . $newSecondName;
+        $updateSuccess = "Update complete";
+        echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href= 'index.php';
     </script> ";
@@ -273,19 +261,19 @@ if (isset($_POST["updatePassword"])) {
     $newPass1 = trim($newPassword1);
     $newPass2 = trim($newPassword2);
 
-    if(strlen($curPas) == 0 || strlen($curPas) == 0 || strlen($curPas) == 0){
+    if(strlen($curPas) == 0 || strlen($newPass1) == 0 || strlen($newPass2) == 0){
         //do nothing
     }
     else {
         if ($currentPasswordStored != md5($newPassword1)) {
-            if(trim($newPassword1) == ""||trim($newPassword2) == ""){
-            if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
-                $userId = $_SESSION['userId'];
-                $newPassword1 = md5($newPassword1);
-                $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-                $conn->query($sql);
-                $updateSuccess = "Update complete";
-                echo "<script>
+            if(trim($newPassword1)!= ""||trim($newPassword2) != ""){
+                if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+                    $userId = $_SESSION['userId'];
+                    $newPassword1 = md5($newPassword1);
+                    $sql = "UPDATE `Gym Membership` SET password = '$newPassword1' WHERE id = \"$userId\"";
+                    $conn->query($sql);
+                    $updateSuccess = "Update complete";
+                    echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='index.php';
     </script> ";}
@@ -392,13 +380,13 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" type="text"
+                            <input name="newPassword1" value="" placeholder="New Password" type="password"
                                    class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input name="newPassword2" value="" type="text"
+                            <input name="newPassword2" value="" type="password"
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>
@@ -473,4 +461,3 @@ if (isset($_POST["updatePassword"])) {
 </body>
 
 </html>
-

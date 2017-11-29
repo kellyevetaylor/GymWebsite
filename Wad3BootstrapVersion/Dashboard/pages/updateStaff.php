@@ -239,6 +239,7 @@ if (isset($_POST["updateDetails"])) {
         }
         //  header("location:indexStaff.php");
 
+        $_SESSION['login'] = "Welcome, ".$newFirstName . " " . $newSecondName;
 
         $updateSuccess = "Update complete";
         echo "<script>
@@ -250,8 +251,8 @@ if (isset($_POST["updateDetails"])) {
 
 }
 
-if (isset($_POST["updatePassword"])) {
 
+if (isset($_POST["updatePassword"])) {
 
     $newPassword1 = isset($_POST["newPassword1"]) ? cleanInput($_POST["newPassword1"]) : "";
     $newPassword2 = isset($_POST["newPassword2"]) ? cleanInput($_POST["newPassword2"]) : "";
@@ -261,25 +262,40 @@ if (isset($_POST["updatePassword"])) {
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
 
-    if ($currentPasswordStored != md5($newPassword1)) {
-        if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
-            $newPassword1 = md5($newPassword1);
-            $userId = $_SESSION['userId'];
-            $sql = "UPDATE staff SET password = '$newPassword1' WHERE id = \"$userId\"";
-            $conn->query($sql);
-            $updateSuccess = "Update complete";
-            echo "<script>
+    $curPas = trim($currentPassword);
+    $newPass1 = trim($newPassword1);
+    $newPass2 = trim($newPassword2);
+
+    if(strlen($curPas) == 0 || strlen($newPass1) == 0 || strlen($newPass2) == 0){
+        //do nothing
+    }
+    else {
+        if ($currentPasswordStored != md5($newPassword1)) {
+            if(trim($newPassword1)!= ""||trim($newPassword2) != ""){
+                if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+                    $userId = $_SESSION['userId'];
+                    $newPassword1 = md5($newPassword1);
+                    $sql = "UPDATE `staff` SET password = '$newPassword1' WHERE id = \"$userId\"";
+                    $conn->query($sql);
+                    $updateSuccess = "Update complete";
+                    echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='indexStaff.php';
-    </script> ";
-        }
-    } elseif($currentPasswordStored != md5($currentPassword)){
+    </script> ";}
 
-        $loginError = "Current password does not match our records";
-        echo "<script type='text/javascript'>alert('$loginError');</script>";
+            } else {
+
+                $loginError = "Current password does not match our records";
+                echo "<script type='text/javascript'>alert('$loginError');</script>";
+            }
+
+        } else if ($currentPasswordStored != md5($currentPassword)) {
+            $loginError = "Current password does not match our records";
+            echo "<script type='text/javascript'>alert('$loginError');</script>";
+
+        }
     }
 }
-
 
 ?>
 
