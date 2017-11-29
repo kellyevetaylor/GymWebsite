@@ -132,7 +132,7 @@ if (isset($_POST["resetCap"])) {
         die("Query failed" . $conn->error);//get rid of error line
     }
 
-    $class = "class".$id;
+    $class = "class" . $id;
     $val = (int)0;
     $sql = "UPDATE `userClasses` SET `$class`= $val";
     $result = $conn->query($sql);
@@ -168,51 +168,43 @@ if (isset($_POST["update"])) {
     $selectClassCap = (int)$selectClassCap;
 
 
-    $errorMessage="";
+    $errorMessage = "";
     $id = $selectId;
     if (trim($selectClass) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Class\\n";
+        $errorMessage = $errorMessage . " * Invalid Input for Class\\n";
 
 
     }
     if (trim($selectDate) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Date\\n";
-
+        $errorMessage = $errorMessage . " * Invalid Input for Date\\n";
 
 
     }
     if (trim($selectTime) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Time\\n";
-
+        $errorMessage = $errorMessage . " * Invalid Input for Time\\n";
 
 
     }
     if (trim($selectLength) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Length\\n";
-
+        $errorMessage = $errorMessage . " * Invalid Input for Length\\n";
 
 
     }
     if (trim($selectTrainer) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Trainer\\n";
-
+        $errorMessage = $errorMessage . " * Invalid Input for Trainer\\n";
 
 
     }
-       if (trim($selectCapacity) == "") {
-           $errorMessage=$errorMessage." * Invalid Input for Capacity\\n";
-
+    if (trim($selectCapacity) == "") {
+        $errorMessage = $errorMessage . " * Invalid Input for Capacity\\n";
 
 
     }
     if (trim($selectClassCap) == "") {
-        $errorMessage=$errorMessage." * Invalid Input for Class Capacity\\n";
-
+        $errorMessage = $errorMessage . " * Invalid Input for Class Capacity\\n";
 
 
     }
-
-
 
 
     if ($errorMessage == "") {
@@ -221,14 +213,16 @@ if (isset($_POST["update"])) {
 
         $result = $conn->query($sql);
         if (!$result) {
-            die("Query failed" . $conn->error);//get rid of error line
+            $errorDate = "Invalid Date.";
+            echo "<script type='text/javascript'>alert('$errorDate');</script>";
+        }else{
+            $error = "Class Updated.";
+            echo "<script type='text/javascript'>alert('$error');</script>";
         }
         $id = "";
-        $error = "Class Updated.";
-        echo "<script type='text/javascript'>alert('$error');</script>";
-    }
-    else{
-        $errorMessage = $errorMessage."\\n New changes will not be applied\\n";
+
+    } else {
+        $errorMessage = $errorMessage . "\\n New changes will not be applied\\n";
 
         $class = $_POST["classStored"];
         $date = $_POST["dateStored"];

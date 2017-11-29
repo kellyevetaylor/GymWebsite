@@ -154,7 +154,7 @@
                 <div class="col-lg-8 mx-auto">
                     <h1 class="brand-heading">WAD GYM</h1>
                     <p class="intro-text">
-                        WAD GYM offers top quality, next generation equipment for fitness enthusiasts as well beginners.
+                        WAD GYM offers top quality, next generation equipment for fitness enthusiasts as well as beginners.
                         <br>
                         Everything you could need is here so join today with no joining fee!
                     </p>
