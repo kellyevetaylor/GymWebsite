@@ -137,6 +137,15 @@ $city = "";
 $postcode = "";
 $isSelected = false;
 
+//get user information
+$sql = "SELECT * FROM `staff` WHERE `id` = $userID";// change to a variable
+$result = $conn->query($sql);
+$rowNum = $result->num_rows;
+
+while ($row = $result->fetch_assoc()) {
+    $level = $row["level"];
+}
+
 $selectID = ""; //Check
 $selectFName =  "";
 $selectSName =  "";
@@ -579,6 +588,7 @@ if (isset($_POST["SelectCust"])) {
                                             <th></th>
                                             <th></th>
                                             <th></th>
+                                            <th></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -597,6 +607,7 @@ if (isset($_POST["SelectCust"])) {
                                                 <td>
                                                     Username:
                                                 </td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -627,6 +638,7 @@ if (isset($_POST["SelectCust"])) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>
+                                                <td></td>
                                             </tr>
                                             <tr>
 
@@ -642,6 +654,7 @@ if (isset($_POST["SelectCust"])) {
                                                 <td>
                                                     Email:
                                                 </td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -670,6 +683,7 @@ if (isset($_POST["SelectCust"])) {
                                                     <input type="hidden" name="EmailStored" value="<?php echo $selectEmail; ?>"
                                                            placeholder="ID" required/>
                                                 </td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -703,8 +717,6 @@ if (isset($_POST["SelectCust"])) {
                                                 <td>
                                                     <input type="submit" value="Clear" name="clear"
                                                            class="btn btn-outline btn-info"/>
-                                                </td>
-                                                <td>
                                                 </td>
                                             </tr>
                                         </form>

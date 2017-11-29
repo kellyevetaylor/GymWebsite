@@ -121,6 +121,29 @@ if (isset($_POST["SelectClass"])) {
     }
 }
 
+if (isset($_POST["resetCap"])) {
+    $id = safePost($conn, "classid");
+
+
+    //reset customer password
+    $sql = "UPDATE `Classes` SET `Capacity`=0 WHERE `ClassID` = '$id' ";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+
+    $class = "class".$id;
+    $val = (int)0;
+    $sql = "UPDATE `userClasses` SET `$class`= $val";
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Query failed" . $conn->error);//get rid of error line
+    }
+
+    $reset = "The Class Current Capacity has been reset to 0";
+    echo "<script type='text/javascript'>alert('$reset');</script>";
+}
+
 if (isset($_POST["update"])) {
 
 
@@ -213,12 +236,6 @@ if (isset($_POST["update"])) {
         $length = $_POST["lengthStored"];
         $time = $_POST["timeStored"];
         $trainer = $_POST["trainerStored"];
-
-
-
-
-
-
 
         echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 
@@ -480,6 +497,11 @@ if (isset($_POST["update"])) {
                                                         } ?>/>
                                                 </td>
                                                 <td>
+                                                    <input type="submit" value="Clear Current Capacity" name="resetCap"
+                                                           class="btn btn-outline btn-success"
+                                                        <?php if (!isset($_POST["SelectClass"]) && $isSelected == false) {
+                                                            echo "disabled";
+                                                        } ?>/>
                                                 </td>
                                                 <td>
                                                 </td>

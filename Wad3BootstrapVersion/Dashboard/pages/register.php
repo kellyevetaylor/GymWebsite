@@ -187,44 +187,44 @@
                 </div>
                 <div class="panel-body">
                     <fieldset>
-                        <form name="registerForm" method="post" onsubmit="return validateInputForm()">
+                        <form name="registerForm" action="register.php" method="post" onsubmit="validateInputForm()">
 
 
                             <div class="form-group">
                                 <input class="form-control" placeholder="First Name" name="firstName" type="name"
-                                       autofocus value="<?php $firstName ?>">
+                                       autofocus value="<?php echo $firstName; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Second Name" name="secondName" type="name"
-                                       autofocus value="<?php $secondName ?>">
+                                       autofocus value="<?php echo $secondName; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus
-                                       value="<?php $email ?>">
+                                       value="<?php echo $email; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="1st Line of Address" name="address"
-                                       type="address" autofocus value="<?php $address ?>">
+                                       type="address" autofocus value="<?php echo $address; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="City" name="city" type="city" autofocus
-                                       value="<?php $city ?>">
+                                       value="<?php echo $city; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="PostCode" name="postcode" type="postcode"
-                                       autofocus value="<?php $postcode ?>">
+                                       autofocus value="<?php echo $postcode; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Username" name="username" type="username"
-                                       autofocus value="<?php $username ?>">
+                                       autofocus value="<?php echo $username; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password"
-                                       autofocus value="<?php $password ?>">
+                                       autofocus value="<?php echo $password; ?>">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Confirm Password" name="ConfirmPassword"
-                                       type="password" autofocus value="<?php $confirmPassword ?>">
+                                       type="password" autofocus value="<?php echo $confirmPassword; ?>">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <input type="submit" value="Register" class="btn btn-lg btn-success btn-block"/>

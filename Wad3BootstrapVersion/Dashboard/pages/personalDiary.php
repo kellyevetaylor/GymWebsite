@@ -309,12 +309,43 @@ if (isset($_POST['addactivity'])) {
                     <div class="col-lg-4">
 
                         <form method="post" name="updateForm" onsubmit="validateInputForm()">
-                            <br>Add an activity from today:</br>
-                            <input type="text" name="activity"></br>
-                            Duration:</br>
-                            <input type="number" name="time" min="0"></br>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Add an activity from today:</p>
 
-                            <input type="submit" name="addactivity"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" placeholder="Activty Name" name="activity" class="form-control"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        <p>Duration:</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="number" name="time" placeholder="Minutes" min="0" class="form-control"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        <input type="submit" name="addactivity" class="btn btn-outline btn-primary"/>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </form>
 
                     </div>

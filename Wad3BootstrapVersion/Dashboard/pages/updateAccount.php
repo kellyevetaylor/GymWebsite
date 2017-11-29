@@ -26,6 +26,7 @@
         header("Location: ../../MainPage/index.php"); /* Redirect browser */
         exit();
     }
+    $outcome = "";
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -115,7 +116,7 @@
                 message += " * Please enter your old password\n";
             }
 
-            if (newPassword1.value.trim().length == 0 || newPassword2.value.trim().length == 0 ||newPassword1 == null|| newPassword2 == null||newPassword1==""||newPassword2=="") {
+            if (newPassword1.value.trim().length == 0 || newPassword2.value.trim().length == 0 || newPassword1 == null || newPassword2 == null || newPassword1 == "" || newPassword2 == "") {
 
                 message += " * Please enter value for new password";
             } else {
@@ -214,27 +215,35 @@ $newPostcode = safePost($conn, "postcode");
 
 if (isset($_POST["updateDetails"])) {
 
+    $errorCheck = false;
     if ($newFirstName == null || $newFirstName == "" || trim($newFirstName) == "") {
         $newFirstName = $firstName;
+        $errorCheck = true;
     }
 
     if ($newSecondName == null || $newSecondName == "" || trim($newSecondName) == "") {
         $newSecondName = $secondName;
+        $errorCheck = true;
     }
     if ($newEmail == null || $newEmail == "" || trim($newEmail) == "") {
         $newEmail = $email;
+        $errorCheck = true;
     }
     if ($newAddress == null || $newAddress == "" || trim($newAddress) == "") {
         $newAddress = $address;
+        $errorCheck = true;
     }
     if ($newCity == null || $newCity == "" || trim($newCity) == "") {
         $newCity = $city;
+        $errorCheck = true;
     }
     if ($newPostcode == null || $newPostcode == "" || trim($newPostcode) == "") {
         $newPostcode = $postcode;
+        $errorCheck = true;
     }
 
 
+    if($errorCheck == false){
     $userId = $_SESSION['userId'];
     $sql = "UPDATE `Gym Membership` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email address`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `Gym Membership`.`id` = '$userId' ";
     $result = $conn->query($sql);
@@ -244,6 +253,7 @@ if (isset($_POST["updateDetails"])) {
      type='text/javascript'>alert('$updateSuccess');
      window.location.href= 'index.php';
     </script> ";
+    }
 }
 
 if (isset($_POST["updatePassword"])) {
@@ -256,30 +266,37 @@ if (isset($_POST["updatePassword"])) {
     $newPassword2 = safePost($conn, "newPassword2");
     $currentPassword = safePost($conn, "currentPassword");
 
+    $curPas = trim($currentPassword);
+    $newPass1 = trim($newPassword1);
+    $newPass2 = trim($newPassword2);
 
-    if ($currentPasswordStored != md5($newPassword1) ) {
-        if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
-            $userId = $_SESSION['userId'];
-            $newPassword1 = md5($newPassword1);
-            $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
-            $conn->query($sql);
-            $updateSuccess = "Update complete";
-            echo "<script>
+    if(strlen($curPas) == 0 || strlen($curPas) == 0 || strlen($curPas) == 0){
+        //do nothing
+    }
+    else {
+        if ($currentPasswordStored != md5($newPassword1)) {
+            if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
+                $userId = $_SESSION['userId'];
+                $newPassword1 = md5($newPassword1);
+                $sql = "UPDATE `Gym Membership` SET `password` = '$newPassword1' WHERE id = \"$userId\"";
+                $conn->query($sql);
+                $updateSuccess = "Update complete";
+                echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='index.php';
     </script> ";
 
-        } else {
+            } else {
 
+                $loginError = "Current password does not match our records";
+                echo "<script type='text/javascript'>alert('$loginError');</script>";
+            }
+
+        } else if ($currentPasswordStored != md5($currentPassword)) {
             $loginError = "Current password does not match our records";
             echo "<script type='text/javascript'>alert('$loginError');</script>";
+
         }
-
-    } elseif
-    ($currentPasswordStored != md5($currentPassword)) {
-        $loginError = "Current password does not match our records";
-        echo "<script type='text/javascript'>alert('$loginError');</script>";
-
     }
 }
 
@@ -360,24 +377,24 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Username:
                             </p>
-                            <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
+                            <input value="<?php echo $username ?>" class="form-control" disabled>
                             <br/>
                             <p>
                                 Current Password:
                             </p>
-                            <input name="currentPassword" value="" type=password
+                            <input name="currentPassword" value="" type="password"
                                    placeholder="Current Password" class="form-control">
                             <br/>
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" type=password
+                            <input name="newPassword1" value="" placeholder="New Password" type="password"
                                    class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input name="newPassword2" value="" type=password
+                            <input name="newPassword2" value="" type="password"
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>

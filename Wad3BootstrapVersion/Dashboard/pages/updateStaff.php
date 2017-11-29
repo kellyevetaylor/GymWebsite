@@ -211,41 +211,65 @@ $newPostcode = safePost($conn, "postcode");
 
 if (isset($_POST["updateDetails"])) {
 
-    if ($newFirstName == null || $newFirstName == ""|| trim($newFirstName)=="") {
+    $errorCheck = false;
+    $errorMsg = "";
+
+    if ($newFirstName == null || $newFirstName == ""|| trim($newFirstName) == "") {
         $newFirstName = $firstName;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * First Name.\\n";
     }
 
-    if ($newSecondName == null || $newSecondName == "") {
+    if ($newSecondName == null || $newSecondName == ""|| trim($newSecondName) == "") {
         $newSecondName = $secondName;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * Second Name.\\n";
     }
-    if ($newEmail == null || $newEmail == "") {
+    if ($newEmail == null || $newEmail == ""|| trim($newEmail) == "") {
         $newEmail = $email;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * Email Name.\\n";
     }
-    if ($newAddress == null || $newAddress == "") {
+    if ($newAddress == null || $newAddress == ""|| trim($newAddress) == "") {
         $newAddress = $address;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * Address.\\n";
     }
-    if ($newCity == null || $newCity == "") {
+    if ($newCity == null || $newCity == ""|| trim($newCity) == "") {
         $newCity = $city;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * City.\\n";
     }
-    if ($newPostcode == null || $newPostcode == "") {
+    if ($newPostcode == null || $newPostcode == ""|| trim($newPostcode) == "") {
         $newPostcode = $postcode;
+        $errorCheck = true;
+        $errorMsg = $errorMsg." * PostCode.\\n";
     }
-    $userId = $_SESSION['userId'];
 
-    $sql = "UPDATE `staff` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `staff`.`id` = '$userId' ";
-    $result = $conn->query($sql);
+    if($errorCheck = false) {
+        $userId = $_SESSION['userId'];
 
-    if (!$result) {
-        die("Query failed" . $conn->error);//get rid of error line
-    }
-    //  header("location:indexStaff.php");
+        $sql = "UPDATE `staff` SET `first name`= '$newFirstName',`second name`= '$newSecondName',`email`= '$newEmail',`address`= '$newAddress',`city`= '$newCity',`postcode`='$newPostcode' WHERE `staff`.`id` = '$userId' ";
+        $result = $conn->query($sql);
+
+        if (!$result) {
+            die("Query failed" . $conn->error);//get rid of error line
+        }
+        //  header("location:indexStaff.php");
 
 
-    $updateSuccess = "Update complete";
-    echo "<script>
+        $updateSuccess = "Update complete";
+        echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='indexStaff.php';
     </script> ";
+    }
+    else{
+        $updateFail = "Invalid Input as follows:\\n".$errorMsg;
+        echo "<script>
+     type='text/javascript'>alert('$updateFail');
+    </script> ";
+    }
 
 }
 
@@ -362,23 +386,23 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 Username:
                             </p>
-                            <input name="username" value="<?php echo $username ?>" class="form-control" disabled>
+                            <input value="<?php echo $username ?>" class="form-control" disabled>
                             <br/>
                             <p>
                                 Current Password:
                             </p>
-                            <input name="currentPassword" value="" type = password
+                            <input name="currentPassword" value="" type = "password"
                                    placeholder="Current Password" class="form-control">
                             <br/>
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" type = password class="form-control">
+                            <input name="newPassword1" value="" placeholder="New Password" type = "password" class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input name="newPassword2" value="" type = password
+                            <input name="newPassword2" value="" type = "password"
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>

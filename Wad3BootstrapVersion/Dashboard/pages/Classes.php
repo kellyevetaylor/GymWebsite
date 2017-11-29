@@ -175,7 +175,7 @@ $conn = new mysqli($host, $user, $password, $dbname);
                                             echo "Date: " . $row["Date"] . "<br>";
                                             echo "Class: " . $row["Class"] . "<br>" . " Length: " . $row["Length"] . " minutes<br> ";
                                             echo "Capacity: " . $row["Capacity"] . "/" . $row["classCapacity"]
-                                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' '>
+                                                . "<br> Trainer: " . $row["Trainer"] . "<br>" . "</n>" . "<input type='submit' name='class$i' value='Add Class' class='btn btn-outline btn-primary'>
             </td>";
                                             echo "</tr>";
                                         }
