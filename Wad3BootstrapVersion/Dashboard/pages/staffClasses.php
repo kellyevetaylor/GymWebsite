@@ -228,6 +228,7 @@ if (isset($_POST["update"])) {
         echo "<script type='text/javascript'>alert('$error');</script>";
     }
     else{
+        $errorMessage = $errorMessage."\\n New changes will not be applied\\n";
 
         $class = $_POST["classStored"];
         $date = $_POST["dateStored"];

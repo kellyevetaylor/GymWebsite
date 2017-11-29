@@ -100,6 +100,8 @@
 
             }
             if (errMessage != "") {
+                errMessage += "\n New changes will not be applied\n";
+
                 alert("Errors as follow:\n" + errMessage);
             }
         }
@@ -134,6 +136,7 @@
 
 
             if (message != "") {
+
                 alert("Errors as follow:\n" + message);
             }
         }
@@ -275,6 +278,7 @@ if (isset($_POST["updatePassword"])) {
     }
     else {
         if ($currentPasswordStored != md5($newPassword1)) {
+            if(trim($newPassword1) == ""||trim($newPassword2) == ""){
             if (md5($newPassword1) == md5($newPassword2) && (md5($currentPassword) == $currentPasswordStored)) {
                 $userId = $_SESSION['userId'];
                 $newPassword1 = md5($newPassword1);
@@ -284,7 +288,7 @@ if (isset($_POST["updatePassword"])) {
                 echo "<script>
      type='text/javascript'>alert('$updateSuccess');
      window.location.href='index.php';
-    </script> ";
+    </script> ";}
 
             } else {
 
@@ -388,13 +392,13 @@ if (isset($_POST["updatePassword"])) {
                             <p>
                                 New Password:
                             </p>
-                            <input name="newPassword1" value="" placeholder="New Password" type="password"
+                            <input name="newPassword1" value="" placeholder="New Password" type="text"
                                    class="form-control">
                             <br/>
                             <p>
                                 Confirm New Password:
                             </p>
-                            <input name="newPassword2" value="" type="password"
+                            <input name="newPassword2" value="" type="text"
                                    placeholder="Confirm New Password"
                                    class="form-control">
                             <br/>

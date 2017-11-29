@@ -110,7 +110,7 @@
 
         }
         if (errMessage != "") {
-            alert("Errors as follow:\n" + errMessage);
+            alert("Errors as follow:\n" + errMessage+"\n New changes will not be applied\n");
         }
     }
 
@@ -225,6 +225,8 @@ if (isset($_POST["StaffUpdate"])) {
         echo "<script type='text/javascript'>alert('$error');</script>";
 
     } else {
+
+        $errorMessage = $errorMessage."\\n New changes will not be applied\\n";
 
         $selectStaffID = $_POST["staffID"];
         $selectStaffFName = $_POST["staffFNameStored"];
@@ -395,7 +397,7 @@ if (isset($_POST["StaffDelete"])) {
 if (isset($_POST["update"])) {
 
     $selectID = safePost($conn, "custID");
-    $selectFName = safePost($conn, "custFName");
+    $selectFName = safePost($conn, "custFName"); 
     $selectSName = safePost($conn, "custSName");
     $selectEmail = safePost($conn, "custEmail");
     $selectAddress = safePost($conn, "custAddress");
@@ -751,7 +753,7 @@ if (isset($_POST["SelectStaff"])) {
                                                 <td>
                                                     <input type="submit" value="Create New Account" name="create"
                                                            class="btn btn-outline btn-success"
-                                                        <?php if (isset($_POST["SelectStaff"])&& $isSelected == true) {
+                                                        <?php if (isset($_POST["SelectStaff"])|| $isSelected == true) {
                                                             echo "disabled";
                                                         } ?>/>
                                                 </td>

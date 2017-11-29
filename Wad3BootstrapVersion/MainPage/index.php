@@ -75,7 +75,7 @@
     ?>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="=" width="device-width,initial-scale=1.0">
     <meta name="the index page, information regarding the WAD Gym, login and re-direct for signing up" content="">
     <meta name="cs312" content="">
 
